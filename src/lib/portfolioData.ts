@@ -29,6 +29,39 @@ export interface Project {
   technologies?: string[];
 }
 
+export interface AcademicProject {
+  id: string;
+  title: string;
+  description: string;
+  link?: string;
+  technologies?: string[];
+}
+
+export interface Research {
+  id: string;
+  title: string;
+  journal: string;
+  year: string;
+  status: string;
+  link?: string;
+}
+
+export interface OtherExperience {
+  id: string;
+  organization: string;
+  position: string;
+  period: string;
+  description: string;
+}
+
+export interface Education {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  details: string;
+}
+
 const DEFAULT_DATA = {
   personalInfo: {
     name: "Wahiduzzaman Shuvo",
@@ -101,6 +134,152 @@ const DEFAULT_DATA = {
       period: "Nov 2025 - Running",
       description: "Lead acquisition platform built with Vite. Scraping engine using Beautiful Soup with AI-powered validation. Containerized with Docker, orchestrated with Redis.",
       technologies: ["Vite", "Python", "Docker", "Redis"]
+    }
+  ],
+  academicProjects: [
+    {
+      id: "1",
+      title: "Nexa: Social Media",
+      description: "Developed using C# and .NET Framework, SignalR, WebRTC, MySQL",
+      link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
+      technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"]
+    },
+    {
+      id: "2",
+      title: "Optra Fintech",
+      description: "NextJS, Flowbite, PostgreSQL",
+      link: "https://github.com/wshuv-o/Grocery-Management",
+      technologies: ["Next.js", "Flowbite", "PostgreSQL"]
+    },
+    {
+      id: "3",
+      title: "Railway Ticketing System",
+      description: "Developed in Java Swing and MySQL",
+      link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
+      technologies: ["Java Swing", "MySQL"]
+    },
+    {
+      id: "4",
+      title: "Courseway - Learning Management System",
+      description: "Learning management system built with Laravel and MySQL",
+      link: "https://github.com/wshuv-o/iInventory-backend",
+      technologies: ["Laravel", "MySQL"]
+    },
+    {
+      id: "5",
+      title: "Pharmacy Management System",
+      description: "C# and .NET, MySQL",
+      link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
+      technologies: ["C#", ".NET", "MySQL"]
+    },
+    {
+      id: "6",
+      title: "I-Inventory",
+      description: "NextJs, NestJs, PostgreSQL",
+      link: "https://optra-blush.vercel.app/",
+      technologies: ["Next.js", "NestJS", "PostgreSQL"]
+    },
+    {
+      id: "7",
+      title: "Single-Vendor Retail Shop",
+      description: "C# and .NET, MsSQL",
+      link: "https://github.com/wshuv-o/Nexa-Social-Media",
+      technologies: ["C#", ".NET", "MsSQL"]
+    },
+    {
+      id: "8",
+      title: "Sentiment Analysis on Conti Ransomware Leaks",
+      description: "NetworkX, Vader (NLTK)",
+      link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
+      technologies: ["Python", "NetworkX", "NLTK"]
+    },
+    {
+      id: "9",
+      title: "Real-time Face Recognition",
+      description: "Computer vision project with real-time face recognition capabilities",
+      technologies: ["Python", "OpenCV"]
+    },
+    {
+      id: "10",
+      title: "Game Development Projects",
+      description: "Grand Canyon, Shadow Island, Galactic Exodus",
+      technologies: ["Unity", "C#"]
+    }
+  ],
+  research: [
+    {
+      id: "1",
+      title: "Lorentz-Equivariant Quantum Graph Neural Network for High-Energy Physics",
+      journal: "IEEE Transactions on Artificial Intelligence",
+      year: "2025",
+      status: "Published"
+    },
+    {
+      id: "2",
+      title: "Federated Learning in Health Care Technology: Challenges, Solutions and Opportunities",
+      journal: "Studies in Computational Intelligence (Springer Nature)",
+      year: "2025",
+      status: "Published"
+    },
+    {
+      id: "3",
+      title: "Advanced Visualization Approaches for Statistical Data Analysis",
+      journal: "Journal of Computational Insights, Metaversalize",
+      year: "2024",
+      status: "Published"
+    },
+    {
+      id: "4",
+      title: "Clinical Knowledge Graph Framework for Uncertainty Quantification in LLM Reasoning",
+      journal: "ACM Web Conference",
+      year: "2026",
+      status: "Submitted"
+    },
+    {
+      id: "5",
+      title: "A Symmetry-Aware Equivariant Quantum Clustering Approach for Enhanced Unsupervised Learning",
+      journal: "Physica Scripta",
+      year: "2025",
+      status: "Submitted"
+    }
+  ],
+  otherExperiences: [
+    {
+      id: "1",
+      organization: "Trest Rossem, Rooppur NPP",
+      position: "Interpreter",
+      period: "Jun 2021 - Feb 2022",
+      description: "Facilitated effective communication with government officials and the HR department. Prepared documentation for work permits, legalization, and visas for foreign employees. Attended multi-party meetings as a Russian-Bangla interpreter."
+    },
+    {
+      id: "2",
+      organization: "AIUB Robotics Crew, AIUB",
+      position: "Mars Rover Crew",
+      period: "Sep 2023 - Present",
+      description: "Real-time sensor data integration and processing using Python. Implemented image processing algorithms with OpenCV for onboard analysis. Utilized NumPy, SciPy, and matplotlib for data analysis."
+    },
+    {
+      id: "3",
+      organization: "AIUB Arts Club, AIUB",
+      position: "Organizer",
+      period: "Jan 2023 – Feb 2025",
+      description: "Organized 15+ workshops and exhibitions, leading logistics, sponsorship, and promotion teams."
+    }
+  ],
+  education: [
+    {
+      id: "1",
+      degree: "Bachelor of Science in Computer Science and Engineering",
+      institution: "American International University Bangladesh",
+      period: "Jan 2022 - Present",
+      details: "CGPA 3.97 (out of 4.00)"
+    },
+    {
+      id: "2",
+      degree: "Russian Language and Literature",
+      institution: "Saint Petersburg State University, Russia",
+      period: "Aug 2020 - Jan 2022",
+      details: "TORFL B1 Certification"
     }
   ]
 };
