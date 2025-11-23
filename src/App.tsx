@@ -8,6 +8,9 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
+import Academic from "./pages/Academic";
+import Research from "./pages/Research";
+import EducationPage from "./pages/EducationPage";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/skills" element={<Skills />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/academic" element={<Academic />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/education" element={<EducationPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
