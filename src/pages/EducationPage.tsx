@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import { getPortfolioData, initializeData, Education } from "@/lib/portfolioData";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const EducationPage = () => {
   const [education, setEducation] = useState<Education[]>([]);
@@ -17,39 +18,53 @@ const EducationPage = () => {
       <Navbar />
       <main className="pt-16">
         <section className="container mx-auto px-4 py-20">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl font-display font-bold text-gradient">Education</h1>
-              <p className="text-xl text-muted-foreground">
-                Academic background and qualifications
+          <div className="max-w-5xl mx-auto space-y-12">
+            <div className="space-y-6 text-center">
+              <h1 className="text-5xl md:text-6xl font-display font-bold text-gradient">
+                Education
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Academic journey and educational achievements that have shaped my expertise 
+                in computer science and software engineering.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {education.map((edu, index) => (
-                <div
+                <Card
                   key={edu.id}
-                  className="p-8 rounded-2xl bg-card border border-border glow-card hover-scale"
+                  className="overflow-hidden hover-scale glow-card border-2"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
-                      <GraduationCap className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1 space-y-3">
-                      <div>
-                        <h2 className="text-2xl font-display font-semibold text-foreground">
-                          {edu.degree}
-                        </h2>
-                        <p className="text-lg text-primary font-medium">{edu.institution}</p>
-                        <p className="text-sm text-muted-foreground mt-1">{edu.period}</p>
+                  <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5 border-b">
+                    <div className="flex items-start gap-4">
+                      <div className="p-4 rounded-xl bg-background border-2 border-primary/20">
+                        <GraduationCap className="h-8 w-8 text-primary" />
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {edu.details}
-                      </p>
+                      <div className="flex-1">
+                        <CardTitle className="text-3xl mb-3">
+                          {edu.degree}
+                        </CardTitle>
+                        <div className="space-y-2">
+                          <p className="text-xl text-primary font-semibold flex items-center gap-2">
+                            <MapPin className="h-5 w-5" />
+                            {edu.institution}
+                          </p>
+                          <p className="text-base text-muted-foreground flex items-center gap-2">
+                            <Calendar className="h-4 w-4" />
+                            {edu.period}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </CardHeader>
+
+                  <CardContent className="pt-6">
+                    <p className="text-muted-foreground leading-relaxed text-lg">
+                      {edu.details}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
