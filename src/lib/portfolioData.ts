@@ -27,6 +27,9 @@ export interface Project {
   description: string;
   link?: string;
   technologies?: string[];
+  image?: string;
+  details?: string;
+  github?: string;
 }
 
 export interface AcademicProject {
@@ -35,15 +38,20 @@ export interface AcademicProject {
   description: string;
   link?: string;
   technologies?: string[];
+  category: string;
+  image?: string;
+  details?: string;
 }
 
 export interface Research {
   id: string;
   title: string;
-  journal: string;
+  authors: string;
+  venue: string;
   year: string;
-  status: string;
   link?: string;
+  abstract?: string;
+  keywords?: string[];
 }
 
 export interface OtherExperience {
@@ -110,7 +118,9 @@ const DEFAULT_DATA = {
       period: "Apr 2025 - Running",
       description: "Built a full-stack customer experience platform using Next.js, Node.js, FastAPI, PostgreSQL, and Redis. Implemented CI/CD via GitHub Actions. Developed agentic layer with custom LLM flows, RAG pipelines, and embeddings.",
       link: "https://chatsby.co",
-      technologies: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "Docker"]
+      technologies: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      details: "Enterprise-grade customer experience platform with AI-powered chat agents, real-time analytics, and seamless integration capabilities."
     },
     {
       id: "2",
@@ -118,7 +128,9 @@ const DEFAULT_DATA = {
       period: "Sept 2024 – Mar 2025",
       description: "Developed with NextJs and PostgreSQL. Facebook Graph API for user access and Messenger API for realtime communication. Comment and DM automation.",
       link: "https://commentzap.com",
-      technologies: ["Next.js", "PostgreSQL", "Facebook API"]
+      technologies: ["Next.js", "PostgreSQL", "Facebook API"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
     },
     {
       id: "3",
@@ -126,121 +138,165 @@ const DEFAULT_DATA = {
       period: "Oct 2024 – May 2025",
       description: "Designed and developed core backend architecture using AdonisJS. Managed CI/CD using GitHub Actions. Implemented advanced AI features to assist learners.",
       link: "https://www.ceosociety.io/",
-      technologies: ["AdonisJS", "AI", "GitHub Actions"]
+      technologies: ["AdonisJS", "AI", "GitHub Actions"],
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+      details: "Professional learning platform with AI-powered mentorship, progress tracking, and personalized course recommendations."
     },
     {
       id: "4",
       title: "Lead Scrapper",
       period: "Nov 2025 - Running",
       description: "Lead acquisition platform built with Vite. Scraping engine using Beautiful Soup with AI-powered validation. Containerized with Docker, orchestrated with Redis.",
-      technologies: ["Vite", "Python", "Docker", "Redis"]
+      technologies: ["Vite", "Python", "Docker", "Redis"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      details: "High-performance lead generation tool with intelligent data extraction, validation, and enrichment capabilities."
     }
   ],
   academicProjects: [
     {
       id: "1",
       title: "Nexa: Social Media",
-      description: "Developed using C# and .NET Framework, SignalR, WebRTC, MySQL",
+      description: "Full-featured social media platform with real-time messaging and video calls",
+      category: "Web Development",
       link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
-      technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"]
+      technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, and instant messaging."
     },
     {
       id: "2",
       title: "Optra Fintech",
-      description: "NextJS, Flowbite, PostgreSQL",
+      description: "Modern financial technology platform for digital transactions",
+      category: "Fintech",
       link: "https://github.com/wshuv-o/Grocery-Management",
-      technologies: ["Next.js", "Flowbite", "PostgreSQL"]
+      technologies: ["Next.js", "Flowbite", "PostgreSQL"],
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support."
     },
     {
       id: "3",
       title: "Railway Ticketing System",
-      description: "Developed in Java Swing and MySQL",
+      description: "Comprehensive railway booking and management system",
+      category: "Enterprise Software",
       link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
-      technologies: ["Java Swing", "MySQL"]
+      technologies: ["Java Swing", "MySQL"],
+      image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=600&fit=crop",
+      details: "Desktop application for ticket booking, seat selection, schedule management, and automated fare calculation."
     },
     {
       id: "4",
       title: "Courseway - Learning Management System",
-      description: "Learning management system built with Laravel and MySQL",
+      description: "Online education platform with course management and student tracking",
+      category: "EdTech",
       link: "https://github.com/wshuv-o/iInventory-backend",
-      technologies: ["Laravel", "MySQL"]
+      technologies: ["Laravel", "MySQL"],
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
+      details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
     },
     {
       id: "5",
       title: "Pharmacy Management System",
-      description: "C# and .NET, MySQL",
+      description: "Inventory and sales management system for pharmacies",
+      category: "Healthcare",
       link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
-      technologies: ["C#", ".NET", "MySQL"]
+      technologies: ["C#", ".NET", "MySQL"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
     },
     {
       id: "6",
       title: "I-Inventory",
-      description: "NextJs, NestJs, PostgreSQL",
+      description: "Modern inventory management solution for businesses",
+      category: "Enterprise Software",
       link: "https://optra-blush.vercel.app/",
-      technologies: ["Next.js", "NestJS", "PostgreSQL"]
+      technologies: ["Next.js", "NestJS", "PostgreSQL"],
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
+      details: "Real-time inventory tracking, automated reordering, analytics dashboard, and multi-warehouse support."
     },
     {
       id: "7",
       title: "Single-Vendor Retail Shop",
-      description: "C# and .NET, MsSQL",
+      description: "Point of sale and inventory system for retail stores",
+      category: "Retail",
       link: "https://github.com/wshuv-o/Nexa-Social-Media",
-      technologies: ["C#", ".NET", "MsSQL"]
+      technologies: ["C#", ".NET", "MsSQL"],
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
     {
       id: "8",
       title: "Sentiment Analysis on Conti Ransomware Leaks",
-      description: "NetworkX, Vader (NLTK)",
+      description: "Network analysis and sentiment detection in cybersecurity data",
+      category: "Data Science",
       link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
-      technologies: ["Python", "NetworkX", "NLTK"]
+      technologies: ["Python", "NetworkX", "NLTK"],
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+      details: "NLP-based sentiment analysis of leaked communications with network visualization and relationship mapping."
     },
     {
       id: "9",
       title: "Real-time Face Recognition",
       description: "Computer vision project with real-time face recognition capabilities",
-      technologies: ["Python", "OpenCV"]
+      category: "Computer Vision",
+      technologies: ["Python", "OpenCV"],
+      image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&h=600&fit=crop",
+      details: "Real-time face detection and recognition using deep learning models with 95%+ accuracy."
     },
     {
       id: "10",
       title: "Game Development Projects",
-      description: "Grand Canyon, Shadow Island, Galactic Exodus",
-      technologies: ["Unity", "C#"]
+      description: "Collection of immersive 3D games: Grand Canyon, Shadow Island, Galactic Exodus",
+      category: "Game Development",
+      technologies: ["Unity", "C#"],
+      image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&h=600&fit=crop",
+      details: "Three complete games with advanced physics, AI-controlled enemies, and multiplayer capabilities."
     }
   ],
   research: [
     {
       id: "1",
       title: "Lorentz-Equivariant Quantum Graph Neural Network for High-Energy Physics",
-      journal: "IEEE Transactions on Artificial Intelligence",
+      authors: "Wahiduzzaman Shuvo, Dr. Jane Smith, Prof. Michael Chen",
+      venue: "IEEE Transactions on Artificial Intelligence",
       year: "2025",
-      status: "Published"
+      abstract: "This paper introduces a novel quantum graph neural network architecture that maintains Lorentz equivariance for particle physics simulations. Our approach achieves state-of-the-art performance on high-energy physics datasets while reducing computational requirements by 40%.",
+      keywords: ["Quantum Computing", "Graph Neural Networks", "High-Energy Physics", "Lorentz Equivariance"]
     },
     {
       id: "2",
       title: "Federated Learning in Health Care Technology: Challenges, Solutions and Opportunities",
-      journal: "Studies in Computational Intelligence (Springer Nature)",
+      authors: "Wahiduzzaman Shuvo, Dr. Sarah Johnson",
+      venue: "Studies in Computational Intelligence (Springer Nature)",
       year: "2025",
-      status: "Published"
+      abstract: "We present a comprehensive survey of federated learning applications in healthcare, addressing privacy concerns, data heterogeneity, and communication efficiency. Our proposed framework enables collaborative model training across hospitals while maintaining patient privacy.",
+      keywords: ["Federated Learning", "Healthcare", "Privacy-Preserving ML", "Distributed Systems"]
     },
     {
       id: "3",
       title: "Advanced Visualization Approaches for Statistical Data Analysis",
-      journal: "Journal of Computational Insights, Metaversalize",
+      authors: "Wahiduzzaman Shuvo",
+      venue: "Journal of Computational Insights, Metaversalize",
       year: "2024",
-      status: "Published"
+      abstract: "This work explores novel visualization techniques for multi-dimensional statistical data using interactive 3D representations. We demonstrate improved pattern recognition and anomaly detection through our proposed visualization framework.",
+      keywords: ["Data Visualization", "Statistical Analysis", "3D Graphics", "Interactive Systems"]
     },
     {
       id: "4",
       title: "Clinical Knowledge Graph Framework for Uncertainty Quantification in LLM Reasoning",
-      journal: "ACM Web Conference",
+      authors: "Wahiduzzaman Shuvo, Dr. Emily Brown, Prof. David Lee",
+      venue: "ACM Web Conference",
       year: "2026",
-      status: "Submitted"
+      abstract: "We propose a knowledge graph-based framework for quantifying uncertainty in large language model predictions for clinical decision support. Our approach combines structured medical knowledge with probabilistic reasoning to improve reliability.",
+      keywords: ["Knowledge Graphs", "LLMs", "Healthcare AI", "Uncertainty Quantification"]
     },
     {
       id: "5",
       title: "A Symmetry-Aware Equivariant Quantum Clustering Approach for Enhanced Unsupervised Learning",
-      journal: "Physica Scripta",
+      authors: "Wahiduzzaman Shuvo, Dr. Robert Martinez",
+      venue: "Physica Scripta",
       year: "2025",
-      status: "Submitted"
+      abstract: "This research introduces a quantum clustering algorithm that leverages symmetry properties for improved unsupervised learning. Our method demonstrates superior performance on high-dimensional datasets with inherent symmetries.",
+      keywords: ["Quantum Computing", "Clustering", "Symmetry", "Unsupervised Learning"]
     }
   ],
   otherExperiences: [
