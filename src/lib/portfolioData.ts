@@ -80,29 +80,89 @@ const DEFAULT_DATA = {
     github: "/wshuv-o",
     linkedin: "/wshuvo"
   },
-  skills: [
-    {
-      id: "1",
-      category: "Backend & AI",
-      items: ["FastAPI", "AdonisJS/NestJS", "RAG pipelines", "LangChain", "AI agents"],
-      icon: "cpu",
-      color: "purple"
-    },
-    {
-      id: "2",
-      category: "Infrastructure",
-      items: ["Docker", "VPS deployments", "Nginx/PM2", "CI/CD", "Redis"],
-      icon: "cloud",
-      color: "blue"
-    },
-    {
-      id: "3",
-      category: "Interests",
-      items: ["AI agents", "Automation systems", "Scalable SaaS", "Hybrid architectures"],
-      icon: "zap",
-      color: "green"
-    }
-  ],
+skills: [
+  {
+    id: "1",
+    category: "Backend & AI",
+    icon: "cpu",
+    color: "purple",
+    items: [
+      { 
+        name: "FastAPI", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg'
+      },
+      { 
+        name: "AdonisJS", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adonisjs/adonisjs-original.svg'
+      },
+      { 
+        name: "NestJS", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg'
+      },
+      { 
+        name: "LangChain", 
+        icon: 'https://cdn.simpleicons.org/langchain/1C3C3C'
+      },
+      { 
+        name: "Python", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+      },
+    ]
+  },
+  {
+    id: "2",
+    category: "Infrastructure",
+    icon: "cloud",
+    color: "blue",
+    items: [
+      { 
+        name: "Docker", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+      },
+      { 
+        name: "Linux", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
+      },
+      { 
+        name: "Nginx", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg'
+      },
+      { 
+        name: "Redis", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+      },
+      { 
+        name: "PostgreSQL", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+      }
+    ]
+  },
+  {
+    id: "3",
+    category: "Frontend",
+    icon: "code",
+    color: "green",
+    items: [
+      { 
+        name: "React", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+      },
+      { 
+        name: "TypeScript", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+      },
+      { 
+        name: "Next.js", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+      },
+      { 
+        name: "Tailwind CSS", 
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
+      }
+    ]
+  }
+],
+
   experiences: [
     {
       id: "1",

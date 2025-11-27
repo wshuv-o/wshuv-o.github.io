@@ -48,7 +48,7 @@ const ExperiencePage = () => {
               </p>
             </div>
 
-            <div className="grid gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skills.map((skill, index) => {
                 const Icon = iconMap[skill.icon || "code"];
                 const colorClass = colorMap[skill.color || "blue"];
@@ -69,12 +69,20 @@ const ExperiencePage = () => {
                     </div>
                     <div className="flex flex-wrap gap-3">
                       {skill.items.map((item, i) => (
-                        <span
-                          key={i}
-                          className="px-4 py-2 rounded-lg bg-muted text-foreground border border-border text-sm font-medium"
-                        >
-                          {item}
-                        </span>
+                        <div key={i} className="relative group">
+                          <img
+                            src={item.icon}
+                            alt={item.name}
+                            className="h-8 w-8 object-contain transition-transform group-hover:scale-110"
+                          />
+                          {/* tooltip */}
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                                          opacity-0 group-hover:opacity-100 
+                                          pointer-events-none transition 
+                                          bg-black text-white text-xs px-2 py-1 rounded-lg whitespace-nowrap">
+                            {item.name}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
