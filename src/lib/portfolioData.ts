@@ -9,7 +9,7 @@ export interface PersonalInfo {
 export interface Skill {
   id: string;
   category: string;
-  items: string[];
+  items: {name: string; icon: string;}[]; 
   icon?: string;
   color?: string;
 }

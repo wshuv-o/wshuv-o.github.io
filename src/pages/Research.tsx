@@ -20,12 +20,6 @@ const ResearchPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-16 relative">
-        {/* SCImago Journal Rank Widget */}
-        <div className="fixed top-24 right-8 z-40 hidden lg:block">
-          <a href="https://www.scimagojr.com/journalsearch.php?q=21101093601&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank">
-            <img src="https://www.scimagojr.com/journal_img.php?id=21101093601" alt="SCImago Journal &amp; Country Rank" className="border-0" />
-          </a>
-        </div>
         <section className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto space-y-20">
             {/* Research Publications */}
