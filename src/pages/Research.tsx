@@ -19,7 +19,13 @@ const ResearchPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-16 relative">
+        {/* SCImago Journal Rank Widget */}
+        <div className="fixed top-24 right-8 z-40 hidden lg:block">
+          <a href="https://www.scimagojr.com/journalsearch.php?q=21101093601&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank">
+            <img src="https://www.scimagojr.com/journal_img.php?id=21101093601" alt="SCImago Journal &amp; Country Rank" className="border-0" />
+          </a>
+        </div>
         <section className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto space-y-20">
             {/* Research Publications */}
@@ -97,52 +103,6 @@ const ResearchPage = () => {
                           </div>
                         </div>
                       )}
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Other Experiences */}
-            <div className="space-y-12">
-              <div className="space-y-6 text-center">
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient">
-                  Other Professional Experience
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  Additional roles and contributions including interpretation, robotics research, 
-                  and arts organization spanning technical and creative domains.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {otherExp.map((exp, index) => (
-                  <Card
-                    key={exp.id}
-                    className="hover-scale glow-card border-2"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <CardHeader>
-                      <div className="flex items-start gap-4">
-                        <div className="p-4 rounded-xl bg-accent/10 border border-accent/20">
-                          <Award className="h-6 w-6 text-accent" />
-                        </div>
-                        <div className="flex-1 space-y-2">
-                          <CardTitle className="text-2xl">
-                            {exp.position}
-                          </CardTitle>
-                          <CardDescription className="text-lg">
-                            <span className="text-primary font-semibold">{exp.organization}</span>
-                            <span className="mx-2">•</span>
-                            <span>{exp.period}</span>
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground leading-relaxed text-base">
-                        {exp.description}
-                      </p>
                     </CardContent>
                   </Card>
                 ))}

@@ -10,6 +10,8 @@ export interface Skill {
   id: string;
   category: string;
   items: string[];
+  icon?: string;
+  color?: string;
 }
 
 export interface Experience {
@@ -82,17 +84,23 @@ const DEFAULT_DATA = {
     {
       id: "1",
       category: "Backend & AI",
-      items: ["FastAPI", "AdonisJS/NestJS", "RAG pipelines", "LangChain", "AI agents"]
+      items: ["FastAPI", "AdonisJS/NestJS", "RAG pipelines", "LangChain", "AI agents"],
+      icon: "cpu",
+      color: "purple"
     },
     {
       id: "2",
       category: "Infrastructure",
-      items: ["Docker", "VPS deployments", "Nginx/PM2", "CI/CD", "Redis"]
+      items: ["Docker", "VPS deployments", "Nginx/PM2", "CI/CD", "Redis"],
+      icon: "cloud",
+      color: "blue"
     },
     {
       id: "3",
       category: "Interests",
-      items: ["AI agents", "Automation systems", "Scalable SaaS", "Hybrid architectures"]
+      items: ["AI agents", "Automation systems", "Scalable SaaS", "Hybrid architectures"],
+      icon: "zap",
+      color: "green"
     }
   ],
   experiences: [
