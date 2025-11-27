@@ -8,13 +8,10 @@ const Navbar = () => {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/skills", label: "Skills" },
     { to: "/experience", label: "Experience" },
     { to: "/projects", label: "Projects" },
-    { to: "/academic", label: "Academic" },
     { to: "/research", label: "Research" },
-    { to: "/education", label: "Education" },
+    { to: "/other-activities", label: "Other Activities" },
     { to: "/contact", label: "Contact" },
   ];
 
