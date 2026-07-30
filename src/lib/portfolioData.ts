@@ -266,7 +266,9 @@ skills: [
       title: "CEO Society",
       period: "Oct 2024 – May 2025",
       description: "Entrepreneurship training platform: course tracks, cohorts, coach and member roles, and an in-product AI assistant.",
+      link: "https://app.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
+      image: "/screenshots/ceosociety.png",
       details: "Built the AI assistant: retrieval over course material for in-lesson questions, plus a model trained on client conduct examples backing scenario tools such as objection handling."
     },
     {
@@ -275,6 +277,7 @@ skills: [
       period: "Sept 2024 – Mar 2025",
       description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhook ingestion, rule-driven responses, per-account token handling, and rate-limit backoff.",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
+      image: "/screenshots/commentzap.jpg",
       details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
     },
     {
@@ -807,7 +810,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.5";
+const DATA_VERSION = "2026-07-30.6";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
