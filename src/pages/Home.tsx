@@ -230,6 +230,18 @@ const Home = () => {
                         ))}
                       </div>
                     )}
+                    {paper.linkedinEmbed && (
+                      <iframe
+                        src={paper.linkedinEmbed}
+                        height="565"
+                        width="504"
+                        frameBorder="0"
+                        allowFullScreen
+                        title={`LinkedIn post: ${paper.title}`}
+                        loading="lazy"
+                        className="mt-3 rounded-lg border border-border max-w-full"
+                      />
+                    )}
                   </div>
                 </li>
               ))}
