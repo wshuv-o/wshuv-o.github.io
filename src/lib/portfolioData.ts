@@ -44,7 +44,9 @@ export interface AcademicProject {
   technologies?: string[];
   category: string;
   image?: string;
+  images?: string[];
   details?: string;
+  linkedinEmbed?: string;
 }
 
 export interface Research {
@@ -378,23 +380,22 @@ skills: [
     },
     {
       id: "7",
-      title: "Real-time Face Recognition",
-      description: "FaceNet-based real-time face recognition with 128-dimensional embeddings",
+      title: "Face Recognition with FaceNet and MTCNN",
+      description: "Face recognition using FaceNet embeddings and MTCNN detection",
       category: "Computer Vision",
       link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
-      technologies: ["Python", "TensorFlow", "Keras", "MTCNN"],
-      image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&h=600&fit=crop",
+      technologies: ["Python", "TensorFlow", "Keras", "MTCNN", "Scikit-learn"],
+      images: ["/images/facenet-detection.jpg", "/images/facenet-embeddings.jpg"],
       details: "Maps face images into a 128-dimensional embedding space where distances correspond to face similarity, with MTCNN for detection."
     },
     {
       id: "8",
       title: "Sentiment Analysis on Conti Ransomware Leaks",
-      description: "Network analysis and sentiment detection over the Conti gang's leaked communications",
+      description: "Sentiment analysis of the leaked Conti ransomware chats to uncover trends and emotional tone",
       category: "Data Science",
       link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
-      technologies: ["Python", "NetworkX", "NLTK"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
-      details: "Data preparation, visualization over time, network analysis to identify key actors, sentiment analysis of communications, and extraction of technical terms related to ransomware scripts."
+      technologies: ["Python", "Pandas", "NLTK (VADER)", "NetworkX", "Matplotlib", "Seaborn"],
+      details: "Cleaned and structured the leaked data with Pandas, classified message sentiment with VADER, explored relationships between actors with NetworkX, and visualized findings with Matplotlib and Seaborn."
     },
     {
       id: "9",
@@ -497,22 +498,22 @@ skills: [
     {
       id: "19",
       title: "Game Development Projects",
-      description: "3D games: Grand Canyon, Shadow Island (Unity), and Galactic Exodus (C++/OpenGL)",
+      description: "First-person adventure game in Unity — explore the environment, find a set of keys, and complete missions — plus a canyon-environment mystery game and OpenGL games in C++.",
       category: "Game Development",
-      link: "https://github.com/wshuv-o/opengl-galactic-exodus",
+      link: "https://www.youtube.com/watch?v=skQcoC6f3Hs",
       technologies: ["Unity", "C#", "C++", "OpenGL"],
-      image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&h=600&fit=crop",
-      details: "Complete games with physics, AI-controlled enemies, and custom rendering, spanning Unity and raw OpenGL."
+      details: "Gameplay demo on YouTube. OpenGL titles (Galactic Exodus): github.com/wshuv-o/opengl-galactic-exodus",
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7291817784240418817?collapsed=1"
     },
     {
       id: "20",
-      title: "Koala Data Analysis",
-      description: "Exploratory data analysis of koala populations, habitats, and environmental factors",
+      title: "Koala Tracklog Analysis",
+      description: "Analysis of koala movement patterns from GPS tracklog data",
       category: "Data Science",
       link: "https://github.com/wshuv-o/koala-data-analysis",
-      technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      details: "EDA project surfacing trends and patterns in koala-related datasets."
+      technologies: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn"],
+      images: ["/images/koala-tracklog-1.jpg", "/images/koala-tracklog-2.jpg"],
+      details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
     }
   ],
   research: [
@@ -630,7 +631,7 @@ skills: [
       id: "0",
       organization: "Prodigy AI",
       position: "BCI Researcher",
-      period: "May 2025 - Present",
+      period: "Mar 2022 - Present",
       description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller, EEG-DATNet, VC-DATNet.",
       link: "https://github.com/prodigyagi",
       image: "/images/eeg-defense-2025.jpg",
@@ -645,10 +646,10 @@ skills: [
     },
     {
       id: "2",
-      organization: "AIUB Robotics Crew, AIUB",
-      position: "Mars Rover Crew",
-      period: "Sep 2023 - Present",
-      description: "Real-time sensor data integration and processing using Python. Implemented image processing algorithms with OpenCV for onboard analysis. Utilized NumPy, SciPy, and matplotlib for data analysis.",
+      organization: "AIUB Robotic Crew (ARC)",
+      position: "Science Team, Mars Rover Crew",
+      period: "Oct 2023 - Present",
+      description: "Designed the rover's science module (2023-24) and work on soil analysis, biochemical testing, and scientific payload development for the University Rover Challenge, alongside sensor data processing in Python and OpenCV.",
       link: "https://arc.aiub.edu/",
       image: "/images/urc-science-box.jpg",
       imageCaption: "Science box module designed as part of University Rover Challenge 2024"
@@ -832,7 +833,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.13";
+const DATA_VERSION = "2026-07-30.14";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

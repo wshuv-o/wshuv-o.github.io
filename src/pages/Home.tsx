@@ -313,6 +313,13 @@ const Home = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {academicProjects.map((project) => (
                 <div key={project.id} className="p-4 rounded-xl bg-card border border-border glow-card space-y-1.5">
+                  {project.images && project.images.length > 0 && (
+                    <div className={`grid ${project.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-1.5 mb-2`}>
+                      {project.images.map((img, i) => (
+                        <img key={i} src={img} alt={project.title} loading="lazy" className="rounded-md border border-border w-full h-24 object-cover" />
+                      ))}
+                    </div>
+                  )}
                   <span className="text-[11px] uppercase tracking-wide font-semibold text-primary">{project.category}</span>
                   <div className="flex items-start justify-between gap-2">
                     {project.link ? (
@@ -325,6 +332,17 @@ const Home = () => {
                     {project.link && <ExternalLink className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">{project.description}</p>
+                  {project.linkedinEmbed && (
+                    <iframe
+                      src={project.linkedinEmbed}
+                      height="400"
+                      frameBorder="0"
+                      allowFullScreen
+                      title={`LinkedIn post: ${project.title}`}
+                      loading="lazy"
+                      className="mt-2 rounded-lg border border-border w-full"
+                    />
+                  )}
                 </div>
               ))}
             </div>
