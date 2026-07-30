@@ -20,6 +20,7 @@ export interface Experience {
   position: string;
   period: string;
   description: string;
+  link?: string;
 }
 
 export interface Project {
@@ -225,21 +226,23 @@ skills: [
       company: "Odin",
       position: "Lead AI Engineer",
       period: "Feb 2025 - Present",
-      description: "Tools for financial reporting at a US real-estate client: they read and write analyst Excel models and verify their output against the source documents. A per-page document extraction pipeline (pdfplumber, Camelot, Tesseract OCR) covers PDF, Word, and scanned files. Everything runs on client hardware."
+      description: "Tools for financial reporting at a US real-estate client: they read and write analyst Excel models and verify their output against the source documents. A per-page document extraction pipeline (pdfplumber, Camelot, Tesseract OCR) covers PDF, Word, and scanned files. Everything runs on client hardware.",
+      link: "https://odinbd.com"
     },
     {
       id: "2",
       company: "Byteverse Ltd",
       position: "Software Engineer",
       period: "Jun 2023 - Present",
-      description: "Work on Chatsby, the company's customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions)."
+      description: "Work on [Chatsby](https://chatsby.co), the company's customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions).",
+      link: "https://byteverseit.com"
     },
     {
       id: "3",
       company: "Codelogiest",
       position: "Software Engineer (Contract)",
       period: "2024 - 2025",
-      description: "Backend work for client products: a WhatsApp marketing agent, an outbound calling pipeline, comment and DM automation, and a course platform on AdonisJS."
+      description: "Backend work for client products: a [WhatsApp marketing agent](https://jasmyn.ai), an outbound calling pipeline, comment and DM automation, and a [course platform](https://app.ceosociety.io/) on AdonisJS."
     }
   ],
   projects: [
@@ -803,7 +806,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.8";
+const DATA_VERSION = "2026-07-30.9";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

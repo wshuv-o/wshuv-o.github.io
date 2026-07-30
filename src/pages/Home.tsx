@@ -31,6 +31,32 @@ const renderAuthors = (authors: string) => {
   ));
 };
 
+// Render [text](url) spans in plain description strings as anchors.
+const linkify = (text: string) => {
+  const parts: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    parts.push(
+      <a
+        key={key++}
+        href={m[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary hover:underline"
+      >
+        {m[1]}
+      </a>
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+};
+
 const SectionHeading = ({ icon: Icon, children }: { icon: any; children: ReactNode }) => (
   <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-display font-bold text-gradient mb-6">
     <Icon className="h-6 w-6 text-primary shrink-0" />
@@ -150,10 +176,21 @@ const Home = () => {
                   <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
                   <div className="flex flex-wrap items-baseline gap-x-3">
                     <h3 className="font-display font-semibold text-lg text-foreground">{exp.position}</h3>
-                    <span className="text-primary font-medium">{exp.company}</span>
+                    {exp.link ? (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary font-medium hover:underline"
+                      >
+                        {exp.company}
+                      </a>
+                    ) : (
+                      <span className="text-primary font-medium">{exp.company}</span>
+                    )}
                     <span className="text-xs text-muted-foreground">{exp.period}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">{exp.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">{linkify(exp.description)}</p>
                 </div>
               ))}
             </div>
