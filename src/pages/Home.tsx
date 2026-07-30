@@ -287,6 +287,18 @@ const Home = () => {
                       ))}
                     </div>
                   )}
+                  {project.linkedinEmbed && (
+                    <iframe
+                      src={project.linkedinEmbed}
+                      height="669"
+                      width="504"
+                      frameBorder="0"
+                      allowFullScreen
+                      title={`LinkedIn post: ${project.title}`}
+                      loading="lazy"
+                      className="mt-3 rounded-lg border border-border w-full max-w-full"
+                    />
+                  )}
                   </div>
                 </div>
               ))}

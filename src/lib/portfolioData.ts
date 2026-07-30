@@ -33,6 +33,7 @@ export interface Project {
   image?: string;
   details?: string;
   github?: string;
+  linkedinEmbed?: string;
 }
 
 export interface AcademicProject {
@@ -252,7 +253,8 @@ skills: [
       title: "Chatsby",
       period: "Apr 2025 - Running",
       description: "Customer-support AI platform at Byteverse. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack.",
-      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"]
+      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7369019422184726548?collapsed=1"
     },
     {
       id: "2",
@@ -808,7 +810,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.10";
+const DATA_VERSION = "2026-07-30.11";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
