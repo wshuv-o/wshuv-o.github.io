@@ -73,6 +73,13 @@ export interface WebProfile {
   note?: string;
 }
 
+export interface NewsItem {
+  id: string;
+  date: string;
+  text: string;
+  link?: string;
+}
+
 export interface Education {
   id: string;
   degree: string;
@@ -645,6 +652,59 @@ skills: [
       description: "Organized 15+ workshops and exhibitions, leading logistics, sponsorship, and promotion teams."
     }
   ],
+  news: [
+    {
+      id: "1",
+      date: "Jan 2026",
+      text: "First-author paper on symmetry-aware equivariant quantum clustering published in Physica Scripta.",
+      link: "https://doi.org/10.1088/1402-4896/ae2dd7"
+    },
+    {
+      id: "2",
+      date: "2026",
+      text: "EEG-DATNet, a dual-attention transformer for EEG classification, posted on SSRN (under review).",
+      link: "https://doi.org/10.2139/ssrn.6531865"
+    },
+    {
+      id: "3",
+      date: "2026",
+      text: "Started MSc in Computer Science at American International University-Bangladesh."
+    },
+    {
+      id: "4",
+      date: "Nov 2025",
+      text: "Book chapter on federated learning in healthcare published in Springer Studies in Computational Intelligence (vol. 1216).",
+      link: "https://doi.org/10.1007/978-981-96-8353-6_1"
+    },
+    {
+      id: "5",
+      date: "May 2025",
+      text: "Joined Prodigy AI, a Bangladesh-based brain-computer interface research group.",
+      link: "https://github.com/prodigyagi"
+    },
+    {
+      id: "6",
+      date: "Mar 2025",
+      text: "Lorentz-Equivariant Quantum Graph Neural Network paper published in IEEE Transactions on Artificial Intelligence.",
+      link: "https://doi.org/10.1109/TAI.2025.3554461"
+    },
+    {
+      id: "7",
+      date: "Feb 2025",
+      text: "Joined Odin (Townhouse Partners) as Lead AI Engineer, leading a team of 4 on AI-driven financial reporting."
+    },
+    {
+      id: "8",
+      date: "2024",
+      text: "First journal paper, on advanced visualization approaches for statistical data analysis, published in Metaversalize.",
+      link: "https://doi.org/10.22105/metaverse.v1i1.36"
+    },
+    {
+      id: "9",
+      date: "Jun 2023",
+      text: "Joined Byteverse Ltd as Software Engineer; now leading development of Chatsby, the company's AI customer experience platform."
+    }
+  ],
   webProfiles: [
     {
       id: "1",
@@ -755,7 +815,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.3";
+const DATA_VERSION = "2026-07-30.4";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

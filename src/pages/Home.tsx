@@ -1,144 +1,362 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Github, Linkedin, Mail, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import { useEffect, useState } from "react";
-import { getPortfolioData, initializeData, PersonalInfo } from "@/lib/portfolioData";
+import { useEffect, useState, type ReactNode } from "react";
+import {
+  getPortfolioData,
+  initializeData,
+  PersonalInfo,
+  Experience,
+  Project,
+  AcademicProject,
+  Research,
+  OtherExperience,
+  Education,
+  Skill,
+  WebProfile,
+  NewsItem,
+} from "@/lib/portfolioData";
+
+const SELF_NAME = "Md Wahiduzzaman Suva";
+
+// Bold the site owner's name inside a comma-separated author string.
+const renderAuthors = (authors: string) => {
+  const parts = authors.split(SELF_NAME);
+  return parts.map((part, i) => (
+    <span key={i}>
+      {part}
+      {i < parts.length - 1 && (
+        <span className="font-semibold text-foreground">{SELF_NAME}</span>
+      )}
+    </span>
+  ));
+};
+
+const SectionHeading = ({ icon: Icon, children }: { icon: any; children: ReactNode }) => (
+  <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-display font-bold text-gradient mb-6">
+    <Icon className="h-6 w-6 text-primary shrink-0" />
+    {children}
+  </h2>
+);
 
 const Home = () => {
-  const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     initializeData();
-    const data = getPortfolioData();
-    setPersonalInfo(data.personalInfo);
+    setData(getPortfolioData());
   }, []);
 
-  if (!personalInfo) return null;
+  // Scroll to hash target once data has rendered
+  useEffect(() => {
+    if (data && window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [data]);
+
+  if (!data) return null;
+
+  const personalInfo: PersonalInfo = data.personalInfo;
+  const experiences: Experience[] = data.experiences || [];
+  const projects: Project[] = data.projects || [];
+  const academicProjects: AcademicProject[] = data.academicProjects || [];
+  const research: Research[] = data.research || [];
+  const otherExperiences: OtherExperience[] = data.otherExperiences || [];
+  const education: Education[] = data.education || [];
+  const skills: Skill[] = data.skills || [];
+  const webProfiles: WebProfile[] = data.webProfiles || [];
+  const news: NewsItem[] = data.news || [];
+
+  const stats = [
+    { value: `${research.length}`, label: "Publications" },
+    { value: "63+", label: "Repositories" },
+    { value: "4+", label: "Years in Production" },
+    { value: `${projects.length + academicProjects.length}`, label: "Projects Shipped" },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-16">
-        <section className="container mx-auto px-4 py-20 md:py-32">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="space-y-4 animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-display font-bold text-gradient">
-                {personalInfo.name}
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                Applied AI Engineer
-              </p>
-            </div>
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-4 max-w-5xl space-y-16">
 
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              Backend engineer with four years of production experience across SaaS, fintech,
-              and US real estate clients. Building agent runtimes, RAG pipelines, and the
-              infrastructure they run on.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <Link to="/projects">
-                <Button size="lg" className="gradient-lovable hover:opacity-90 transition-opacity">
-                  View Projects <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="hover-scale">
-                  Get in Touch
-                </Button>
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6 pt-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="h-5 w-5" />
-                <span className="text-sm">{personalInfo.email}</span>
-              </a>
-              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="h-5 w-5" />
-                <span className="text-sm">{personalInfo.phone}</span>
-              </a>
-              <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Github className="h-5 w-5" />
-                <span className="text-sm">GitHub</span>
-              </a>
-              <a href={`https://linkedin.com/in${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="text-sm">LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="container mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { title: "AI & Automation", desc: "Building intelligent systems with LangChain, RAG pipelines, and agentic workflows" },
-              { title: "Backend Architecture", desc: "Expertise in FastAPI, Node.js, and scalable microservices" },
-              { title: "DevOps & Infrastructure", desc: "Docker, CI/CD, VPS deployments, and cloud optimization" }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-card border border-border glow-card hover-scale">
-                <h3 className="text-xl font-display font-semibold mb-3 text-gradient">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* About Me Section */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="space-y-4 text-center">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient">About Me</h2>
-              <p className="text-xl text-muted-foreground">
-                Passionate about building intelligent systems and automation
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              <div className="p-8 rounded-2xl bg-card border border-border glow-card">
-                <h3 className="text-2xl font-display font-semibold mb-4 text-primary">Background</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  As an Applied AI Engineer, I build agent harnesses that do real work — tools that read and
-                  write live Excel models and verify their own output, campaign operators that run entirely
-                  over WhatsApp — along with the extraction engines, RAG pipelines, and backend
-                  infrastructure underneath them.
+          {/* ===== About / Hero ===== */}
+          <section id="about" className="scroll-mt-24">
+            <div className="flex flex-col sm:flex-row gap-8 items-start">
+              <img
+                src="/100506316.jpg"
+                alt={personalInfo.name}
+                className="w-36 h-36 rounded-2xl object-cover border border-border shadow-lg shrink-0"
+              />
+              <div className="space-y-3 min-w-0">
+                <h1 className="text-4xl md:text-5xl font-display font-bold text-gradient">
+                  {personalInfo.name}
+                </h1>
+                <p className="text-lg text-muted-foreground font-medium">
+                  Applied AI Engineer · AI &amp; Quantum ML Researcher
                 </p>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-card border border-border glow-card">
-                <h3 className="text-2xl font-display font-semibold mb-4 text-primary">Expertise</h3>
-                <div className="space-y-4 text-muted-foreground">
-                  <p>
-                    <strong className="text-foreground">AI & Automation:</strong> I've built multiple AI-powered platforms, 
-                    including customer experience systems with agentic workflows, embedding-based search, and custom LLM flows. 
-                    My work has automated hundreds of hours of manual processes.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Backend Development:</strong> Expert in FastAPI, AdonisJS, and NestJS, 
-                    I design robust backend architectures that scale. From real-time WebSocket systems to complex data pipelines, 
-                    I build infrastructure that powers modern applications.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Infrastructure & DevOps:</strong> Proficient in Docker, CI/CD automation, 
-                    VPS deployments with Nginx/PM2, and orchestrating services with Redis. I ensure systems are reliable, scalable, 
-                    and maintainable.
-                  </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Backend engineer with four years of production experience across SaaS, fintech, and
+                  US real estate clients — building agent harnesses, RAG pipelines, and document
+                  extraction engines. Researching brain-computer interfaces, quantum machine learning,
+                  and federated learning, with publications in IEEE TAI, Physica Scripta, and Springer.
+                </p>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
+                  <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                    <Mail className="h-4 w-4" /> {personalInfo.email}
+                  </a>
+                  <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                    <Phone className="h-4 w-4" /> {personalInfo.phone}
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {webProfiles.map((p) => (
+                    <a
+                      key={p.id}
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 rounded-full bg-card border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+                    >
+                      {p.name}
+                    </a>
+                  ))}
                 </div>
               </div>
-
-              <div className="p-8 rounded-2xl bg-card border border-border glow-card">
-                <h3 className="text-2xl font-display font-semibold mb-4 text-primary">Interests</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  I'm passionate about AI agents, automation systems, scalable SaaS infrastructure, and hybrid backend 
-                  architectures. I love exploring how emerging technologies can solve real-world problems and continuously 
-                  push the boundaries of what's possible with modern software development.
-                </p>
-              </div>
             </div>
-          </div>
-        </section>
+
+            {/* Stats strip */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              {stats.map((s, i) => (
+                <div key={i} className="p-4 rounded-xl bg-card border border-border text-center glow-card">
+                  <div className="text-2xl font-display font-bold text-gradient">{s.value}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== News ===== */}
+          {news.length > 0 && (
+            <section id="news" className="scroll-mt-24">
+              <SectionHeading icon={Newspaper}>News</SectionHeading>
+              <ul className="space-y-3">
+                {news.map((n) => (
+                  <li key={n.id} className="flex gap-4 text-sm leading-relaxed">
+                    <span className="font-semibold text-primary whitespace-nowrap w-20 shrink-0">{n.date}</span>
+                    <span className="text-muted-foreground">
+                      {n.text}{" "}
+                      {n.link && (
+                        <a href={n.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-0.5">
+                          link<ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* ===== Experience ===== */}
+          <section id="experience" className="scroll-mt-24">
+            <SectionHeading icon={Briefcase}>Experience</SectionHeading>
+            <div className="space-y-6 border-l-2 border-border pl-6">
+              {experiences.map((exp) => (
+                <div key={exp.id} className="relative">
+                  <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
+                  <div className="flex flex-wrap items-baseline gap-x-3">
+                    <h3 className="font-display font-semibold text-lg text-foreground">{exp.position}</h3>
+                    <span className="text-primary font-medium">{exp.company}</span>
+                    <span className="text-xs text-muted-foreground">{exp.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Publications ===== */}
+          <section id="publications" className="scroll-mt-24">
+            <SectionHeading icon={FileText}>Publications</SectionHeading>
+            <ol className="space-y-5">
+              {research.map((paper, idx) => (
+                <li key={paper.id} className="flex gap-4">
+                  <span className="text-sm font-mono text-muted-foreground pt-0.5 shrink-0">[{idx + 1}]</span>
+                  <div className="space-y-1 min-w-0">
+                    {paper.link ? (
+                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors leading-snug block">
+                        {paper.title}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-foreground leading-snug block">{paper.title}</span>
+                    )}
+                    <p className="text-sm text-muted-foreground leading-relaxed">{renderAuthors(paper.authors)}</p>
+                    <p className="text-sm">
+                      <span className="italic text-muted-foreground">{paper.venue}</span>
+                      <span className="text-muted-foreground"> · {paper.year}</span>
+                    </p>
+                    {(paper.link || (paper.links && paper.links.length > 0)) && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {paper.link && (
+                          <a href={paper.link} target="_blank" rel="noopener noreferrer" className="px-2 py-0.5 rounded bg-primary/10 border border-primary/20 text-xs font-medium text-primary hover:bg-primary/20 transition-colors">
+                            DOI
+                          </a>
+                        )}
+                        {paper.links?.map((l, i) => (
+                          <a key={i} href={l.url} target="_blank" rel="noopener noreferrer" className="px-2 py-0.5 rounded bg-muted border border-border text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          {/* ===== Products & Projects ===== */}
+          <section id="projects" className="scroll-mt-24">
+            <SectionHeading icon={Wrench}>Products &amp; Projects</SectionHeading>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {projects.map((project) => (
+                <div key={project.id} className="p-5 rounded-xl bg-card border border-border glow-card space-y-2">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-display font-semibold text-foreground leading-snug">{project.title}</h3>
+                    <div className="flex gap-2 shrink-0">
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} website`}>
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} source`}>
+                          <Github className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{project.period}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                  {project.technologies && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded bg-muted text-xs text-foreground border border-border">{tech}</span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Research & Academic Projects ===== */}
+          <section id="academic" className="scroll-mt-24">
+            <SectionHeading icon={FlaskConical}>Research &amp; Academic Projects</SectionHeading>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {academicProjects.map((project) => (
+                <div key={project.id} className="p-4 rounded-xl bg-card border border-border glow-card space-y-1.5">
+                  <span className="text-[11px] uppercase tracking-wide font-semibold text-primary">{project.category}</span>
+                  <div className="flex items-start justify-between gap-2">
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-foreground hover:text-primary transition-colors leading-snug">
+                        {project.title}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-sm text-foreground leading-snug">{project.title}</span>
+                    )}
+                    {project.link && <ExternalLink className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Skills ===== */}
+          <section id="skills" className="scroll-mt-24">
+            <SectionHeading icon={Wrench}>Skills</SectionHeading>
+            <div className="space-y-4">
+              {skills.map((skill) => (
+                <div key={skill.id} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                  <span className="text-sm font-semibold text-foreground w-44 shrink-0">{skill.category}</span>
+                  <div className="flex flex-wrap gap-2">
+                    {skill.items.map((item, i) => (
+                      <span key={i} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-card border border-border text-xs text-muted-foreground">
+                        <img src={item.icon} alt="" className="h-4 w-4 object-contain" loading="lazy" />
+                        {item.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Education ===== */}
+          <section id="education" className="scroll-mt-24">
+            <SectionHeading icon={GraduationCap}>Education</SectionHeading>
+            <div className="space-y-4">
+              {education.map((edu) => (
+                <div key={edu.id} className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span className="text-xs text-muted-foreground w-28 shrink-0">{edu.period}</span>
+                  <div>
+                    <span className="font-medium text-foreground">{edu.degree}</span>
+                    <span className="text-muted-foreground"> — {edu.institution}</span>
+                    {edu.details && <span className="text-sm text-muted-foreground"> · {edu.details}</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Activities & Service ===== */}
+          <section id="activities" className="scroll-mt-24">
+            <SectionHeading icon={Users}>Activities &amp; Service</SectionHeading>
+            <div className="space-y-4">
+              {otherExperiences.map((exp) => (
+                <div key={exp.id}>
+                  <div className="flex flex-wrap items-baseline gap-x-3">
+                    <span className="font-medium text-foreground">{exp.position}</span>
+                    {exp.link ? (
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-primary text-sm font-medium hover:underline">
+                        {exp.organization}
+                      </a>
+                    ) : (
+                      <span className="text-primary text-sm font-medium">{exp.organization}</span>
+                    )}
+                    <span className="text-xs text-muted-foreground">{exp.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Contact / Footer ===== */}
+          <section id="contact" className="scroll-mt-24 border-t border-border pt-10">
+            <SectionHeading icon={Globe}>Get in Touch</SectionHeading>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Mail className="h-4 w-4" /> {personalInfo.email}
+              </a>
+              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Phone className="h-4 w-4" /> {personalInfo.phone}
+              </a>
+              <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Github className="h-4 w-4" /> GitHub
+              </a>
+              <a href={`https://linkedin.com/in${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground mt-8">
+              © {new Date().getFullYear()} {personalInfo.name} · wshuv-o.github.io
+            </p>
+          </section>
+        </div>
       </main>
     </div>
   );
