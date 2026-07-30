@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import { getPortfolioData, initializeData, Research, OtherExperience } from "@/lib/portfolioData";
-import { FileText, Calendar, Users, Award } from "lucide-react";
+import { FileText, Calendar, Users, Award, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
@@ -96,6 +96,18 @@ const ResearchPage = () => {
                             ))}
                           </div>
                         </div>
+                      )}
+
+                      {paper.link && (
+                        <a
+                          href={paper.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          View publication
+                        </a>
                       )}
                     </CardContent>
                   </Card>

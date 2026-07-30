@@ -27,13 +27,14 @@ const Home = () => {
                 {personalInfo.name}
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Lead Data Engineer & Full-Stack Developer
+                Applied AI Engineer
               </p>
             </div>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              Specializing in AI-powered automation, backend architecture, and scalable SaaS infrastructure.
-              Building intelligent systems that transform workflows and drive efficiency.
+              Backend engineer with four years of production experience across SaaS, fintech,
+              and US real estate clients. Building agent runtimes, RAG pipelines, and the
+              infrastructure they run on.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -99,9 +100,10 @@ const Home = () => {
               <div className="p-8 rounded-2xl bg-card border border-border glow-card">
                 <h3 className="text-2xl font-display font-semibold mb-4 text-primary">Background</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  As a Lead Data Engineer and Full-Stack Developer, I specialize in creating intelligent automation systems 
-                  that transform how businesses operate. My expertise spans from building sophisticated AI agents and RAG 
-                  pipelines to architecting scalable backend systems that handle millions of operations.
+                  As an Applied AI Engineer, I build agent harnesses that do real work — tools that read and
+                  write live Excel models and verify their own output, campaign operators that run entirely
+                  over WhatsApp — along with the extraction engines, RAG pipelines, and backend
+                  infrastructure underneath them.
                 </p>
               </div>
 

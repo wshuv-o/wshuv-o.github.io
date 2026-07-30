@@ -74,89 +74,129 @@ export interface Education {
 
 const DEFAULT_DATA = {
   personalInfo: {
-    name: "Wahiduzzaman Shuvo",
+    name: "Wahiduzzaman Suva",
     email: "wahedshuvo36@gmail.com",
     phone: "(+880) 1773259873",
     github: "/wshuv-o",
-    linkedin: "/wshuvo"
+    linkedin: "/wahid-shuvo"
   },
 skills: [
   {
     id: "1",
-    category: "Backend & AI",
+    category: "AI & LLM",
     icon: "cpu",
     color: "purple",
     items: [
-      { 
-        name: "FastAPI", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg'
-      },
-      { 
-        name: "AdonisJS", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adonisjs/adonisjs-original.svg'
-      },
-      { 
-        name: "NestJS", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg'
-      },
-      { 
-        name: "LangChain", 
+      {
+        name: "LangChain",
         icon: 'https://cdn.simpleicons.org/langchain/1C3C3C'
       },
-      { 
-        name: "Python", 
+      {
+        name: "OpenAI API",
+        icon: 'https://cdn.simpleicons.org/openai/412991'
+      },
+      {
+        name: "Anthropic API",
+        icon: 'https://cdn.simpleicons.org/anthropic/191919'
+      },
+      {
+        name: "PyTorch",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg'
+      },
+      {
+        name: "Qdrant",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qdrant/qdrant-original.svg'
+      },
+      {
+        name: "Python",
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
       },
     ]
   },
   {
     id: "2",
-    category: "Infrastructure",
-    icon: "cloud",
-    color: "blue",
+    category: "Backend",
+    icon: "zap",
+    color: "orange",
     items: [
-      { 
-        name: "Docker", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+      {
+        name: "FastAPI",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg'
       },
-      { 
-        name: "Linux", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
+      {
+        name: "NestJS",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg'
       },
-      { 
-        name: "Nginx", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg'
+      {
+        name: "AdonisJS",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adonisjs/adonisjs-original.svg'
       },
-      { 
-        name: "Redis", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+      {
+        name: "Express",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
       },
-      { 
-        name: "PostgreSQL", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
-      }
+      {
+        name: "Laravel",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg'
+      },
+      {
+        name: "TypeScript",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+      },
     ]
   },
   {
     id: "3",
+    category: "Data & Infrastructure",
+    icon: "cloud",
+    color: "blue",
+    items: [
+      {
+        name: "Docker",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+      },
+      {
+        name: "Linux",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
+      },
+      {
+        name: "Nginx",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg'
+      },
+      {
+        name: "Redis",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg'
+      },
+      {
+        name: "PostgreSQL",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+      },
+      {
+        name: "GitHub Actions",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg'
+      }
+    ]
+  },
+  {
+    id: "4",
     category: "Frontend",
     icon: "code",
     color: "green",
     items: [
-      { 
-        name: "React", 
+      {
+        name: "React",
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       },
-      { 
-        name: "TypeScript", 
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
-      },
-      { 
-        name: "Next.js", 
+      {
+        name: "Next.js",
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
       },
-      { 
-        name: "Tailwind CSS", 
+      {
+        name: "Vite",
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg'
+      },
+      {
+        name: "Tailwind CSS",
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg'
       }
     ]
@@ -167,16 +207,23 @@ skills: [
     {
       id: "1",
       company: "Odin - Townhouse Partners",
-      position: "Lead Data Engineer",
+      position: "Lead AI Engineer",
       period: "Feb 2025 - Present",
-      description: "Built and maintained automated data pipelines to ingest, clean, and standardize multi-format financial data from top Wall Street banks. Led a team of 4 analysts/dev, cut monthly reporting cycles from 12+ days to <4 hours. Currently leading development of an internal AI workflow automation platform."
+      description: "Own the agent harness behind institutional financial reporting for a US client: tools that read and write live analyst Excel models, verify their own output, and run entirely on client hardware. Built a per-page document extraction engine (pdfplumber, Camelot, Tesseract OCR) covering PDF, Word, and scanned files. Cut monthly reporting cycles from 12+ days to under 4 hours. Lead a team of 4 engineers and analysts; shipped Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, and a vision model for QC."
     },
     {
       id: "2",
       company: "Byteverse Ltd",
-      position: "Software Developer I",
+      position: "Software Engineer",
       period: "Jun 2023 - Present",
-      description: "Designed and delivered backend applications using Node.js, Next.js, and FastAPI. Built AI features and agent-style automation tools. Deployed and maintained services using Docker, AWS S3, and CI/CD pipelines."
+      description: "Ship client and internal products end to end, from data model and API through production deployment. Lead the team building Chatsby, the company's AI customer experience product: an agentic tool-calling runtime, RAG with hybrid retrieval over Qdrant, a realtime WebSocket layer, and a FastAPI, Redis, and Nginx production stack deployed via GitHub Actions."
+    },
+    {
+      id: "3",
+      company: "Codelogiest",
+      position: "Software Engineer (Contract)",
+      period: "2024 - 2025",
+      description: "Built AI and automation products for agency and SaaS clients: an outbound calling assistant with lead scoring, live transfer to human closers, and CRM writeback, built on the agent backend of a WhatsApp-driven AI marketing operator; CommentZap on the Meta Graph and Messenger APIs; and the CEO Society backend on AdonisJS."
     }
   ],
   projects: [
@@ -184,31 +231,41 @@ skills: [
       id: "1",
       title: "Chatsby – Customer Experience",
       period: "Apr 2025 - Running",
-      description: "Built a full-stack customer experience platform using Next.js, Node.js, FastAPI, PostgreSQL, and Redis. Implemented CI/CD via GitHub Actions. Developed agentic layer with custom LLM flows, RAG pipelines, and embeddings.",
+      description: "AI customer experience platform. Agentic layer dispatches tool calls against 40+ integrations including HubSpot, Slack, Calendly, and Zapier, with per-provider OAuth token storage and refresh.",
       link: "https://chatsby.co",
-      technologies: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      details: "Enterprise-grade customer experience platform with AI-powered chat agents, real-time analytics, and seamless integration capabilities."
+      details: "Retrieval runs as a separate Dockerized FastAPI service over Qdrant with hybrid dense and keyword retrieval. WebSocket delivery fans out over Redis pub/sub under PM2 cluster mode. Fine-tuning portal ships LoRA adapters trained on a self-hosted GPU cluster within hours."
     },
     {
       id: "2",
-      title: "CommentZap - Instagram Automation",
-      period: "Sept 2024 – Mar 2025",
-      description: "Developed with NextJs and PostgreSQL. Facebook Graph API for user access and Messenger API for realtime communication. Comment and DM automation.",
-      link: "https://commentzap.com",
-      technologies: ["Next.js", "PostgreSQL", "Facebook API"],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-      details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
+      title: "Outbound Calling Assistant",
+      period: "2024 - 2025",
+      description: "AI outbound calling pipeline: rule-based lead scoring on live call data, live transfer of qualified calls to a human closer, voicemail detection with scheduled retry, CRM writeback, and SMS/WhatsApp follow-up triggered by call outcome.",
+      link: "https://jasmyn.ai",
+      technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+      details: "Built on the same agent runtime as a WhatsApp-driven marketing operator: webhook ingestion with signature verification, idempotent duplicate handling, per-contact conversation state, and a JSON-defined flow builder so operators compose call and campaign logic, branching, and transfer conditions without developer involvement."
     },
     {
       id: "3",
       title: "CEO Society",
       period: "Oct 2024 – May 2025",
-      description: "Designed and developed core backend architecture using AdonisJS. Managed CI/CD using GitHub Actions. Implemented advanced AI features to assist learners.",
+      description: "Entrepreneurship training platform: course tracks, cohorts, coach and member roles, and an in-product AI assistant.",
       link: "https://www.ceosociety.io/",
-      technologies: ["AdonisJS", "AI", "GitHub Actions"],
+      technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
-      details: "Professional learning platform with AI-powered mentorship, progress tracking, and personalized course recommendations."
+      details: "Built the AI assistant: retrieval over course material for in-lesson questions, plus a model trained on client conduct examples backing scenario tools such as objection handling."
+    },
+    {
+      id: "5",
+      title: "CommentZap - Instagram Automation",
+      period: "Sept 2024 – Mar 2025",
+      description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhook ingestion, rule-driven responses, per-account token handling, and rate-limit backoff.",
+      link: "https://commentzap.com",
+      technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
     },
     {
       id: "4",
@@ -218,156 +275,316 @@ skills: [
       technologies: ["Vite", "Python", "Docker", "Redis"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       details: "High-performance lead generation tool with intelligent data extraction, validation, and enrichment capabilities."
+    },
+    {
+      id: "6",
+      title: "Odin Financial Reporting Suite",
+      period: "Feb 2025 - Running",
+      description: "Agent harness behind institutional financial reporting: the model plans a task, calls tools that read from and write directly into live Excel workbooks, verifies output against the source, and re-runs the fields it got wrong.",
+      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"],
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+      details: "Tools shipped on the platform: Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, a vision model for QC, and Market/Submarket analysis. Runs entirely on client infrastructure — no external API calls in the extraction path."
+    },
+    {
+      id: "7",
+      title: "Pexl – Document Extraction Engine",
+      period: "2025",
+      description: "Extraction engine for financial documents — appraisals, bank statements, utility bills — using a per-page cascade of pdfplumber, Camelot lattice and stream, and Tesseract OCR, scored to keep the best result.",
+      github: "https://github.com/wshuv-o/pexl",
+      technologies: ["TypeScript", "Python", "pdfplumber", "Camelot", "Tesseract OCR"],
+      image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&h=600&fit=crop",
+      details: "Handles semi-structured forms, pulls values out of vector diagrams, and types currency, percentage, and numeric cells on output."
     }
   ],
   academicProjects: [
     {
       id: "1",
-      title: "Nexa: Social Media",
-      description: "Full-featured social media platform with real-time messaging and video calls",
-      category: "Web Development",
-      link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
-      technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-      details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, and instant messaging."
+      title: "VC-DATNet: Inner-Speech Decoding",
+      description: "Variance-coupled dual-attention transformer for cross-dataset inner-speech decoding from EEG",
+      category: "Brain-Computer Interface",
+      link: "https://github.com/wshuv-o/VC-DATNet",
+      technologies: ["Python", "PyTorch", "EEG", "Transformers"],
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
+      details: "Pairs a shared multi-scale temporal-spatial front-end with parallel mean and log-variance encoder streams of dual-attention transformer layers. Every number in the manuscript is reproducible from raw OpenNeuro data (ds003626, ds004196, ds006033)."
     },
     {
       id: "2",
-      title: "Optra Fintech",
-      description: "Modern financial technology platform for digital transactions",
-      category: "Fintech",
-      link: "https://github.com/wshuv-o/Grocery-Management",
-      technologies: ["Next.js", "Flowbite", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-      details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support."
+      title: "Brain-Controller (Prodigy AI)",
+      description: "Brain-computer interface work under the Prodigy AI research group",
+      category: "Brain-Computer Interface",
+      link: "https://github.com/prodigyagi/Brain-Controller",
+      technologies: ["EEG", "Deep Learning", "Python"],
+      image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=600&fit=crop",
+      details: "Research on decoding EEG signals into device control commands, developed under Prodigy AI, a Bangladesh-based AI research group."
     },
     {
       id: "3",
-      title: "Railway Ticketing System",
-      description: "Comprehensive railway booking and management system",
-      category: "Enterprise Software",
-      link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
-      technologies: ["Java Swing", "MySQL"],
-      image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=600&fit=crop",
-      details: "Desktop application for ticket booking, seat selection, schedule management, and automated fare calculation."
+      title: "CB-SAFE: Post-Quantum Secure Aggregation for Federated Learning",
+      description: "Code-based (HQC) post-quantum secure-aggregation framework for federated learning",
+      category: "Quantum & Security",
+      link: "https://github.com/wshuv-o/ISM_Quantum",
+      technologies: ["Python", "PyTorch", "HQC / ML-KEM", "Federated Learning"],
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
+      details: "KEM-agnostic cluster-based secure aggregation with Bonawitz-style double masking, Shamir dropout recovery, and robust aggregation rules (trimmed mean, median, Multi-Krum) against poisoning attacks, evaluated on non-IID CIFAR-10 with 30 clients."
     },
     {
       id: "4",
-      title: "Courseway - Learning Management System",
-      description: "Online education platform with course management and student tracking",
-      category: "EdTech",
-      link: "https://github.com/wshuv-o/iInventory-backend",
-      technologies: ["Laravel", "MySQL"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
-      details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
+      title: "Clinical Reasoning Graph",
+      description: "LLM reasoning modeled as traversals through clinical knowledge graphs with uncertainty quantification",
+      category: "AI Research",
+      link: "https://github.com/wshuv-o/clinical-reasoning-graph",
+      technologies: ["Python", "Knowledge Graphs", "LLMs"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      details: "Introduces graph-theoretical uncertainty measures enabling interpretable, theoretically grounded decomposition of epistemic and aleatoric uncertainty for clinical tasks like diagnosis and treatment planning."
     },
     {
       id: "5",
-      title: "Pharmacy Management System",
-      description: "Inventory and sales management system for pharmacies",
-      category: "Healthcare",
-      link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
-      technologies: ["C#", ".NET", "MySQL"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
-      details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
+      title: "Quantum Clustering for Image Data",
+      description: "Hybrid quantum-classical model for image clustering using variational quantum circuits",
+      category: "Quantum ML",
+      link: "https://github.com/wshuv-o/quantum-clustering",
+      technologies: ["Python", "Variational Quantum Circuits", "K-means"],
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
     },
     {
       id: "6",
+      title: "Quantum ML Experiments",
+      description: "Quanvolutional neural network layers and quantum-enhanced NeRF experiments",
+      category: "Quantum ML",
+      link: "https://github.com/wshuv-o/quanvolution",
+      technologies: ["Python", "Quantum Computing", "Deep Learning"],
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
+      details: "Exploratory research repos including quanvolution (quantum convolutional layers) and qnerf (quantum neural radiance fields)."
+    },
+    {
+      id: "7",
+      title: "Real-time Face Recognition",
+      description: "FaceNet-based real-time face recognition with 128-dimensional embeddings",
+      category: "Computer Vision",
+      link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
+      technologies: ["Python", "TensorFlow", "Keras", "MTCNN"],
+      image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&h=600&fit=crop",
+      details: "Maps face images into a 128-dimensional embedding space where distances correspond to face similarity, with MTCNN for detection."
+    },
+    {
+      id: "8",
+      title: "Sentiment Analysis on Conti Ransomware Leaks",
+      description: "Network analysis and sentiment detection over the Conti gang's leaked communications",
+      category: "Data Science",
+      link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
+      technologies: ["Python", "NetworkX", "NLTK"],
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+      details: "Data preparation, visualization over time, network analysis to identify key actors, sentiment analysis of communications, and extraction of technical terms related to ransomware scripts."
+    },
+    {
+      id: "9",
+      title: "AKI Prediction Using Machine Learning",
+      description: "Machine learning models predicting acute kidney injury from clinical data",
+      category: "Healthcare AI",
+      link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
+      technologies: ["Python", "scikit-learn", "Pandas"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      details: "Predictive modeling on clinical datasets for early detection of acute kidney injury."
+    },
+    {
+      id: "10",
+      title: "Space Rover Application",
+      description: "Control and telemetry application for the AIUB Robotics Crew Mars rover",
+      category: "Robotics",
+      link: "https://github.com/wshuv-o/space-rover-application",
+      technologies: ["Python", "OpenCV", "Sensor Integration"],
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      details: "Real-time sensor data integration and processing with onboard image analysis for rover operations."
+    },
+    {
+      id: "11",
+      title: "Nexa: Social Media",
+      description: "Full-featured social media platform with real-time messaging and video calls",
+      category: "Web Development",
+      link: "https://github.com/wshuv-o/Nexa-Social-Media",
+      technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, friends management, and instant messaging."
+    },
+    {
+      id: "12",
+      title: "Optra Fintech",
+      description: "Modern financial technology platform for digital transactions",
+      category: "Fintech",
+      link: "https://optra-blush.vercel.app/",
+      technologies: ["Next.js", "TypeScript", "PostgreSQL"],
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support. Source: github.com/wshuv-o/optra"
+    },
+    {
+      id: "13",
       title: "I-Inventory",
       description: "Modern inventory management solution for businesses",
       category: "Enterprise Software",
-      link: "https://optra-blush.vercel.app/",
+      link: "https://github.com/wshuv-o/iInventory-backend",
       technologies: ["Next.js", "NestJS", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
       details: "Real-time inventory tracking, automated reordering, analytics dashboard, and multi-warehouse support."
     },
     {
-      id: "7",
+      id: "14",
+      title: "Courseway - Learning Management System",
+      description: "Online education platform with course management and student tracking",
+      category: "EdTech",
+      link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
+      technologies: ["PHP", "Laravel", "MySQL"],
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
+      details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
+    },
+    {
+      id: "15",
+      title: "PharmaSync - Pharmacy Management System",
+      description: "Inventory and sales management system for pharmacies",
+      category: "Healthcare",
+      link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
+      technologies: ["C#", ".NET", "MySQL"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
+    },
+    {
+      id: "16",
+      title: "HealthHub Management System",
+      description: "Healthcare facility management desktop application",
+      category: "Healthcare",
+      link: "https://github.com/wshuv-o/HealthHub-ManagementSystem",
+      technologies: ["C#", ".NET"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      details: "Patient, appointment, and records management for healthcare facilities."
+    },
+    {
+      id: "17",
+      title: "Railway Ticketing System",
+      description: "Comprehensive railway booking and management system",
+      category: "Enterprise Software",
+      technologies: ["Java Swing", "MySQL"],
+      image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=600&fit=crop",
+      details: "Desktop application for ticket booking, seat selection, schedule management, and automated fare calculation."
+    },
+    {
+      id: "18",
       title: "Single-Vendor Retail Shop",
       description: "Point of sale and inventory system for retail stores",
       category: "Retail",
-      link: "https://github.com/wshuv-o/Nexa-Social-Media",
       technologies: ["C#", ".NET", "MsSQL"],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
       details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
     {
-      id: "8",
-      title: "Sentiment Analysis on Conti Ransomware Leaks",
-      description: "Network analysis and sentiment detection in cybersecurity data",
-      category: "Data Science",
-      link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
-      technologies: ["Python", "NetworkX", "NLTK"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
-      details: "NLP-based sentiment analysis of leaked communications with network visualization and relationship mapping."
-    },
-    {
-      id: "9",
-      title: "Real-time Face Recognition",
-      description: "Computer vision project with real-time face recognition capabilities",
-      category: "Computer Vision",
-      technologies: ["Python", "OpenCV"],
-      image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800&h=600&fit=crop",
-      details: "Real-time face detection and recognition using deep learning models with 95%+ accuracy."
-    },
-    {
-      id: "10",
+      id: "19",
       title: "Game Development Projects",
-      description: "Collection of immersive 3D games: Grand Canyon, Shadow Island, Galactic Exodus",
+      description: "3D games: Grand Canyon, Shadow Island (Unity), and Galactic Exodus (C++/OpenGL)",
       category: "Game Development",
-      technologies: ["Unity", "C#"],
+      link: "https://github.com/wshuv-o/opengl-galactic-exodus",
+      technologies: ["Unity", "C#", "C++", "OpenGL"],
       image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&h=600&fit=crop",
-      details: "Three complete games with advanced physics, AI-controlled enemies, and multiplayer capabilities."
+      details: "Complete games with physics, AI-controlled enemies, and custom rendering, spanning Unity and raw OpenGL."
+    },
+    {
+      id: "20",
+      title: "Koala Data Analysis",
+      description: "Exploratory data analysis of koala populations, habitats, and environmental factors",
+      category: "Data Science",
+      link: "https://github.com/wshuv-o/koala-data-analysis",
+      technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      details: "EDA project surfacing trends and patterns in koala-related datasets."
     }
   ],
   research: [
     {
       id: "1",
       title: "Lorentz-Equivariant Quantum Graph Neural Network for High-Energy Physics",
-      authors: "Wahiduzzaman Shuvo, Dr. Jane Smith, Prof. Michael Chen",
-      venue: "IEEE Transactions on Artificial Intelligence",
+      authors: "Md Abrar Jahin, Md. Akmol Masud, Md Wahiduzzaman Suva, M. F. Mridha, Nilanjan Dey",
+      venue: "IEEE Transactions on Artificial Intelligence, vol. 6, no. 12, pp. 3195-3206",
       year: "2025",
-      abstract: "This paper introduces a novel quantum graph neural network architecture that maintains Lorentz equivariance for particle physics simulations. Our approach achieves state-of-the-art performance on high-energy physics datasets while reducing computational requirements by 40%.",
-      keywords: ["Quantum Computing", "Graph Neural Networks", "High-Energy Physics", "Lorentz Equivariance"]
+      link: "https://doi.org/10.1109/TAI.2025.3554461",
+      abstract: "Proposes Lorentz-EQGNN, a hybrid quantum-classical graph neural network that replaces LorentzNet's Lorentz Group Equivariant Blocks with a dressed quantum circuit, using ~5.5x fewer parameters and only 4 qubits. Achieves 74.00% accuracy and 87.38% AUC on quark-gluon jet tagging and 67.00% / 68.20% on electron-photon discrimination.",
+      keywords: ["Quantum Machine Learning", "Graph Neural Networks", "Lorentz Equivariance", "High-Energy Physics"]
     },
     {
       id: "2",
-      title: "Federated Learning in Health Care Technology: Challenges, Solutions and Opportunities",
-      authors: "Wahiduzzaman Shuvo, Dr. Sarah Johnson",
-      venue: "Studies in Computational Intelligence (Springer Nature)",
-      year: "2025",
-      abstract: "We present a comprehensive survey of federated learning applications in healthcare, addressing privacy concerns, data heterogeneity, and communication efficiency. Our proposed framework enables collaborative model training across hospitals while maintaining patient privacy.",
-      keywords: ["Federated Learning", "Healthcare", "Privacy-Preserving ML", "Distributed Systems"]
+      title: "A Symmetry-Aware Equivariant Quantum Clustering Approach for Enhanced Unsupervised Learning",
+      authors: "Md Wahiduzzaman Suva, Md. Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Md Tauhidul Islam, M. F. Mridha, Md. Abdul Hamid, Md. Jakir Hossen",
+      venue: "Physica Scripta (IOP Publishing), vol. 101, no. 2, art. 026007",
+      year: "2026",
+      link: "https://doi.org/10.1088/1402-4896/ae2dd7",
+      abstract: "Introduces a p4m Equivariant Quantum Clustering method integrating equivariant quantum neural networks with quantum kernel methods on an 8-qubit circuit for high-dimensional data with geometric symmetries. Outperforms classical K-Means on the Quark-Gluon dataset (Silhouette 0.512 vs 0.183) and remains stable under simulated depolarizing noise.",
+      keywords: ["Equivariant QNN", "Quantum Kernel Methods", "Unsupervised Learning", "NISQ"]
     },
     {
       id: "3",
-      title: "Advanced Visualization Approaches for Statistical Data Analysis",
-      authors: "Wahiduzzaman Shuvo",
-      venue: "Journal of Computational Insights, Metaversalize",
-      year: "2024",
-      abstract: "This work explores novel visualization techniques for multi-dimensional statistical data using interactive 3D representations. We demonstrate improved pattern recognition and anomaly detection through our proposed visualization framework.",
-      keywords: ["Data Visualization", "Statistical Analysis", "3D Graphics", "Interactive Systems"]
+      title: "EEG-DATNet: Dual Attention Transformer for EEG Classification",
+      authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E. Moula Chowdhury Abha, Susham Moula Choudhury Akash, Md Tauhidul Islam, Abhijit Bhowmik, Dip Nandi, Mashiour Rahman, Debajyoti Karmaker",
+      venue: "SSRN (preprint, under review)",
+      year: "2026",
+      link: "https://doi.org/10.2139/ssrn.6531865",
+      abstract: "Hybrid architecture for motor-imagery brain-computer interfaces combining multi-scale temporal convolutions (60-260 ms), spatial encoding, and dual attention. Reports 82.84% and 89.03% mean accuracy on two standard motor-imagery benchmarks at ~0.47 GFLOPs and 3.2 ms latency.",
+      keywords: ["EEG Classification", "Brain-Computer Interface", "Motor Imagery", "Transformers"]
     },
     {
       id: "4",
-      title: "Clinical Knowledge Graph Framework for Uncertainty Quantification in LLM Reasoning",
-      authors: "Wahiduzzaman Shuvo, Dr. Emily Brown, Prof. David Lee",
-      venue: "ACM Web Conference",
+      title: "Federated Learning in Healthcare Technology: Challenges, Solutions and Opportunities",
+      authors: "Esm E Moula Chowdhury Abha, Md. Imtiaj Alam Sajin, Md Wahiduzzaman Suva, Shanjida Akter, Mushfiqur Rahman Abir, Md. Asgor Hossain Reaj, Jahir Ibna Rafiq",
+      venue: "Federated Learning in Health Care Technology, Studies in Computational Intelligence vol. 1216, Springer Nature Singapore, ch. 1, pp. 1-17",
       year: "2026",
-      abstract: "We propose a knowledge graph-based framework for quantifying uncertainty in large language model predictions for clinical decision support. Our approach combines structured medical knowledge with probabilistic reasoning to improve reliability.",
-      keywords: ["Knowledge Graphs", "LLMs", "Healthcare AI", "Uncertainty Quantification"]
+      link: "https://doi.org/10.1007/978-981-96-8353-6_1",
+      abstract: "Reviews how federated learning enables collaborative model training across distributed healthcare data without centralization, and examines implementation barriers in smart healthcare. Proposes a framework combining privacy-preserving techniques, personalized learning algorithms, efficient communication protocols, and infrastructure support.",
+      keywords: ["Federated Learning", "Healthcare", "Privacy-Preserving ML", "Decentralized Learning"]
     },
     {
       id: "5",
-      title: "A Symmetry-Aware Equivariant Quantum Clustering Approach for Enhanced Unsupervised Learning",
-      authors: "Wahiduzzaman Shuvo, Dr. Robert Martinez",
-      venue: "Physica Scripta",
+      title: "Advanced Visualization Approaches for Statistical Data Analysis",
+      authors: "Md Wahiduzzaman Suva, Md. Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Mushfiqur Rahman Abir, Asif Zaman",
+      venue: "Metaversalize, vol. 1, no. 4, pp. 225-239",
+      year: "2024",
+      link: "https://doi.org/10.22105/metaverse.v1i1.36",
+      abstract: "Surveys advanced visualization methods for complex, high-dimensional statistical data in the big-data era, demonstrating R-based workflows on the UCI HCV dataset. Covers gaps in categorical data visualization (rmb and CPCP plots) and argues R/ggplot2 lowers the barrier for researchers wary of coding.",
+      keywords: ["Data Visualization", "R", "ggplot2", "Statistical Analysis"]
+    },
+    {
+      id: "6",
+      title: "An Integrated Deep Learning and Natural Language Processing Framework for Autonomous Vehicle Perception and Voice Control",
+      authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Mohammed Mustafa, Abir Bakhtiar, Susham Moula Chowdhury Akash",
+      venue: "figshare (preprint)",
       year: "2025",
-      abstract: "This research introduces a quantum clustering algorithm that leverages symmetry properties for improved unsupervised learning. Our method demonstrates superior performance on high-dimensional datasets with inherent symmetries.",
-      keywords: ["Quantum Computing", "Clustering", "Symmetry", "Unsupervised Learning"]
+      link: "https://doi.org/10.6084/m9.figshare.30610052",
+      abstract: "Describes a smart interactive vehicle prototype integrating voice recognition, obstacle avoidance, and perception systems, targeting assistive technology, educational robotics, and home-automation applications.",
+      keywords: ["Autonomous Vehicles", "Object Detection", "Deep Learning", "NLP", "Voice Control"]
+    },
+    {
+      id: "7",
+      title: "M-∂KG: A Theoretical Framework for Uncertainty Quantification in Large Language Models",
+      authors: "Md Tauhidul Islam, Md Wahiduzzaman Suva, Md Tanzim Hosain, Nur Fahad, Md Kishor Morol, Dip Nandi, Mashiour Rahman, et al.",
+      venue: "Under review",
+      year: "2026",
+      abstract: "Theoretical framework for quantifying uncertainty in large language model reasoning via knowledge-graph structure. Companion code models LLM reasoning as traversals through knowledge graphs with graph-theoretical uncertainty measures decomposing epistemic and aleatoric uncertainty.",
+      keywords: ["Knowledge Graphs", "LLMs", "Uncertainty Quantification"]
+    },
+    {
+      id: "8",
+      title: "Smart Surveillance: Integrating Drones and CCTV for Automated Crime Detection and Public Safety",
+      authors: "Emam Hossain Kazol, Md. Imtiaj Alam Sajin, Esm-E Moula Chowdhury Abha, Md Wahiduzzaman Suva, Md Tauhidul Islam",
+      venue: "ResearchGate (research proposal)",
+      year: "2025",
+      link: "https://doi.org/10.13140/RG.2.2.22726.74565",
+      abstract: "Proposes combining drone and CCTV feeds for automated crime detection and public-safety monitoring.",
+      keywords: ["Surveillance", "Drones", "Computer Vision", "Public Safety"]
     }
   ],
   otherExperiences: [
+    {
+      id: "0",
+      organization: "Prodigy AI",
+      position: "AI Researcher",
+      period: "May 2025 - Present",
+      description: "Bangladesh-based AI research group focused on brain-computer interfaces. Working on EEG decoding systems including the Brain-Controller project (github.com/prodigyagi) and BCI research such as EEG-DATNet and VC-DATNet (cross-dataset inner-speech decoding)."
+    },
     {
       id: "1",
       organization: "Trest Rossem, Rooppur NPP",
@@ -393,13 +610,20 @@ skills: [
   education: [
     {
       id: "1",
-      degree: "Bachelor of Science in Computer Science and Engineering",
+      degree: "Master of Science in Computer Science",
       institution: "American International University Bangladesh",
-      period: "Jan 2022 - Present",
-      details: "CGPA 3.97 (out of 4.00)"
+      period: "2026 - Present",
+      details: "Dhaka, Bangladesh"
     },
     {
       id: "2",
+      degree: "Bachelor of Science in Computer Science and Engineering",
+      institution: "American International University Bangladesh",
+      period: "2021 - 2025",
+      details: "CGPA 3.97 (out of 4.00)"
+    },
+    {
+      id: "3",
       degree: "Russian Language and Literature",
       institution: "Saint Petersburg State University, Russia",
       period: "Aug 2020 - Jan 2022",
@@ -417,8 +641,13 @@ export const setPortfolioData = (data: any) => {
   localStorage.setItem('portfolioData', JSON.stringify(data));
 };
 
+// Bump whenever DEFAULT_DATA changes so returning visitors get the new content
+// instead of the stale copy cached in their localStorage.
+const DATA_VERSION = "2026-07-30.2";
+
 export const initializeData = () => {
-  if (!localStorage.getItem('portfolioData')) {
+  if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
     setPortfolioData(DEFAULT_DATA);
+    localStorage.setItem('portfolioDataVersion', DATA_VERSION);
   }
 };
