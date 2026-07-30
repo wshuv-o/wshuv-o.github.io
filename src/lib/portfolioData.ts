@@ -222,10 +222,10 @@ skills: [
   experiences: [
     {
       id: "1",
-      company: "Odin - Townhouse Partners",
+      company: "Odin",
       position: "Lead AI Engineer",
       period: "Feb 2025 - Present",
-      description: "Tooling for financial reporting at a US real-estate client: an agent that reads and writes analyst Excel models, and a document extraction pipeline (pdfplumber, Camelot, Tesseract) for PDFs and scans. Runs on client hardware."
+      description: "Tools for financial reporting at a US real-estate client: they read and write analyst Excel models and verify their output against the source documents. A per-page document extraction pipeline (pdfplumber, Camelot, Tesseract OCR) covers PDF, Word, and scanned files. Everything runs on client hardware."
     },
     {
       id: "2",
@@ -287,7 +287,7 @@ skills: [
       id: "6",
       title: "Odin Reporting Tools",
       period: "Feb 2025 - Running",
-      description: "Internal tools for financial reporting: an agent that works directly in Excel workbooks, cashflow models, rent roll analysis, and PDF extraction. Runs on client infrastructure.",
+      description: "Internal tools for financial reporting: they work directly in Excel workbooks — cashflow models, rent roll analysis, and PDF extraction. Runs on client infrastructure.",
       technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"]
     },
     {
@@ -679,7 +679,7 @@ skills: [
     {
       id: "7",
       date: "Feb 2025",
-      text: "Joined Odin (Townhouse Partners)."
+      text: "Joined Odin."
     },
     {
       id: "8",
@@ -803,7 +803,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.7";
+const DATA_VERSION = "2026-07-30.8";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
