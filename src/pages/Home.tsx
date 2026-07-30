@@ -67,13 +67,6 @@ const Home = () => {
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
 
-  const stats = [
-    { value: `${research.length}`, label: "Publications" },
-    { value: "63+", label: "Repositories" },
-    { value: "4+", label: "Years in Production" },
-    { value: `${projects.length + academicProjects.length}`, label: "Projects Shipped" },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -93,13 +86,11 @@ const Home = () => {
                   {personalInfo.name}
                 </h1>
                 <p className="text-lg text-muted-foreground font-medium">
-                  Applied AI Engineer · AI &amp; Quantum ML Researcher
+                  Backend &amp; AI engineer
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Backend engineer with four years of production experience across SaaS, fintech, and
-                  US real estate clients — building agent harnesses, RAG pipelines, and document
-                  extraction engines. Researching brain-computer interfaces, quantum machine learning,
-                  and federated learning, with publications in IEEE TAI, Physica Scripta, and Springer.
+                  I work on backend and AI systems, and do research on brain-computer
+                  interfaces and quantum machine learning.
                 </p>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
@@ -126,15 +117,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Stats strip */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              {stats.map((s, i) => (
-                <div key={i} className="p-4 rounded-xl bg-card border border-border text-center glow-card">
-                  <div className="text-2xl font-display font-bold text-gradient">{s.value}</div>
-                  <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
-                </div>
-              ))}
-            </div>
           </section>
 
           {/* ===== News ===== */}
@@ -219,7 +201,7 @@ const Home = () => {
 
           {/* ===== Products & Projects ===== */}
           <section id="projects" className="scroll-mt-24">
-            <SectionHeading icon={Wrench}>Products &amp; Projects</SectionHeading>
+            <SectionHeading icon={Wrench}>Projects</SectionHeading>
             <div className="grid sm:grid-cols-2 gap-4">
               {projects.map((project) => (
                 <div key={project.id} className="rounded-xl bg-card border border-border glow-card overflow-hidden flex flex-col">
@@ -264,7 +246,7 @@ const Home = () => {
 
           {/* ===== Research & Academic Projects ===== */}
           <section id="academic" className="scroll-mt-24">
-            <SectionHeading icon={FlaskConical}>Research &amp; Academic Projects</SectionHeading>
+            <SectionHeading icon={FlaskConical}>Academic Projects</SectionHeading>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {academicProjects.map((project) => (
                 <div key={project.id} className="p-4 rounded-xl bg-card border border-border glow-card space-y-1.5">
@@ -324,7 +306,7 @@ const Home = () => {
 
           {/* ===== Activities & Service ===== */}
           <section id="activities" className="scroll-mt-24">
-            <SectionHeading icon={Users}>Activities &amp; Service</SectionHeading>
+            <SectionHeading icon={Users}>Activities</SectionHeading>
             <div className="space-y-4">
               {otherExperiences.map((exp) => (
                 <div key={exp.id}>
@@ -347,7 +329,7 @@ const Home = () => {
 
           {/* ===== Contact / Footer ===== */}
           <section id="contact" className="scroll-mt-24 border-t border-border pt-10">
-            <SectionHeading icon={Globe}>Get in Touch</SectionHeading>
+            <SectionHeading icon={Globe}>Contact</SectionHeading>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
               <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> {personalInfo.email}

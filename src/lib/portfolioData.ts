@@ -225,86 +225,79 @@ skills: [
       company: "Odin - Townhouse Partners",
       position: "Lead AI Engineer",
       period: "Feb 2025 - Present",
-      description: "Own the agent harness behind institutional financial reporting for a US client: tools that read and write live analyst Excel models, verify their own output, and run entirely on client hardware. Built a per-page document extraction engine (pdfplumber, Camelot, Tesseract OCR) covering PDF, Word, and scanned files. Cut monthly reporting cycles from 12+ days to under 4 hours. Lead a team of 4 engineers and analysts; shipped Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, and a vision model for QC."
+      description: "Tooling for financial reporting at a US real-estate client: an agent that reads and writes analyst Excel models, and a document extraction pipeline (pdfplumber, Camelot, Tesseract) for PDFs and scans. Runs on client hardware."
     },
     {
       id: "2",
       company: "Byteverse Ltd",
       position: "Software Engineer",
       period: "Jun 2023 - Present",
-      description: "Ship client and internal products end to end, from data model and API through production deployment. Lead the team building Chatsby, the company's AI customer experience product: an agentic tool-calling runtime, RAG with hybrid retrieval over Qdrant, a realtime WebSocket layer, and a FastAPI, Redis, and Nginx production stack deployed via GitHub Actions."
+      description: "Work on Chatsby, the company's customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions)."
     },
     {
       id: "3",
       company: "Codelogiest",
       position: "Software Engineer (Contract)",
       period: "2024 - 2025",
-      description: "Built AI and automation products for agency and SaaS clients: an outbound calling assistant with lead scoring, live transfer to human closers, and CRM writeback, built on the agent backend of a WhatsApp-driven AI marketing operator; CommentZap on the Meta Graph and Messenger APIs; and the CEO Society backend on AdonisJS."
+      description: "Backend work for client products: a WhatsApp marketing agent, an outbound calling pipeline, comment and DM automation, and a course platform on AdonisJS."
     }
   ],
   projects: [
     {
       id: "1",
-      title: "Chatsby – Customer Experience",
+      title: "Chatsby",
       period: "Apr 2025 - Running",
-      description: "AI customer experience platform. Agentic layer dispatches tool calls against 40+ integrations including HubSpot, Slack, Calendly, and Zapier, with per-provider OAuth token storage and refresh.",
-      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
-      details: "Retrieval runs as a separate Dockerized FastAPI service over Qdrant with hybrid dense and keyword retrieval. WebSocket delivery fans out over Redis pub/sub under PM2 cluster mode. Fine-tuning portal ships LoRA adapters trained on a self-hosted GPU cluster within hours."
+      description: "Customer-support AI platform at Byteverse. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack.",
+      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"]
     },
     {
       id: "2",
       title: "Outbound Calling Assistant",
       period: "2024 - 2025",
-      description: "AI outbound calling pipeline: rule-based lead scoring on live call data, live transfer of qualified calls to a human closer, voicemail detection with scheduled retry, CRM writeback, and SMS/WhatsApp follow-up triggered by call outcome.",
+      description: "Calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback. Built on the agent backend of a WhatsApp marketing product.",
       link: "https://jasmyn.ai",
       technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
-      image: "/screenshots/jasmyn.jpg",
-      details: "Built on the same agent runtime as a WhatsApp-driven marketing operator: webhook ingestion with signature verification, idempotent duplicate handling, per-contact conversation state, and a JSON-defined flow builder so operators compose call and campaign logic, branching, and transfer conditions without developer involvement."
+      image: "/screenshots/jasmyn.jpg"
     },
     {
       id: "3",
       title: "CEO Society",
       period: "Oct 2024 – May 2025",
-      description: "Entrepreneurship training platform: course tracks, cohorts, coach and member roles, and an in-product AI assistant.",
+      description: "Backend for a course platform: courses, cohorts, roles, and an in-product assistant that answers from course material.",
       link: "https://app.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
-      image: "/screenshots/ceosociety.png",
-      details: "Built the AI assistant: retrieval over course material for in-lesson questions, plus a model trained on client conduct examples backing scenario tools such as objection handling."
+      image: "/screenshots/ceosociety.png"
     },
     {
       id: "5",
-      title: "CommentZap - Instagram Automation",
+      title: "CommentZap",
       period: "Sept 2024 – Mar 2025",
-      description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhook ingestion, rule-driven responses, per-account token handling, and rate-limit backoff.",
+      description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhooks, rule-driven responses, token handling, rate-limit backoff.",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
-      image: "/screenshots/commentzap.jpg",
-      details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
+      image: "/screenshots/commentzap.jpg"
     },
     {
       id: "4",
       title: "Lead Scrapper",
       period: "Nov 2025 - Running",
-      description: "Lead acquisition platform built with Vite. Scraping engine using Beautiful Soup with AI-powered validation. Containerized with Docker, orchestrated with Redis.",
-      technologies: ["Vite", "Python", "Docker", "Redis"],
-      details: "High-performance lead generation tool with intelligent data extraction, validation, and enrichment capabilities."
+      description: "Lead scraping tool with validation, running on Docker and Redis.",
+      technologies: ["Vite", "Python", "Docker", "Redis"]
     },
     {
       id: "6",
-      title: "Odin Financial Reporting Suite",
+      title: "Odin Reporting Tools",
       period: "Feb 2025 - Running",
-      description: "Agent harness behind institutional financial reporting: the model plans a task, calls tools that read from and write directly into live Excel workbooks, verifies output against the source, and re-runs the fields it got wrong.",
-      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"],
-      details: "Tools shipped on the platform: Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, a vision model for QC, and Market/Submarket analysis. Runs entirely on client infrastructure — no external API calls in the extraction path."
+      description: "Internal tools for financial reporting: an agent that works directly in Excel workbooks, cashflow models, rent roll analysis, and PDF extraction. Runs on client infrastructure.",
+      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"]
     },
     {
       id: "7",
-      title: "Pexl – Document Extraction Engine",
+      title: "Pexl",
       period: "2025",
-      description: "Extraction engine for financial documents — appraisals, bank statements, utility bills — using a per-page cascade of pdfplumber, Camelot lattice and stream, and Tesseract OCR, scored to keep the best result.",
+      description: "Extracts tables and fields from financial documents (appraisals, bank statements, utility bills) with pdfplumber, Camelot, and Tesseract.",
       github: "https://github.com/wshuv-o/pexl",
       technologies: ["TypeScript", "Python", "pdfplumber", "Camelot", "Tesseract OCR"],
-      image: "/screenshots/pexl.png",
-      details: "Handles semi-structured forms, pulls values out of vector diagrams, and types currency, percentage, and numeric cells on output."
+      image: "/screenshots/pexl.png"
     }
   ],
   academicProjects: [
@@ -619,9 +612,9 @@ skills: [
     {
       id: "0",
       organization: "Prodigy AI",
-      position: "AI Researcher",
+      position: "BCI Researcher",
       period: "May 2025 - Present",
-      description: "Bangladesh-based AI research group focused on brain-computer interfaces. Working on EEG decoding systems including the Brain-Controller project and BCI research such as EEG-DATNet and VC-DATNet (cross-dataset inner-speech decoding).",
+      description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller, EEG-DATNet, VC-DATNet.",
       link: "https://github.com/prodigyagi"
     },
     {
@@ -651,53 +644,53 @@ skills: [
     {
       id: "1",
       date: "Jan 2026",
-      text: "First-author paper on symmetry-aware equivariant quantum clustering published in Physica Scripta.",
+      text: "Paper on equivariant quantum clustering published in Physica Scripta.",
       link: "https://doi.org/10.1088/1402-4896/ae2dd7"
     },
     {
       id: "2",
       date: "2026",
-      text: "EEG-DATNet, a dual-attention transformer for EEG classification, posted on SSRN (under review).",
+      text: "EEG-DATNet preprint posted on SSRN.",
       link: "https://doi.org/10.2139/ssrn.6531865"
     },
     {
       id: "3",
       date: "2026",
-      text: "Started MSc in Computer Science at American International University-Bangladesh."
+      text: "Started MSc in Computer Science at AIUB."
     },
     {
       id: "4",
       date: "Nov 2025",
-      text: "Book chapter on federated learning in healthcare published in Springer Studies in Computational Intelligence (vol. 1216).",
+      text: "Book chapter on federated learning in healthcare published (Springer SCI vol. 1216).",
       link: "https://doi.org/10.1007/978-981-96-8353-6_1"
     },
     {
       id: "5",
       date: "May 2025",
-      text: "Joined Prodigy AI, a Bangladesh-based brain-computer interface research group.",
+      text: "Joined Prodigy AI to work on brain-computer interfaces.",
       link: "https://github.com/prodigyagi"
     },
     {
       id: "6",
       date: "Mar 2025",
-      text: "Lorentz-Equivariant Quantum Graph Neural Network paper published in IEEE Transactions on Artificial Intelligence.",
+      text: "Quantum graph neural network paper published in IEEE Transactions on Artificial Intelligence.",
       link: "https://doi.org/10.1109/TAI.2025.3554461"
     },
     {
       id: "7",
       date: "Feb 2025",
-      text: "Joined Odin (Townhouse Partners) as Lead AI Engineer, leading a team of 4 on AI-driven financial reporting."
+      text: "Joined Odin (Townhouse Partners)."
     },
     {
       id: "8",
       date: "2024",
-      text: "First journal paper, on advanced visualization approaches for statistical data analysis, published in Metaversalize.",
+      text: "First paper published, in Metaversalize.",
       link: "https://doi.org/10.22105/metaverse.v1i1.36"
     },
     {
       id: "9",
       date: "Jun 2023",
-      text: "Joined Byteverse Ltd as Software Engineer; now leading development of Chatsby, the company's AI customer experience platform."
+      text: "Joined Byteverse."
     }
   ],
   webProfiles: [
@@ -810,7 +803,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.6";
+const DATA_VERSION = "2026-07-30.7";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
