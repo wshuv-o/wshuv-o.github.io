@@ -73,13 +73,6 @@ export interface OtherExperience {
   imageCaption?: string;
 }
 
-export interface Achievement {
-  id: string;
-  title: string;
-  description: string;
-  image?: string;
-}
-
 export interface WebProfile {
   id: string;
   name: string;
@@ -92,6 +85,8 @@ export interface NewsItem {
   date: string;
   text: string;
   link?: string;
+  image?: string;
+  linkedinEmbed?: string;
 }
 
 export interface Education {
@@ -325,7 +320,7 @@ skills: [
       category: "Brain-Computer Interface",
       link: "https://github.com/wshuv-o/VC-DATNet",
       technologies: ["Python", "PyTorch", "EEG", "Transformers"],
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
+      images: ["/images/vc-datnet-architecture.jpg"],
       details: "Pairs a shared multi-scale temporal-spatial front-end with parallel mean and log-variance encoder streams of dual-attention transformer layers. Every number in the manuscript is reproducible from raw OpenNeuro data (ds003626, ds004196, ds006033)."
     },
     {
@@ -335,7 +330,7 @@ skills: [
       category: "Brain-Computer Interface",
       link: "https://github.com/prodigyagi/Brain-Controller",
       technologies: ["EEG", "Deep Learning", "Python"],
-      image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=600&fit=crop",
+      images: ["/images/repos/brain-controller.png"],
       details: "Research on decoding EEG signals into device control commands, developed under Prodigy AI, a Bangladesh-based AI research group."
     },
     {
@@ -345,7 +340,7 @@ skills: [
       category: "Quantum & Security",
       link: "https://github.com/wshuv-o/ISM_Quantum",
       technologies: ["Python", "PyTorch", "HQC / ML-KEM", "Federated Learning"],
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
+      images: ["/images/repos/ism-quantum.png"],
       details: "KEM-agnostic cluster-based secure aggregation with Bonawitz-style double masking, Shamir dropout recovery, and robust aggregation rules (trimmed mean, median, Multi-Krum) against poisoning attacks, evaluated on non-IID CIFAR-10 with 30 clients."
     },
     {
@@ -355,7 +350,7 @@ skills: [
       category: "AI Research",
       link: "https://github.com/wshuv-o/clinical-reasoning-graph",
       technologies: ["Python", "Knowledge Graphs", "LLMs"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      images: ["https://opengraph.githubassets.com/1/wshuv-o/clinical-reasoning-graph"],
       details: "Introduces graph-theoretical uncertainty measures enabling interpretable, theoretically grounded decomposition of epistemic and aleatoric uncertainty for clinical tasks like diagnosis and treatment planning."
     },
     {
@@ -365,7 +360,7 @@ skills: [
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quantum-clustering",
       technologies: ["Python", "Variational Quantum Circuits", "K-means"],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      images: ["/images/repos/quantum-clustering.png"],
       details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
     },
     {
@@ -375,7 +370,7 @@ skills: [
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quanvolution",
       technologies: ["Python", "Quantum Computing", "Deep Learning"],
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop",
+      images: ["/images/repos/quanvolution.png"],
       details: "Exploratory research repos including quanvolution (quantum convolutional layers) and qnerf (quantum neural radiance fields)."
     },
     {
@@ -395,6 +390,7 @@ skills: [
       category: "Data Science",
       link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
       technologies: ["Python", "Pandas", "NLTK (VADER)", "NetworkX", "Matplotlib", "Seaborn"],
+      images: ["/images/repos/conti-leaks.png"],
       details: "Cleaned and structured the leaked data with Pandas, classified message sentiment with VADER, explored relationships between actors with NetworkX, and visualized findings with Matplotlib and Seaborn."
     },
     {
@@ -404,7 +400,7 @@ skills: [
       category: "Healthcare AI",
       link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
       technologies: ["Python", "scikit-learn", "Pandas"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      images: ["/images/repos/aki-prediction.png"],
       details: "Predictive modeling on clinical datasets for early detection of acute kidney injury."
     },
     {
@@ -414,7 +410,7 @@ skills: [
       category: "Robotics",
       link: "https://github.com/wshuv-o/space-rover-application",
       technologies: ["Python", "OpenCV", "Sensor Integration"],
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      images: ["/images/space-rover.png"],
       details: "Real-time sensor data integration and processing with onboard image analysis for rover operations."
     },
     {
@@ -424,7 +420,7 @@ skills: [
       category: "Web Development",
       link: "https://github.com/wshuv-o/Nexa-Social-Media",
       technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+      images: ["/images/repos/nexa.png"],
       details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, friends management, and instant messaging."
     },
     {
@@ -434,7 +430,7 @@ skills: [
       category: "Fintech",
       link: "https://optra-blush.vercel.app/",
       technologies: ["Next.js", "TypeScript", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      images: ["/images/optra.jpg"],
       details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support. Source: github.com/wshuv-o/optra"
     },
     {
@@ -444,7 +440,7 @@ skills: [
       category: "Enterprise Software",
       link: "https://github.com/wshuv-o/iInventory-backend",
       technologies: ["Next.js", "NestJS", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
+      images: ["/images/repos/iinventory.png"],
       details: "Real-time inventory tracking, automated reordering, analytics dashboard, and multi-warehouse support."
     },
     {
@@ -454,7 +450,7 @@ skills: [
       category: "EdTech",
       link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
       technologies: ["PHP", "Laravel", "MySQL"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
+      images: ["/images/repos/courseway.png"],
       details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
     },
     {
@@ -464,7 +460,7 @@ skills: [
       category: "Healthcare",
       link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
       technologies: ["C#", ".NET", "MySQL"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      images: ["/images/repos/pharmasync.png"],
       details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
     },
     {
@@ -474,7 +470,7 @@ skills: [
       category: "Healthcare",
       link: "https://github.com/wshuv-o/HealthHub-ManagementSystem",
       technologies: ["C#", ".NET"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      images: ["/images/repos/healthhub.png"],
       details: "Patient, appointment, and records management for healthcare facilities."
     },
     {
@@ -532,7 +528,6 @@ skills: [
         { label: "Hugging Face", url: "https://huggingface.co/papers/2411.01641" },
         { label: "OpenAlex", url: "https://openalex.org/W4408780434" }
       ],
-      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7310208819316342784?collapsed=1",
       abstract: "Proposes Lorentz-EQGNN, a hybrid quantum-classical graph neural network that replaces LorentzNet's Lorentz Group Equivariant Blocks with a dressed quantum circuit, using ~5.5x fewer parameters and only 4 qubits. Achieves 74.00% accuracy and 87.38% AUC on quark-gluon jet tagging and 67.00% / 68.20% on electron-photon discrimination.",
       keywords: ["Quantum Machine Learning", "Graph Neural Networks", "Lorentz Equivariance", "High-Energy Physics"]
     },
@@ -548,7 +543,6 @@ skills: [
         { label: "Semantic Scholar", url: "https://www.semanticscholar.org/paper/278fb13c3ab4bd5b1bbc774e30077542928efcb7" },
         { label: "OpenAlex", url: "https://openalex.org/W4417409583" }
       ],
-      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7406933925102755841?collapsed=1",
       abstract: "Introduces a p4m Equivariant Quantum Clustering method integrating equivariant quantum neural networks with quantum kernel methods on an 8-qubit circuit for high-dimensional data with geometric symmetries. Outperforms classical K-Means on the Quark-Gluon dataset (Silhouette 0.512 vs 0.183) and remains stable under simulated depolarizing noise.",
       keywords: ["Equivariant QNN", "Quantum Kernel Methods", "Unsupervised Learning", "NISQ"]
     },
@@ -667,7 +661,8 @@ skills: [
       id: "1",
       date: "Jan 2026",
       text: "Paper on equivariant quantum clustering published in Physica Scripta.",
-      link: "https://doi.org/10.1088/1402-4896/ae2dd7"
+      link: "https://doi.org/10.1088/1402-4896/ae2dd7",
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7406933925102755841?collapsed=1"
     },
     {
       id: "2",
@@ -687,6 +682,12 @@ skills: [
       link: "https://doi.org/10.1007/978-981-96-8353-6_1"
     },
     {
+      id: "10",
+      date: "Oct 2025",
+      text: "Recognized as Rising Star Performer 2025 at ODIN Outsourcing.",
+      image: "/images/rising-star-2025.jpg"
+    },
+    {
       id: "5",
       date: "May 2025",
       text: "Joined Prodigy AI to work on brain-computer interfaces.",
@@ -696,7 +697,8 @@ skills: [
       id: "6",
       date: "Mar 2025",
       text: "Quantum graph neural network paper published in IEEE Transactions on Artificial Intelligence.",
-      link: "https://doi.org/10.1109/TAI.2025.3554461"
+      link: "https://doi.org/10.1109/TAI.2025.3554461",
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7310208819316342784?collapsed=1"
     },
     {
       id: "7",
@@ -713,14 +715,6 @@ skills: [
       id: "9",
       date: "Jun 2023",
       text: "Joined Byteverse."
-    }
-  ],
-  achievements: [
-    {
-      id: "1",
-      title: "Rising Star Performer 2025 — ODIN Outsourcing",
-      description: "Recognized for dedication, consistency, and contribution to the team. A small milestone in my ongoing journey of learning, improving, and doing meaningful work.",
-      image: "/images/rising-star-2025.jpg"
     }
   ],
   webProfiles: [
@@ -833,7 +827,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.14";
+const DATA_VERSION = "2026-07-30.17";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

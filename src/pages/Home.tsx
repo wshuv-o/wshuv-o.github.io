@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Award } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -14,7 +14,6 @@ import {
   Skill,
   WebProfile,
   NewsItem,
-  Achievement,
 } from "@/lib/portfolioData";
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
@@ -93,7 +92,6 @@ const Home = () => {
   const skills: Skill[] = data.skills || [];
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
-  const achievements: Achievement[] = data.achievements || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -161,6 +159,25 @@ const Home = () => {
                         <a href={n.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-0.5">
                           link<ExternalLink className="h-3 w-3" />
                         </a>
+                      )}
+                      {n.image && (
+                        <img
+                          src={n.image}
+                          alt={n.text}
+                          loading="lazy"
+                          className="block mt-2 rounded-lg border border-border w-40"
+                        />
+                      )}
+                      {n.linkedinEmbed && (
+                        <iframe
+                          src={n.linkedinEmbed}
+                          height="380"
+                          frameBorder="0"
+                          allowFullScreen
+                          title={`LinkedIn post: ${n.text}`}
+                          loading="lazy"
+                          className="block mt-2 rounded-lg border border-border w-full max-w-sm"
+                        />
                       )}
                     </span>
                   </li>
@@ -235,13 +252,12 @@ const Home = () => {
                     {paper.linkedinEmbed && (
                       <iframe
                         src={paper.linkedinEmbed}
-                        height="565"
-                        width="504"
+                        height="380"
                         frameBorder="0"
                         allowFullScreen
                         title={`LinkedIn post: ${paper.title}`}
                         loading="lazy"
-                        className="mt-3 rounded-lg border border-border max-w-full"
+                        className="mt-3 rounded-lg border border-border w-full max-w-sm"
                       />
                     )}
                   </div>
@@ -422,31 +438,6 @@ const Home = () => {
               ))}
             </div>
           </section>
-
-          {/* ===== Achievements ===== */}
-          {achievements.length > 0 && (
-            <section id="achievements" className="scroll-mt-24">
-              <SectionHeading icon={Award}>Achievements</SectionHeading>
-              <div className="space-y-4">
-                {achievements.map((a) => (
-                  <div key={a.id} className="flex flex-col sm:flex-row gap-5 p-5 rounded-xl bg-card border border-border glow-card">
-                    {a.image && (
-                      <img
-                        src={a.image}
-                        alt={a.title}
-                        loading="lazy"
-                        className="rounded-lg border border-border w-full sm:w-56 object-cover shrink-0"
-                      />
-                    )}
-                    <div className="space-y-1.5">
-                      <h3 className="font-display font-semibold text-foreground">{a.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
 
           {/* ===== Contact / Footer ===== */}
           <section id="contact" className="scroll-mt-24 border-t border-border pt-10">
