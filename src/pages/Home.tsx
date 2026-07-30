@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -14,6 +14,7 @@ import {
   Skill,
   WebProfile,
   NewsItem,
+  Achievement,
 } from "@/lib/portfolioData";
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
@@ -92,6 +93,7 @@ const Home = () => {
   const skills: Skill[] = data.skills || [];
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
+  const achievements: Achievement[] = data.achievements || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -383,10 +385,50 @@ const Home = () => {
                     <span className="text-xs text-muted-foreground">{exp.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{exp.description}</p>
+                  {exp.image && (
+                    <figure className="mt-3">
+                      <img
+                        src={exp.image}
+                        alt={exp.imageCaption || exp.organization}
+                        loading="lazy"
+                        className="rounded-lg border border-border w-full max-w-md"
+                      />
+                      {exp.imageCaption && (
+                        <figcaption className="text-xs text-muted-foreground mt-1.5 max-w-md">
+                          {linkify(exp.imageCaption)}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
                 </div>
               ))}
             </div>
           </section>
+
+          {/* ===== Achievements ===== */}
+          {achievements.length > 0 && (
+            <section id="achievements" className="scroll-mt-24">
+              <SectionHeading icon={Award}>Achievements</SectionHeading>
+              <div className="space-y-4">
+                {achievements.map((a) => (
+                  <div key={a.id} className="flex flex-col sm:flex-row gap-5 p-5 rounded-xl bg-card border border-border glow-card">
+                    {a.image && (
+                      <img
+                        src={a.image}
+                        alt={a.title}
+                        loading="lazy"
+                        className="rounded-lg border border-border w-full sm:w-56 object-cover shrink-0"
+                      />
+                    )}
+                    <div className="space-y-1.5">
+                      <h3 className="font-display font-semibold text-foreground">{a.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* ===== Contact / Footer ===== */}
           <section id="contact" className="scroll-mt-24 border-t border-border pt-10">

@@ -67,6 +67,15 @@ export interface OtherExperience {
   period: string;
   description: string;
   link?: string;
+  image?: string;
+  imageCaption?: string;
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 export interface WebProfile {
@@ -623,7 +632,9 @@ skills: [
       position: "BCI Researcher",
       period: "May 2025 - Present",
       description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller, EEG-DATNet, VC-DATNet.",
-      link: "https://github.com/prodigyagi"
+      link: "https://github.com/prodigyagi",
+      image: "/images/eeg-defense-2025.jpg",
+      imageCaption: "One of our research projects on EEG analysis using a transformer-based model was presented at AIUB in May 2025. [Read more](https://www.linkedin.com/posts/imtiaj-sajin_thesis-defense-2025-at-aiub-thanks-to-my-activity-7329541319448584192-ROZE)"
     },
     {
       id: "1",
@@ -638,7 +649,9 @@ skills: [
       position: "Mars Rover Crew",
       period: "Sep 2023 - Present",
       description: "Real-time sensor data integration and processing using Python. Implemented image processing algorithms with OpenCV for onboard analysis. Utilized NumPy, SciPy, and matplotlib for data analysis.",
-      link: "https://arc.aiub.edu/"
+      link: "https://arc.aiub.edu/",
+      image: "/images/urc-science-box.jpg",
+      imageCaption: "Science box module designed as part of University Rover Challenge 2024"
     },
     {
       id: "3",
@@ -699,6 +712,14 @@ skills: [
       id: "9",
       date: "Jun 2023",
       text: "Joined Byteverse."
+    }
+  ],
+  achievements: [
+    {
+      id: "1",
+      title: "Rising Star Performer 2025 — ODIN Outsourcing",
+      description: "Recognized for dedication, consistency, and contribution to the team. A small milestone in my ongoing journey of learning, improving, and doing meaningful work.",
+      image: "/images/rising-star-2025.jpg"
     }
   ],
   webProfiles: [
@@ -811,7 +832,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.12";
+const DATA_VERSION = "2026-07-30.13";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
