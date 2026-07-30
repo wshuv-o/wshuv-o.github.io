@@ -47,6 +47,7 @@ export interface AcademicProject {
   images?: string[];
   details?: string;
   linkedinEmbed?: string;
+  youtubeEmbed?: string;
 }
 
 export interface Research {
@@ -493,13 +494,21 @@ skills: [
     },
     {
       id: "19",
-      title: "Game Development Projects",
-      description: "First-person adventure game in Unity — explore the environment, find a set of keys, and complete missions — plus a canyon-environment mystery game and OpenGL games in C++.",
+      title: "Canyon Mystery Game",
+      description: "Mystery game set in a canyon environment, built in Unity.",
+      category: "Game Development",
+      technologies: ["Unity", "C#"],
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7291817784240418817?collapsed=1"
+    },
+    {
+      id: "21",
+      title: "First-Person Adventure Game",
+      description: "First-person adventure in Unity: explore the environment, find a set of keys, and complete missions. Physics, interactive objects, and level design.",
       category: "Game Development",
       link: "https://www.youtube.com/watch?v=skQcoC6f3Hs",
-      technologies: ["Unity", "C#", "C++", "OpenGL"],
-      details: "Gameplay demo on YouTube. OpenGL titles (Galactic Exodus): github.com/wshuv-o/opengl-galactic-exodus",
-      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7291817784240418817?collapsed=1"
+      technologies: ["Unity", "C#"],
+      details: "Also built OpenGL games in C++ (Galactic Exodus): github.com/wshuv-o/opengl-galactic-exodus",
+      youtubeEmbed: "https://www.youtube.com/embed/skQcoC6f3Hs"
     },
     {
       id: "20",
@@ -688,6 +697,12 @@ skills: [
       image: "/images/rising-star-2025.jpg"
     },
     {
+      id: "11",
+      date: "Sep 2025",
+      text: "Chatsby, the customer-support AI product we build at Byteverse, launched.",
+      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7369019422184726548?collapsed=1"
+    },
+    {
       id: "5",
       date: "May 2025",
       text: "Joined Prodigy AI to work on brain-computer interfaces.",
@@ -827,7 +842,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.17";
+const DATA_VERSION = "2026-07-30.18";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

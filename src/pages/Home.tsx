@@ -359,6 +359,17 @@ const Home = () => {
                       className="mt-2 rounded-lg border border-border w-full"
                     />
                   )}
+                  {project.youtubeEmbed && (
+                    <iframe
+                      src={project.youtubeEmbed}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={`Gameplay video: ${project.title}`}
+                      loading="lazy"
+                      className="mt-2 rounded-lg border border-border w-full aspect-video"
+                    />
+                  )}
                 </div>
               ))}
             </div>
