@@ -248,9 +248,7 @@ skills: [
       title: "Chatsby – Customer Experience",
       period: "Apr 2025 - Running",
       description: "AI customer experience platform. Agentic layer dispatches tool calls against 40+ integrations including HubSpot, Slack, Calendly, and Zapier, with per-provider OAuth token storage and refresh.",
-      link: "https://chatsby.co",
       technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       details: "Retrieval runs as a separate Dockerized FastAPI service over Qdrant with hybrid dense and keyword retrieval. WebSocket delivery fans out over Redis pub/sub under PM2 cluster mode. Fine-tuning portal ships LoRA adapters trained on a self-hosted GPU cluster within hours."
     },
     {
@@ -260,7 +258,7 @@ skills: [
       description: "AI outbound calling pipeline: rule-based lead scoring on live call data, live transfer of qualified calls to a human closer, voicemail detection with scheduled retry, CRM writeback, and SMS/WhatsApp follow-up triggered by call outcome.",
       link: "https://jasmyn.ai",
       technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+      image: "/screenshots/jasmyn.jpg",
       details: "Built on the same agent runtime as a WhatsApp-driven marketing operator: webhook ingestion with signature verification, idempotent duplicate handling, per-contact conversation state, and a JSON-defined flow builder so operators compose call and campaign logic, branching, and transfer conditions without developer involvement."
     },
     {
@@ -268,9 +266,7 @@ skills: [
       title: "CEO Society",
       period: "Oct 2024 – May 2025",
       description: "Entrepreneurship training platform: course tracks, cohorts, coach and member roles, and an in-product AI assistant.",
-      link: "https://www.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
       details: "Built the AI assistant: retrieval over course material for in-lesson questions, plus a model trained on client conduct examples backing scenario tools such as objection handling."
     },
     {
@@ -278,9 +274,7 @@ skills: [
       title: "CommentZap - Instagram Automation",
       period: "Sept 2024 – Mar 2025",
       description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhook ingestion, rule-driven responses, per-account token handling, and rate-limit backoff.",
-      link: "https://commentzap.com",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
       details: "Social media automation tool processing 10,000+ interactions daily with intelligent response generation and scheduling."
     },
     {
@@ -289,7 +283,6 @@ skills: [
       period: "Nov 2025 - Running",
       description: "Lead acquisition platform built with Vite. Scraping engine using Beautiful Soup with AI-powered validation. Containerized with Docker, orchestrated with Redis.",
       technologies: ["Vite", "Python", "Docker", "Redis"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       details: "High-performance lead generation tool with intelligent data extraction, validation, and enrichment capabilities."
     },
     {
@@ -298,7 +291,6 @@ skills: [
       period: "Feb 2025 - Running",
       description: "Agent harness behind institutional financial reporting: the model plans a task, calls tools that read from and write directly into live Excel workbooks, verifies output against the source, and re-runs the fields it got wrong.",
       technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"],
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
       details: "Tools shipped on the platform: Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, a vision model for QC, and Market/Submarket analysis. Runs entirely on client infrastructure — no external API calls in the extraction path."
     },
     {
@@ -308,7 +300,7 @@ skills: [
       description: "Extraction engine for financial documents — appraisals, bank statements, utility bills — using a per-page cascade of pdfplumber, Camelot lattice and stream, and Tesseract OCR, scored to keep the best result.",
       github: "https://github.com/wshuv-o/pexl",
       technologies: ["TypeScript", "Python", "pdfplumber", "Camelot", "Tesseract OCR"],
-      image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&h=600&fit=crop",
+      image: "/screenshots/pexl.png",
       details: "Handles semi-structured forms, pulls values out of vector diagrams, and types currency, percentage, and numeric cells on output."
     }
   ],
@@ -815,7 +807,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.4";
+const DATA_VERSION = "2026-07-30.5";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

@@ -222,7 +222,16 @@ const Home = () => {
             <SectionHeading icon={Wrench}>Products &amp; Projects</SectionHeading>
             <div className="grid sm:grid-cols-2 gap-4">
               {projects.map((project) => (
-                <div key={project.id} className="p-5 rounded-xl bg-card border border-border glow-card space-y-2">
+                <div key={project.id} className="rounded-xl bg-card border border-border glow-card overflow-hidden flex flex-col">
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-40 object-cover object-top border-b border-border"
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="p-5 space-y-2 flex-1">
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="font-display font-semibold text-foreground leading-snug">{project.title}</h3>
                     <div className="flex gap-2 shrink-0">
@@ -247,6 +256,7 @@ const Home = () => {
                       ))}
                     </div>
                   )}
+                  </div>
                 </div>
               ))}
             </div>
