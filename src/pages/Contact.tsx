@@ -1,15 +1,17 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
-import { getPortfolioData, initializeData, PersonalInfo } from "@/lib/portfolioData";
-import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import { getPortfolioData, initializeData, PersonalInfo, WebProfile } from "@/lib/portfolioData";
+import { Mail, Phone, Github, Linkedin, Globe, ExternalLink } from "lucide-react";
 
 const Contact = () => {
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
+  const [webProfiles, setWebProfiles] = useState<WebProfile[]>([]);
 
   useEffect(() => {
     initializeData();
     const data = getPortfolioData();
     setPersonalInfo(data.personalInfo);
+    setWebProfiles(data.webProfiles || []);
   }, []);
 
   if (!personalInfo) return null;
@@ -92,6 +94,37 @@ const Contact = () => {
                 </div>
               </a>
             </div>
+
+            {webProfiles.length > 0 && (
+              <div className="space-y-6 pt-8">
+                <div className="space-y-2">
+                  <h2 className="text-3xl md:text-4xl font-display font-bold text-gradient">Elsewhere on the Web</h2>
+                  <p className="text-lg text-muted-foreground">
+                    Publications, research profiles, and communities
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {webProfiles.map((profile) => (
+                    <a
+                      key={profile.id}
+                      href={profile.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-5 rounded-2xl bg-card border border-border glow-card hover-scale group"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <Globe className="h-5 w-5 text-primary" />
+                        <h3 className="font-display font-semibold">{profile.name}</h3>
+                        <ExternalLink className="h-3 w-3 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      {profile.note && (
+                        <p className="text-sm text-muted-foreground">{profile.note}</p>
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>

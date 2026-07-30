@@ -52,6 +52,7 @@ export interface Research {
   venue: string;
   year: string;
   link?: string;
+  links?: { label: string; url: string }[];
   abstract?: string;
   keywords?: string[];
 }
@@ -62,6 +63,14 @@ export interface OtherExperience {
   position: string;
   period: string;
   description: string;
+  link?: string;
+}
+
+export interface WebProfile {
+  id: string;
+  name: string;
+  url: string;
+  note?: string;
 }
 
 export interface Education {
@@ -504,6 +513,14 @@ skills: [
       venue: "IEEE Transactions on Artificial Intelligence, vol. 6, no. 12, pp. 3195-3206",
       year: "2025",
       link: "https://doi.org/10.1109/TAI.2025.3554461",
+      links: [
+        { label: "IEEE Xplore", url: "https://ieeexplore.ieee.org/document/10938398" },
+        { label: "arXiv", url: "https://arxiv.org/abs/2411.01641" },
+        { label: "Semantic Scholar", url: "https://www.semanticscholar.org/paper/fea886d50bc5b08104b132bcfd469534943b672e" },
+        { label: "NASA ADS", url: "https://ui.adsabs.harvard.edu/abs/2024arXiv241101641J/abstract" },
+        { label: "Hugging Face", url: "https://huggingface.co/papers/2411.01641" },
+        { label: "OpenAlex", url: "https://openalex.org/W4408780434" }
+      ],
       abstract: "Proposes Lorentz-EQGNN, a hybrid quantum-classical graph neural network that replaces LorentzNet's Lorentz Group Equivariant Blocks with a dressed quantum circuit, using ~5.5x fewer parameters and only 4 qubits. Achieves 74.00% accuracy and 87.38% AUC on quark-gluon jet tagging and 67.00% / 68.20% on electron-photon discrimination.",
       keywords: ["Quantum Machine Learning", "Graph Neural Networks", "Lorentz Equivariance", "High-Energy Physics"]
     },
@@ -514,6 +531,11 @@ skills: [
       venue: "Physica Scripta (IOP Publishing), vol. 101, no. 2, art. 026007",
       year: "2026",
       link: "https://doi.org/10.1088/1402-4896/ae2dd7",
+      links: [
+        { label: "IOPscience", url: "https://iopscience.iop.org/article/10.1088/1402-4896/ae2dd7" },
+        { label: "Semantic Scholar", url: "https://www.semanticscholar.org/paper/278fb13c3ab4bd5b1bbc774e30077542928efcb7" },
+        { label: "OpenAlex", url: "https://openalex.org/W4417409583" }
+      ],
       abstract: "Introduces a p4m Equivariant Quantum Clustering method integrating equivariant quantum neural networks with quantum kernel methods on an 8-qubit circuit for high-dimensional data with geometric symmetries. Outperforms classical K-Means on the Quark-Gluon dataset (Silhouette 0.512 vs 0.183) and remains stable under simulated depolarizing noise.",
       keywords: ["Equivariant QNN", "Quantum Kernel Methods", "Unsupervised Learning", "NISQ"]
     },
@@ -524,6 +546,9 @@ skills: [
       venue: "SSRN (preprint, under review)",
       year: "2026",
       link: "https://doi.org/10.2139/ssrn.6531865",
+      links: [
+        { label: "SSRN", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6531865" }
+      ],
       abstract: "Hybrid architecture for motor-imagery brain-computer interfaces combining multi-scale temporal convolutions (60-260 ms), spatial encoding, and dual attention. Reports 82.84% and 89.03% mean accuracy on two standard motor-imagery benchmarks at ~0.47 GFLOPs and 3.2 ms latency.",
       keywords: ["EEG Classification", "Brain-Computer Interface", "Motor Imagery", "Transformers"]
     },
@@ -534,6 +559,10 @@ skills: [
       venue: "Federated Learning in Health Care Technology, Studies in Computational Intelligence vol. 1216, Springer Nature Singapore, ch. 1, pp. 1-17",
       year: "2026",
       link: "https://doi.org/10.1007/978-981-96-8353-6_1",
+      links: [
+        { label: "SpringerLink", url: "https://link.springer.com/chapter/10.1007/978-981-96-8353-6_1" },
+        { label: "ResearchGate", url: "https://www.researchgate.net/publication/388110418_Federated_Learning_in_Health_Care_Technology_Challenges_Solutions_and_Opportunities" }
+      ],
       abstract: "Reviews how federated learning enables collaborative model training across distributed healthcare data without centralization, and examines implementation barriers in smart healthcare. Proposes a framework combining privacy-preserving techniques, personalized learning algorithms, efficient communication protocols, and infrastructure support.",
       keywords: ["Federated Learning", "Healthcare", "Privacy-Preserving ML", "Decentralized Learning"]
     },
@@ -544,6 +573,10 @@ skills: [
       venue: "Metaversalize, vol. 1, no. 4, pp. 225-239",
       year: "2024",
       link: "https://doi.org/10.22105/metaverse.v1i1.36",
+      links: [
+        { label: "Journal page", url: "https://meta.reapress.com/journal/article/view/36" },
+        { label: "ResearchGate", url: "https://www.researchgate.net/publication/388116579_Advanced_Visualization_Approaches_for_Statistical_Data_Analysis" }
+      ],
       abstract: "Surveys advanced visualization methods for complex, high-dimensional statistical data in the big-data era, demonstrating R-based workflows on the UCI HCV dataset. Covers gaps in categorical data visualization (rmb and CPCP plots) and argues R/ggplot2 lowers the barrier for researchers wary of coding.",
       keywords: ["Data Visualization", "R", "ggplot2", "Statistical Analysis"]
     },
@@ -554,6 +587,9 @@ skills: [
       venue: "figshare (preprint)",
       year: "2025",
       link: "https://doi.org/10.6084/m9.figshare.30610052",
+      links: [
+        { label: "OpenAlex", url: "https://openalex.org/W7105670826" }
+      ],
       abstract: "Describes a smart interactive vehicle prototype integrating voice recognition, obstacle avoidance, and perception systems, targeting assistive technology, educational robotics, and home-automation applications.",
       keywords: ["Autonomous Vehicles", "Object Detection", "Deep Learning", "NLP", "Voice Control"]
     },
@@ -583,7 +619,8 @@ skills: [
       organization: "Prodigy AI",
       position: "AI Researcher",
       period: "May 2025 - Present",
-      description: "Bangladesh-based AI research group focused on brain-computer interfaces. Working on EEG decoding systems including the Brain-Controller project (github.com/prodigyagi) and BCI research such as EEG-DATNet and VC-DATNet (cross-dataset inner-speech decoding)."
+      description: "Bangladesh-based AI research group focused on brain-computer interfaces. Working on EEG decoding systems including the Brain-Controller project and BCI research such as EEG-DATNet and VC-DATNet (cross-dataset inner-speech decoding).",
+      link: "https://github.com/prodigyagi"
     },
     {
       id: "1",
@@ -597,7 +634,8 @@ skills: [
       organization: "AIUB Robotics Crew, AIUB",
       position: "Mars Rover Crew",
       period: "Sep 2023 - Present",
-      description: "Real-time sensor data integration and processing using Python. Implemented image processing algorithms with OpenCV for onboard analysis. Utilized NumPy, SciPy, and matplotlib for data analysis."
+      description: "Real-time sensor data integration and processing using Python. Implemented image processing algorithms with OpenCV for onboard analysis. Utilized NumPy, SciPy, and matplotlib for data analysis.",
+      link: "https://arc.aiub.edu/"
     },
     {
       id: "3",
@@ -605,6 +643,80 @@ skills: [
       position: "Organizer",
       period: "Jan 2023 – Feb 2025",
       description: "Organized 15+ workshops and exhibitions, leading logistics, sponsorship, and promotion teams."
+    }
+  ],
+  webProfiles: [
+    {
+      id: "1",
+      name: "Google Scholar",
+      url: "https://scholar.google.com/citations?user=uwTI2-sAAAAJ",
+      note: "Publications and citations"
+    },
+    {
+      id: "2",
+      name: "ORCID",
+      url: "https://orcid.org/0009-0007-6227-7282",
+      note: "0009-0007-6227-7282"
+    },
+    {
+      id: "3",
+      name: "ResearchGate",
+      url: "https://www.researchgate.net/profile/Md-Suva",
+      note: "Papers and preprints"
+    },
+    {
+      id: "4",
+      name: "GitHub",
+      url: "https://github.com/wshuv-o",
+      note: "63+ repositories"
+    },
+    {
+      id: "5",
+      name: "Prodigy AI",
+      url: "https://github.com/prodigyagi",
+      note: "BCI research group"
+    },
+    {
+      id: "6",
+      name: "Hugging Face",
+      url: "https://huggingface.co/wshuv-o",
+      note: "ML profile"
+    },
+    {
+      id: "7",
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/wahid-shuvo",
+      note: "Professional profile"
+    },
+    {
+      id: "8",
+      name: "X (Twitter)",
+      url: "https://x.com/shuvo_330",
+      note: "@shuvo_330"
+    },
+    {
+      id: "9",
+      name: "Semantic Scholar",
+      url: "https://www.semanticscholar.org/author/2329090860",
+      note: "Author profile"
+    },
+    {
+      id: "10",
+      name: "OpenAlex",
+      url: "https://openalex.org/A5114637616",
+      note: "Author record"
+    },
+    {
+      id: "11",
+      name: "DBLP",
+      url: "https://dblp.org/pid/392/4174.html",
+      note: "CS bibliography"
+    },
+    {
+      id: "12",
+      name: "arXiv",
+      url: "https://arxiv.org/search/?searchtype=author&query=Suva%2C+M+W",
+      note: "Preprints"
     }
   ],
   education: [
@@ -643,7 +755,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.2";
+const DATA_VERSION = "2026-07-30.3";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

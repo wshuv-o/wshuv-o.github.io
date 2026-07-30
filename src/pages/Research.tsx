@@ -98,16 +98,32 @@ const ResearchPage = () => {
                         </div>
                       )}
 
-                      {paper.link && (
-                        <a
-                          href={paper.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                          View publication
-                        </a>
+                      {(paper.link || (paper.links && paper.links.length > 0)) && (
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                          {paper.link && (
+                            <a
+                              href={paper.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                              View publication
+                            </a>
+                          )}
+                          {paper.links && paper.links.map((l, i) => (
+                            <a
+                              key={i}
+                              href={l.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary hover:underline"
+                            >
+                              <ExternalLink className="h-3 w-3" />
+                              {l.label}
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </CardContent>
                   </Card>

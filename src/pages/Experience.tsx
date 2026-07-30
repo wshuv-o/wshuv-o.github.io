@@ -158,7 +158,18 @@ const ExperiencePage = () => {
                         <h3 className="text-2xl font-display font-semibold text-foreground">
                           {exp.position}
                         </h3>
-                        <p className="text-lg text-accent font-medium">{exp.organization}</p>
+                        {exp.link ? (
+                          <a
+                            href={exp.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lg text-accent font-medium hover:underline"
+                          >
+                            {exp.organization}
+                          </a>
+                        ) : (
+                          <p className="text-lg text-accent font-medium">{exp.organization}</p>
+                        )}
                         <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">
