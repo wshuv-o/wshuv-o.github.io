@@ -339,7 +339,7 @@ const Home = () => {
                 <div key={paper.id} className="border-l-2 border-border pl-4">
                   <div className="leading-snug">
                     {paper.link ? (
-                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors">
+                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">
                         {paper.title}
                       </a>
                     ) : (

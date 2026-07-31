@@ -798,7 +798,7 @@ skills: [
     },
     {
       id: "3",
-      text: "For two years I organized workshops and exhibitions with the AIUB Arts Club — 15+ events, running logistics, sponsorship, and promotion."
+      text: "For two years I organized workshops and exhibitions with the [AIUB Arts Club](https://www.aiub.edu/oncampus/clubs/aac-in-aiub) — 15+ events like the [Intra-AIUB Art Exhibition](https://aiub.edu/intra-aiub-art-exhibition-by-aiub-arts-club), running logistics, sponsorship, and promotion."
     }
   ],
   webProfiles: [
@@ -917,7 +917,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.12";
+const DATA_VERSION = "2026-07-31.13";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
