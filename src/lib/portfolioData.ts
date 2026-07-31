@@ -110,6 +110,13 @@ export interface TimelineItem {
   image?: string;
 }
 
+export interface WritingItem {
+  id: string;
+  title: string;
+  url: string;
+  date?: string;
+}
+
 export interface NewsItem {
   id: string;
   date: string;
@@ -684,6 +691,14 @@ skills: [
       text: "Joined Byteverse."
     }
   ],
+  writing: [
+    {
+      id: "1",
+      title: "Extracting financial data from documents that can't leave the machine",
+      url: "https://aipedia.blog",
+      date: "coming soon"
+    }
+  ],
   timeline: [
     {
       id: "1",
@@ -846,7 +861,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.22";
+const DATA_VERSION = "2026-07-31.23";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

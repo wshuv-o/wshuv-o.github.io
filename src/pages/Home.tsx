@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone, PenLine } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -14,6 +14,7 @@ import {
   NewsItem,
   MiscItem,
   TimelineItem,
+  WritingItem,
 } from "@/lib/portfolioData";
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
@@ -163,6 +164,7 @@ const Home = () => {
   const news: NewsItem[] = data.news || [];
   const misc: MiscItem[] = data.misc || [];
   const timeline: TimelineItem[] = data.timeline || [];
+  const writing: WritingItem[] = data.writing || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -263,6 +265,28 @@ const Home = () => {
                   </div>
                 ))}
               </div>
+            </section>
+          )}
+
+          {/* ===== Writing ===== */}
+          {writing.length > 0 && (
+            <section id="writing" className="scroll-mt-24">
+              <SectionHeading icon={PenLine}>Writing</SectionHeading>
+              <ul className="space-y-2.5">
+                {writing.map((w) => (
+                  <li key={w.id} className="text-sm leading-relaxed">
+                    <a
+                      href={w.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-2"
+                    >
+                      {w.title}
+                    </a>
+                    {w.date && <span className="text-muted-foreground"> · {w.date}</span>}
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
