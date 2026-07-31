@@ -323,7 +323,8 @@ skills: [
       title: "Acquisition Engine",
       period: "Nov 2025 - Running",
       description: "is Byteverse's lead acquisition engine: scraping with validation, running on Docker and Redis.",
-      technologies: ["Vite", "Python", "Docker", "Redis"]
+      technologies: ["Vite", "Python", "Docker", "Redis"],
+      image: "/images/acquisition-engine.jpg"
     },
     {
       id: "6",
@@ -845,7 +846,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.21";
+const DATA_VERSION = "2026-07-31.22";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
