@@ -771,7 +771,7 @@ skills: [
     {
       id: "3",
       period: "2023",
-      text: "Started [Byteverse](https://byteverseit.com) — an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. Proud of [Chatsby](https://chatsby.co), [aipedia.blog](https://aipedia.blog), and [sspark](https://sspark.lovable.app).",
+      text: "Started [Byteverse](https://byteverseit.com) — an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. I work on [Chatsby](https://chatsby.co), our customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions). Along the way I did contract backend work for client products — a [WhatsApp marketing agent](https://jasmyn.ai), an outbound calling pipeline, comment and DM automation, and a [course platform](https://app.ceosociety.io/) on AdonisJS. Also proud of [aipedia.blog](https://aipedia.blog) and [sspark](https://sspark.lovable.app).",
       image: "/images/logos/byteverse.png"
     },
     {
@@ -917,7 +917,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.11";
+const DATA_VERSION = "2026-07-31.12";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

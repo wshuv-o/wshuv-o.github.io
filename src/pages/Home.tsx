@@ -1,11 +1,10 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   getPortfolioData,
   initializeData,
   PersonalInfo,
-  Experience,
   Project,
   AcademicProject,
   Research,
@@ -143,7 +142,6 @@ const Home = () => {
   if (!data) return null;
 
   const personalInfo: PersonalInfo = data.personalInfo;
-  const experiences: Experience[] = data.experiences || [];
   const projects: Project[] = data.projects || [];
   const academicProjects: AcademicProject[] = data.academicProjects || [];
   const research: Research[] = data.research || [];
@@ -275,35 +273,6 @@ const Home = () => {
               </div>
             </section>
           )}
-
-          {/* ===== Experience ===== */}
-          <section id="experience" className="scroll-mt-24">
-            <SectionHeading icon={Briefcase}>Experience</SectionHeading>
-            <div className="space-y-6 border-l-2 border-border pl-6">
-              {experiences.map((exp) => (
-                <div key={exp.id} className="relative">
-                  <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
-                  <div className="flex flex-wrap items-baseline gap-x-3">
-                    <h3 className="font-display font-semibold text-lg text-foreground">{exp.position}</h3>
-                    {exp.link ? (
-                      <a
-                        href={exp.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary font-medium underline underline-offset-2"
-                      >
-                        {exp.company}
-                      </a>
-                    ) : (
-                      <span className="text-primary font-medium">{exp.company}</span>
-                    )}
-                    <span className="text-xs text-muted-foreground">{exp.period}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">{linkify(exp.description)}</p>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* ===== Products & Projects ===== */}
           <section id="projects" className="scroll-mt-24">
