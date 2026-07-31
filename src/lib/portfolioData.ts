@@ -602,16 +602,12 @@ skills: [
     },
     {
       id: "3",
-      title: "EEG-DATNet: Dual Attention Transformer for EEG Classification",
+      title: "VC-DATNet: A Variance-Coupled Dual-Attention Transformer for Cross-Dataset Inner-Speech Decoding",
       authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E. Moula Chowdhury Abha, Susham Moula Choudhury Akash, Md Tauhidul Islam, Abhijit Bhowmik, Dip Nandi, Mashiour Rahman, Debajyoti Karmaker",
-      venue: "SSRN (preprint, under review)",
+      venue: "Under review",
       year: "2026",
-      link: "https://doi.org/10.2139/ssrn.6531865",
-      links: [
-        { label: "SSRN", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6531865" }
-      ],
-      abstract: "Hybrid architecture for motor-imagery brain-computer interfaces combining multi-scale temporal convolutions (60-260 ms), spatial encoding, and dual attention. Reports 82.84% and 89.03% mean accuracy on two standard motor-imagery benchmarks at ~0.47 GFLOPs and 3.2 ms latency.",
-      keywords: ["EEG Classification", "Brain-Computer Interface", "Motor Imagery", "Transformers"],
+      abstract: "Pairs a shared multi-scale temporal-spatial front-end with parallel mean and log-variance encoder streams of dual-attention transformer layers for decoding inner speech from EEG across datasets. Results are reproducible from raw OpenNeuro data (ds003626, ds004196, ds006033).",
+      keywords: ["Inner Speech", "Brain-Computer Interface", "EEG", "Transformers"],
       secondary: true
     },
     {
@@ -656,7 +652,7 @@ skills: [
       organization: "Prodigy AI",
       position: "BCI Researcher",
       period: "Mar 2022 - Present",
-      description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller, EEG-DATNet, VC-DATNet.",
+      description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller and VC-DATNet.",
       link: "https://github.com/prodigyagi",
       image: "/images/eeg-defense-2025.jpg",
       imageCaption: "One of our research projects on EEG analysis using a transformer-based model was presented at AIUB in May 2025. [Read more](https://www.linkedin.com/posts/imtiaj-sajin_thesis-defense-2025-at-aiub-thanks-to-my-activity-7329541319448584192-ROZE)"
@@ -715,8 +711,7 @@ skills: [
     {
       id: "2",
       date: "2026",
-      text: "EEG-DATNet preprint posted on SSRN.",
-      link: "https://doi.org/10.2139/ssrn.6531865"
+      text: "VC-DATNet, a dual-attention transformer for cross-dataset inner-speech decoding, is under review."
     },
     {
       id: "3",
@@ -904,7 +899,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.5";
+const DATA_VERSION = "2026-07-31.6";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
