@@ -330,7 +330,8 @@ skills: [
       title: "Financial Asset Suite",
       period: "Feb 2025 - Running",
       description: "is a suite of micro-services for financial reporting at Odin, working directly in Excel workbooks on client infrastructure: Cashflow AI (cashflow models), Rent Roll Analyst (rent roll standardization), BossPDF (document workflows), [Pexl](https://github.com/wshuv-o/pexl) (table and field extraction from appraisals, bank statements, and utility bills with pdfplumber, Camelot, and Tesseract), a vision model for QC, and Market and Submarket analysis.",
-      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM", "Tesseract OCR"]
+      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM", "Tesseract OCR"],
+      image: "/images/financial-asset-suite.jpg"
     }
   ],
   academicProjects: [
@@ -844,7 +845,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.20";
+const DATA_VERSION = "2026-07-31.21";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
