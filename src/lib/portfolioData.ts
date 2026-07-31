@@ -82,6 +82,12 @@ export interface WebProfile {
   note?: string;
 }
 
+export interface Tutorial {
+  id: string;
+  title: string;
+  youtubeEmbed: string;
+}
+
 export interface NewsItem {
   id: string;
   date: string;
@@ -508,8 +514,16 @@ skills: [
       category: "Game Development",
       link: "https://www.youtube.com/watch?v=skQcoC6f3Hs",
       technologies: ["Unity", "C#"],
-      details: "Also built OpenGL games in C++ (Galactic Exodus): github.com/wshuv-o/opengl-galactic-exodus",
       youtubeEmbed: "https://www.youtube.com/embed/skQcoC6f3Hs"
+    },
+    {
+      id: "22",
+      title: "Galactic Exodus: Homeward Bound",
+      description: "Space game built from scratch in C++ with OpenGL/GLUT.",
+      category: "Game Development",
+      link: "https://github.com/wshuv-o/opengl-galactic-exodus",
+      technologies: ["C++", "OpenGL", "GLUT"],
+      youtubeEmbed: "https://www.youtube.com/embed/D1DXTJp9y8o"
     },
     {
       id: "20",
@@ -750,6 +764,23 @@ skills: [
       text: "Joined Byteverse."
     }
   ],
+  tutorials: [
+    {
+      id: "1",
+      title: "Java interface — AIUB SOLUTION lecture",
+      youtubeEmbed: "https://www.youtube.com/embed/LNPxhqx9NoY"
+    },
+    {
+      id: "2",
+      title: "How to extract texture and apply it to different shapes in GLUT OpenGL",
+      youtubeEmbed: "https://www.youtube.com/embed/Mvb4EdoprjQ"
+    },
+    {
+      id: "3",
+      title: "How to add image in GLUT, OpenGL",
+      youtubeEmbed: "https://www.youtube.com/embed/oKnh7MfETZs"
+    }
+  ],
   webProfiles: [
     {
       id: "1",
@@ -822,6 +853,12 @@ skills: [
       name: "arXiv",
       url: "https://arxiv.org/search/?searchtype=author&query=Suva%2C+M+W",
       note: "Preprints"
+    },
+    {
+      id: "13",
+      name: "YouTube",
+      url: "https://www.youtube.com/@Py_Geek",
+      note: "Py Geek — games & OpenGL"
     }
   ],
   education: [
@@ -860,7 +897,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.1";
+const DATA_VERSION = "2026-07-31.2";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
