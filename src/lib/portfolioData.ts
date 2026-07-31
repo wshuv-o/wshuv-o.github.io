@@ -319,26 +319,17 @@ skills: [
     },
     {
       id: "4",
-      title: "Lead Scrapper",
+      title: "Acquisition Engine",
       period: "Nov 2025 - Running",
-      description: "is a lead scraping tool with validation, running on Docker and Redis.",
+      description: "is Byteverse's lead acquisition engine: scraping with validation, running on Docker and Redis.",
       technologies: ["Vite", "Python", "Docker", "Redis"]
     },
     {
       id: "6",
-      title: "Odin Reporting Tools",
+      title: "Financial Asset Suite",
       period: "Feb 2025 - Running",
-      description: "are internal tools for financial reporting that work directly in Excel workbooks (cashflow models, rent roll analysis, PDF extraction), running on client infrastructure.",
-      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"]
-    },
-    {
-      id: "7",
-      title: "Pexl",
-      period: "2025",
-      description: "extracts tables and fields from financial documents (appraisals, bank statements, utility bills) with pdfplumber, Camelot, and Tesseract.",
-      github: "https://github.com/wshuv-o/pexl",
-      technologies: ["TypeScript", "Python", "pdfplumber", "Camelot", "Tesseract OCR"],
-      image: "/screenshots/pexl.png"
+      description: "is a suite of micro-services for financial reporting at Odin, working directly in Excel workbooks on client infrastructure: Cashflow AI (cashflow models), Rent Roll Analyst (rent roll standardization), BossPDF (document workflows), [Pexl](https://github.com/wshuv-o/pexl) (table and field extraction from appraisals, bank statements, and utility bills with pdfplumber, Camelot, and Tesseract), a vision model for QC, and Market and Submarket analysis.",
+      technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM", "Tesseract OCR"]
     }
   ],
   academicProjects: [
@@ -852,7 +843,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.18";
+const DATA_VERSION = "2026-07-31.19";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
