@@ -74,7 +74,17 @@ const renderAuthors = (authors: string) => {
   return nodes;
 };
 
-// Render [text](url) spans in plain description strings as anchors.
+// Thumbnail to show in a hover popover for known link types.
+const previewFor = (url: string): string | null => {
+  const yt = url.match(/youtube\.com\/watch\?v=([\w-]+)/);
+  if (yt) return `https://img.youtube.com/vi/${yt[1]}/hqdefault.jpg`;
+  const gh = url.match(/^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+)\/?$/);
+  if (gh && gh[2] !== "prodigyagi") return `https://opengraph.githubassets.com/1/${gh[1]}/${gh[2]}`;
+  return null;
+};
+
+// Render [text](url) spans in plain description strings as anchors,
+// with an image preview on hover where one is derivable.
 const linkify = (text: string) => {
   const parts: ReactNode[] = [];
   const re = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -83,15 +93,21 @@ const linkify = (text: string) => {
   let key = 0;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
+    const preview = previewFor(m[2]);
     parts.push(
       <a
         key={key++}
         href={m[2]}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary underline underline-offset-2"
+        className="relative group/pv text-primary underline underline-offset-2"
       >
         {m[1]}
+        {preview && (
+          <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover/pv:block z-50 w-64 rounded-lg border border-border bg-card p-1 shadow-xl">
+            <img src={preview} alt="" loading="lazy" className="rounded-md w-full" />
+          </span>
+        )}
       </a>
     );
     last = m.index + m[0].length;
