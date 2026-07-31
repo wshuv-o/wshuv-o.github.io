@@ -72,6 +72,11 @@ const renderAuthors = (authors: string) => {
   return nodes;
 };
 
+// Canonical LinkedIn post URL for an embed src, used as a fallback link
+// for visitors whose ad blockers strip the iframe.
+const linkedinPostUrl = (embedSrc: string) =>
+  embedSrc.replace("/embed/feed/update/", "/feed/update/").split("?")[0];
+
 // Thumbnail to show in a hover popover for known link types.
 const previewFor = (url: string): string | null => {
   const yt = url.match(/youtube\.com\/watch\?v=([\w-]+)/);
@@ -183,7 +188,7 @@ const Home = () => {
                   <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
                     <Mail className="h-4 w-4" /> {personalInfo.email}
                   </a>
-                  <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
+                  <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, "")}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
                     <Phone className="h-4 w-4" /> {personalInfo.phone}
                   </a>
                 </div>
@@ -229,15 +234,25 @@ const Home = () => {
                         />
                       )}
                       {n.linkedinEmbed && (
-                        <iframe
-                          src={n.linkedinEmbed}
-                          height="380"
-                          frameBorder="0"
-                          allowFullScreen
-                          title={`LinkedIn post: ${n.text}`}
-                          loading="lazy"
-                          className="block mt-2 rounded-lg border border-border w-full max-w-sm"
-                        />
+                        <>
+                          <iframe
+                            src={n.linkedinEmbed}
+                            height="380"
+                            frameBorder="0"
+                            allowFullScreen
+                            title={`LinkedIn post: ${n.text}`}
+                            loading="lazy"
+                            className="block mt-2 rounded-lg border border-border w-full max-w-sm"
+                          />
+                          <a
+                            href={linkedinPostUrl(n.linkedinEmbed)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block mt-1 text-xs text-muted-foreground underline underline-offset-2"
+                          >
+                            View post on LinkedIn
+                          </a>
+                        </>
                       )}
                     </span>
                   </li>
@@ -314,16 +329,26 @@ const Home = () => {
                     </div>
                   )}
                   {project.linkedinEmbed && (
-                    <iframe
-                      src={project.linkedinEmbed}
-                      height="669"
-                      width="504"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`LinkedIn post: ${project.title}`}
-                      loading="lazy"
-                      className="mt-3 rounded-lg border border-border w-full max-w-full"
-                    />
+                    <>
+                      <iframe
+                        src={project.linkedinEmbed}
+                        height="669"
+                        width="504"
+                        frameBorder="0"
+                        allowFullScreen
+                        title={`LinkedIn post: ${project.title}`}
+                        loading="lazy"
+                        className="mt-3 rounded-lg border border-border w-full max-w-full"
+                      />
+                      <a
+                        href={linkedinPostUrl(project.linkedinEmbed)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block mt-1 text-xs text-muted-foreground underline underline-offset-2"
+                      >
+                        View post on LinkedIn
+                      </a>
+                    </>
                   )}
                   </div>
                 </div>
@@ -530,7 +555,7 @@ const Home = () => {
               <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> {personalInfo.email}
               </a>
-              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
+              <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, "")}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> {personalInfo.phone}
               </a>
               <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">

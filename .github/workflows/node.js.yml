@@ -27,6 +27,20 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # The app is client-rendered; crawlers and link unfurlers see an empty
+      # body. Render the home page with headless Chrome and bake the result
+      # into index.html so the content is visible without JavaScript.
+      - name: Prerender home page
+        run: |
+          npx vite preview --port 4173 &
+          for i in $(seq 1 30); do curl -sf http://localhost:4173/ >/dev/null && break; sleep 1; done
+          google-chrome --headless=new --disable-gpu --no-sandbox --virtual-time-budget=15000 --dump-dom http://localhost:4173/ > prerendered.html
+          if [ "$(wc -c < prerendered.html)" -gt 30000 ] && grep -q "Journey" prerendered.html; then
+            mv prerendered.html dist/index.html
+            echo "prerender applied ($(wc -c < dist/index.html) bytes)"
+          else
+            echo "prerender skipped: output too small or missing content"
+          fi
       # BrowserRouter deep links (/experience, /research, ...) need the SPA
       # served for unknown paths; Pages serves 404.html for those.
       - name: Add SPA fallback
