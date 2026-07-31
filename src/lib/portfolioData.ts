@@ -289,7 +289,8 @@ skills: [
       title: "Chatsby",
       period: "Apr 2025 - Running",
       description: "is Byteverse's customer-support AI platform. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack (FastAPI, Redis, Nginx). See the [launch post](https://www.linkedin.com/feed/update/urn:li:share:7369019422184726548/).",
-      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"]
+      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
+      image: "/images/chatsby-app.jpg"
     },
     {
       id: "2",
@@ -843,7 +844,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.19";
+const DATA_VERSION = "2026-07-31.20";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
