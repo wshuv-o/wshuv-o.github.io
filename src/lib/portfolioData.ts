@@ -660,7 +660,8 @@ skills: [
       organization: "Trest Rossem, Rooppur NPP",
       position: "Interpreter",
       period: "Jun 2021 - Feb 2022",
-      description: "Facilitated effective communication with government officials and the HR department. Prepared documentation for work permits, legalization, and visas for foreign employees. Attended multi-party meetings as a Russian-Bangla interpreter."
+      description: "Facilitated effective communication with government officials and the HR department. Prepared documentation for work permits, legalization, and visas for foreign employees. Attended multi-party meetings as a Russian-Bangla interpreter.",
+      images: ["/images/rooppur-site.jpg", "/images/rooppur-office.jpg"]
     },
     {
       id: "2",
@@ -897,7 +898,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.2";
+const DATA_VERSION = "2026-07-31.3";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
