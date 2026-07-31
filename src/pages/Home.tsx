@@ -406,52 +406,40 @@ const Home = () => {
           {/* ===== Research & Academic Projects ===== */}
           <section id="academic" className="scroll-mt-24">
             <SectionHeading icon={FlaskConical}>Academic Projects</SectionHeading>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {academicProjects.filter((p) => !p.secondary || showAllAcademic).map((project) => (
-                <div key={project.id} className="p-4 rounded-xl bg-card border border-border glow-card space-y-1.5">
-                  {project.images && project.images.length > 0 && (
-                    <div className={`grid ${project.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-1.5 mb-2`}>
-                      {project.images.map((img, i) => (
-                        <img key={i} src={img} alt="" loading="lazy" className="rounded-md border border-border w-full h-24 object-cover" />
-                      ))}
-                    </div>
-                  )}
-                  <span className="text-[11px] uppercase tracking-wide font-semibold text-primary">{project.category}</span>
-                  <div className="flex items-start justify-between gap-2">
-                    {project.link ? (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-foreground underline underline-offset-2 hover:text-primary transition-colors leading-snug">
-                        {project.title}
-                      </a>
+            <div className="divide-y divide-border">
+              {academicProjects.filter((p) => !p.secondary || showAllAcademic).map((project) => {
+                const thumb = project.images?.[0];
+                return (
+                  <div key={project.id} className="flex gap-4 items-start py-4 first:pt-0 last:pb-0">
+                    {thumb ? (
+                      <img
+                        src={thumb}
+                        alt=""
+                        loading="lazy"
+                        className="w-20 h-20 rounded-md border border-border object-cover object-top shrink-0"
+                      />
                     ) : (
-                      <span className="font-medium text-sm text-foreground leading-snug">{project.title}</span>
+                      <div className="w-20 h-20 rounded-md border border-border bg-muted shrink-0" />
                     )}
-                    {project.link && <ExternalLink className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors"
+                        >
+                          {project.title}
+                        </a>
+                      ) : (
+                        <span className="font-medium text-foreground">{project.title}</span>
+                      )}
+                      . {project.description}.
+                      {project.details && <> {project.details}</>}
+                    </p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{project.description}</p>
-                  {project.linkedinEmbed && (
-                    <iframe
-                      src={project.linkedinEmbed}
-                      height="400"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`LinkedIn post: ${project.title}`}
-                      loading="lazy"
-                      className="mt-2 rounded-lg border border-border w-full"
-                    />
-                  )}
-                  {project.youtubeEmbed && (
-                    <iframe
-                      src={project.youtubeEmbed}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={`Gameplay video: ${project.title}`}
-                      loading="lazy"
-                      className="mt-2 rounded-lg border border-border w-full aspect-video"
-                    />
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
             {academicProjects.some((p) => p.secondary) && (
               <button
