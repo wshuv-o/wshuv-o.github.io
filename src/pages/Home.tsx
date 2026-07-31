@@ -77,8 +77,14 @@ const renderAuthors = (authors: string) => {
 const linkedinPostUrl = (embedSrc: string) =>
   embedSrc.replace("/embed/feed/update/", "/feed/update/").split("?")[0];
 
+// Explicit hover previews for links whose thumbnail can't be derived.
+const PREVIEW_OVERRIDES: Record<string, string> = {
+  "https://www.linkedin.com/feed/update/urn:li:ugcPost:7291817784240418817/": "/images/canyon-game.jpg",
+};
+
 // Thumbnail to show in a hover popover for known link types.
 const previewFor = (url: string): string | null => {
+  if (PREVIEW_OVERRIDES[url]) return PREVIEW_OVERRIDES[url];
   const yt = url.match(/youtube\.com\/watch\?v=([\w-]+)/);
   if (yt) return `https://img.youtube.com/vi/${yt[1]}/hqdefault.jpg`;
   const gh = url.match(/^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+)\/?$/);
