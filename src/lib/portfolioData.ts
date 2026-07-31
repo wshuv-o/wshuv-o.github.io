@@ -101,6 +101,15 @@ export interface MiscItem {
   text: string;
 }
 
+// Journey timeline: newest first, year label + logo + story paragraph
+// with inline [text](url) links.
+export interface TimelineItem {
+  id: string;
+  period: string;
+  text: string;
+  image?: string;
+}
+
 export interface NewsItem {
   id: string;
   date: string;
@@ -638,7 +647,7 @@ skills: [
       id: "0",
       organization: "Prodigy AI",
       position: "BCI Researcher",
-      period: "Mar 2022 - Present",
+      period: "2024 - Present",
       description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller and VC-DATNet.",
       link: "https://github.com/prodigyagi",
       image: "/images/eeg-defense-2025.jpg",
@@ -695,7 +704,7 @@ skills: [
     },
     {
       id: "3",
-      date: "2026",
+      date: "2025",
       text: "Started MSc in Computer Science at AIUB."
     },
     {
@@ -717,12 +726,6 @@ skills: [
       linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7369019422184726548?collapsed=1"
     },
     {
-      id: "5",
-      date: "May 2025",
-      text: "Joined Prodigy AI to work on brain-computer interfaces.",
-      link: "https://github.com/prodigyagi"
-    },
-    {
       id: "6",
       date: "Mar 2025",
       text: "Quantum graph neural network paper published in IEEE Transactions on Artificial Intelligence.",
@@ -735,6 +738,12 @@ skills: [
       text: "Joined Odin."
     },
     {
+      id: "5",
+      date: "2024",
+      text: "Opened Prodigy AI, a non-profit research group working on brain-computer interfaces.",
+      link: "https://github.com/prodigyagi"
+    },
+    {
       id: "8",
       date: "2024",
       text: "First paper published, in Metaversalize.",
@@ -744,6 +753,38 @@ skills: [
       id: "9",
       date: "Jun 2023",
       text: "Joined Byteverse."
+    }
+  ],
+  timeline: [
+    {
+      id: "1",
+      period: "2025 - now",
+      text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013 — loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I automate the financial data workflows with Excel VBA, Python, C#, and Power Automate; build desktop tools, browser extensions, and RPA; and extract structured data from PDFs with NLP models (spaCy, BERT, LayoutLM) and rule-based pattern recognition.",
+      image: "/images/logos/odin.png"
+    },
+    {
+      id: "2",
+      period: "2024",
+      text: "Opened [Prodigy AI](https://github.com/prodigyagi) with a group of friends from AIUB — a non-profit research organization exploring neuroscience and AI: brain-computer interfaces, cognitive computing, and neuroimaging analysis. Open-source projects for collaboration, private research for focused studies.",
+      image: "/images/logos/prodigyai.png"
+    },
+    {
+      id: "3",
+      period: "2023",
+      text: "Started [Byteverse](https://byteverseit.com) — an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. Proud of [Chatsby](https://chatsby.co), [aipedia.blog](https://aipedia.blog), and [sspark](https://sspark.lovable.app).",
+      image: "/images/logos/byteverse.png"
+    },
+    {
+      id: "4",
+      period: "2022 - 2025",
+      text: "BSc in Computer Science and Engineering at [AIUB](https://www.aiub.edu), finishing with a 3.97 CGPA. Started the MSc there in 2025.",
+      image: "/images/logos/aiub.png"
+    },
+    {
+      id: "5",
+      period: "2020 - 2022",
+      text: "Left for [Saint Petersburg State University](https://english.spbu.ru/) intending a software engineering degree; earned TORFL B1 Russian along the way, then discontinued and came home — putting the Russian to work as a Russian-Bangla interpreter at the Rooppur Nuclear Power Plant.",
+      image: "/images/logos/spbu.png"
     }
   ],
   misc: [
@@ -845,7 +886,7 @@ skills: [
       id: "1",
       degree: "Master of Science in Computer Science",
       institution: "American International University Bangladesh",
-      period: "2026 - Present",
+      period: "2025 - Present",
       details: "Dhaka, Bangladesh"
     },
     {
@@ -876,7 +917,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.8";
+const DATA_VERSION = "2026-07-31.10";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

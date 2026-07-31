@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -15,6 +15,7 @@ import {
   WebProfile,
   NewsItem,
   MiscItem,
+  TimelineItem,
 } from "@/lib/portfolioData";
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
@@ -137,6 +138,7 @@ const Home = () => {
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
   const misc: MiscItem[] = data.misc || [];
+  const timeline: TimelineItem[] = data.timeline || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -229,6 +231,34 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {/* ===== Journey ===== */}
+          {timeline.length > 0 && (
+            <section id="journey" className="scroll-mt-24">
+              <SectionHeading icon={Milestone}>Journey</SectionHeading>
+              <div className="border-l-2 border-border pl-6 space-y-8">
+                {timeline.map((t) => (
+                  <div key={t.id} className="relative">
+                    <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
+                    <div className="flex gap-4 items-start">
+                      {t.image && (
+                        <img
+                          src={t.image}
+                          alt=""
+                          loading="lazy"
+                          className="w-10 h-10 rounded-md border border-border object-contain bg-white p-0.5 shrink-0"
+                        />
+                      )}
+                      <div className="min-w-0">
+                        <div className="text-xs font-semibold text-muted-foreground">{t.period}</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed mt-1">{linkify(t.text)}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </section>
           )}
 
