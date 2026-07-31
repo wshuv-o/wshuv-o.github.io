@@ -321,62 +321,46 @@ const Home = () => {
           {/* ===== Publications ===== */}
           <section id="publications" className="scroll-mt-24">
             <SectionHeading icon={FileText}>Publications</SectionHeading>
-            <ol className="space-y-5">
-              {research.filter((p) => !p.secondary || showAllPapers).map((paper, idx) => (
-                <li key={paper.id} className="flex gap-4">
-                  <span className="text-sm font-mono text-muted-foreground pt-0.5 shrink-0">[{idx + 1}]</span>
-                  <div className="space-y-1 min-w-0">
+            <div className="space-y-4">
+              {research.filter((p) => !p.secondary || showAllPapers).map((paper) => (
+                <div key={paper.id} className="border-l-2 border-border pl-4">
+                  <div className="leading-snug">
                     {paper.link ? (
-                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors leading-snug block">
+                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors">
                         {paper.title}
                       </a>
                     ) : (
-                      <span className="font-medium text-foreground leading-snug block">{paper.title}</span>
-                    )}
-                    <p className="text-sm text-muted-foreground leading-relaxed">{renderAuthors(paper.authors)}</p>
-                    <p className="text-sm">
-                      <span className="italic text-muted-foreground">{paper.venue}</span>
-                      <span className="text-muted-foreground"> · {paper.year}</span>
-                    </p>
-                    {(paper.link || (paper.links && paper.links.length > 0)) && (
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {paper.link && (
-                          <a href={paper.link} target="_blank" rel="noopener noreferrer" className="px-2 py-0.5 rounded bg-primary/10 border border-primary/20 text-xs font-medium text-primary hover:bg-primary/20 transition-colors">
-                            DOI
-                          </a>
-                        )}
-                        {paper.links?.map((l, i) => (
-                          <a key={i} href={l.url} target="_blank" rel="noopener noreferrer" className="px-2 py-0.5 rounded bg-muted border border-border text-xs font-medium text-muted-foreground hover:text-primary transition-colors">
-                            {l.label}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                    {paper.linkedinEmbed && (
-                      <iframe
-                        src={paper.linkedinEmbed}
-                        height="380"
-                        frameBorder="0"
-                        allowFullScreen
-                        title={`LinkedIn post: ${paper.title}`}
-                        loading="lazy"
-                        className="mt-3 rounded-lg border border-border w-full max-w-sm"
-                      />
-                    )}
+                      <span className="font-medium text-foreground">{paper.title}</span>
+                    )}{" "}
+                    <span className="text-primary font-medium whitespace-nowrap">
+                      {paper.venueShort || paper.venue} {paper.year}
+                    </span>
                   </div>
-                </li>
+                  <p className="text-sm text-muted-foreground mt-0.5">{renderAuthors(paper.authors)}</p>
+                </div>
               ))}
-            </ol>
+            </div>
             {research.some((p) => p.secondary) && (
               <button
                 onClick={() => setShowAllPapers(!showAllPapers)}
-                className="mt-4 text-sm text-primary underline underline-offset-2"
+                className="mt-4 block text-sm text-primary underline underline-offset-2"
               >
                 {showAllPapers
                   ? "Show fewer papers"
                   : `Show ${research.filter((p) => p.secondary).length} more technical papers`}
               </button>
             )}
+            <p className="mt-4 text-sm text-muted-foreground">
+              Also on{" "}
+              <a
+                href="https://scholar.google.com/citations?user=uwTI2-sAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline underline-offset-2"
+              >
+                Google Scholar
+              </a>
+            </p>
           </section>
 
           {/* ===== Research & Academic Projects ===== */}

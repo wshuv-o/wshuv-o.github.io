@@ -58,6 +58,7 @@ export interface Research {
   title: string;
   authors: string;
   venue: string;
+  venueShort?: string;
   year: string;
   link?: string;
   links?: { label: string; url: string }[];
@@ -544,6 +545,7 @@ skills: [
       title: "Lorentz-Equivariant Quantum Graph Neural Network for High-Energy Physics",
       authors: "Md Abrar Jahin, Md. Akmol Masud, Md Wahiduzzaman Suva, M. F. Mridha, Nilanjan Dey",
       venue: "IEEE Transactions on Artificial Intelligence, vol. 6, no. 12, pp. 3195-3206",
+      venueShort: "IEEE TAI",
       year: "2025",
       link: "https://doi.org/10.1109/TAI.2025.3554461",
       links: [
@@ -562,6 +564,7 @@ skills: [
       title: "A Symmetry-Aware Equivariant Quantum Clustering Approach for Enhanced Unsupervised Learning",
       authors: "Md Wahiduzzaman Suva, Md. Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Md Tauhidul Islam, M. F. Mridha, Md. Abdul Hamid, Md. Jakir Hossen",
       venue: "Physica Scripta (IOP Publishing), vol. 101, no. 2, art. 026007",
+      venueShort: "Physica Scripta",
       year: "2026",
       link: "https://doi.org/10.1088/1402-4896/ae2dd7",
       links: [
@@ -577,6 +580,7 @@ skills: [
       title: "Federated Learning in Healthcare Technology: Challenges, Solutions and Opportunities",
       authors: "Esm E Moula Chowdhury Abha, Md. Imtiaj Alam Sajin, Md Wahiduzzaman Suva, Shanjida Akter, Mushfiqur Rahman Abir, Md. Asgor Hossain Reaj, Jahir Ibna Rafiq",
       venue: "Federated Learning in Health Care Technology, Studies in Computational Intelligence vol. 1216, Springer Nature Singapore, ch. 1, pp. 1-17",
+      venueShort: "Springer SCI (book chapter)",
       year: "2026",
       link: "https://doi.org/10.1007/978-981-96-8353-6_1",
       links: [
@@ -591,6 +595,7 @@ skills: [
       title: "Advanced Visualization Approaches for Statistical Data Analysis",
       authors: "Md Wahiduzzaman Suva, Md. Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Mushfiqur Rahman Abir, Asif Zaman",
       venue: "Metaversalize, vol. 1, no. 4, pp. 225-239",
+      venueShort: "Metaversalize",
       year: "2024",
       link: "https://doi.org/10.22105/metaverse.v1i1.36",
       links: [
@@ -615,6 +620,7 @@ skills: [
       title: "An Integrated Deep Learning and Natural Language Processing Framework for Autonomous Vehicle Perception and Voice Control",
       authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Mohammed Mustafa, Abir Bakhtiar, Susham Moula Chowdhury Akash",
       venue: "figshare (preprint)",
+      venueShort: "figshare preprint",
       year: "2025",
       link: "https://doi.org/10.6084/m9.figshare.30610052",
       links: [
@@ -639,6 +645,7 @@ skills: [
       title: "Smart Surveillance: Integrating Drones and CCTV for Automated Crime Detection and Public Safety",
       authors: "Emam Hossain Kazol, Md. Imtiaj Alam Sajin, Esm-E Moula Chowdhury Abha, Md Wahiduzzaman Suva, Md Tauhidul Islam",
       venue: "ResearchGate (research proposal)",
+      venueShort: "Research proposal",
       year: "2025",
       link: "https://doi.org/10.13140/RG.2.2.22726.74565",
       abstract: "Proposes combining drone and CCTV feeds for automated crime detection and public-safety monitoring.",
@@ -899,7 +906,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.6";
+const DATA_VERSION = "2026-07-31.7";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
