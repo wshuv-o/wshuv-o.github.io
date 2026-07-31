@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -10,7 +10,6 @@ import {
   AcademicProject,
   Research,
   OtherExperience,
-  Education,
   Skill,
   WebProfile,
   NewsItem,
@@ -149,7 +148,6 @@ const Home = () => {
   const academicProjects: AcademicProject[] = data.academicProjects || [];
   const research: Research[] = data.research || [];
   const otherExperiences: OtherExperience[] = data.otherExperiences || [];
-  const education: Education[] = data.education || [];
   const skills: Skill[] = data.skills || [];
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
@@ -485,23 +483,6 @@ const Home = () => {
                         {item.name}
                       </span>
                     ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* ===== Education ===== */}
-          <section id="education" className="scroll-mt-24">
-            <SectionHeading icon={GraduationCap}>Education</SectionHeading>
-            <div className="space-y-4">
-              {education.map((edu) => (
-                <div key={edu.id} className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="text-xs text-muted-foreground w-28 shrink-0">{edu.period}</span>
-                  <div>
-                    <span className="font-medium text-foreground">{edu.degree}</span>
-                    <span className="text-muted-foreground"> — {edu.institution}</span>
-                    {edu.details && <span className="text-sm text-muted-foreground"> · {edu.details}</span>}
                   </div>
                 </div>
               ))}

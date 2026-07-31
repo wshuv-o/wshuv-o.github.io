@@ -759,7 +759,7 @@ skills: [
     {
       id: "1",
       period: "2025 - now",
-      text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013 — loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I automate the financial data workflows with Excel VBA, Python, C#, and Power Automate; build desktop tools, browser extensions, and RPA; and extract structured data from PDFs with NLP models (spaCy, BERT, LayoutLM) and rule-based pattern recognition.",
+      text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013 — loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I build the tooling behind that reporting: a model plans a task, calls tools that read from and write directly into the analysts' live Excel workbooks, verifies its output against the source documents, and re-runs the fields it got wrong. Underneath sits a per-page extraction cascade — pdfplumber, Camelot lattice and stream, Tesseract OCR — covering PDF, Word, and scanned files, scored to keep the best result per page. Everything runs on client hardware, because bank documents can't leave the machine.",
       image: "/images/logos/odin.png"
     },
     {
@@ -917,7 +917,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.10";
+const DATA_VERSION = "2026-07-31.11";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
