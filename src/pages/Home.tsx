@@ -130,6 +130,7 @@ const Home = () => {
   const [data, setData] = useState<any>(null);
   const [showAllAcademic, setShowAllAcademic] = useState(false);
   const [showAllPapers, setShowAllPapers] = useState(false);
+  const [showAllProfiles, setShowAllProfiles] = useState(false);
 
   useEffect(() => {
     initializeData();
@@ -193,22 +194,71 @@ const Home = () => {
                   </a>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {webProfiles.map((p) => (
-                    <a
-                      key={p.id}
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3 py-1 rounded-full bg-card border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
-                    >
-                      {p.name}
-                    </a>
-                  ))}
+                  {(() => {
+                    const primary = ["GitHub", "Google Scholar", "LinkedIn", "ORCID"];
+                    const sorted = [...webProfiles].sort(
+                      (a, b) => Number(primary.includes(b.name)) - Number(primary.includes(a.name))
+                    );
+                    const hiddenCount = sorted.filter((p) => !primary.includes(p.name)).length;
+                    return (
+                      <>
+                        {sorted.map((p) => (
+                          <a
+                            key={p.id}
+                            href={p.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`px-3 py-1 rounded-full bg-card border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors ${
+                              primary.includes(p.name) || showAllProfiles ? "" : "hidden"
+                            }`}
+                          >
+                            {p.name}
+                          </a>
+                        ))}
+                        {hiddenCount > 0 && (
+                          <button
+                            onClick={() => setShowAllProfiles(!showAllProfiles)}
+                            className="px-3 py-1 rounded-full border border-dashed border-border text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {showAllProfiles ? "less" : `+${hiddenCount} more`}
+                          </button>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </div>
 
           </section>
+
+          {/* ===== Journey ===== */}
+          {timeline.length > 0 && (
+            <section id="journey" className="scroll-mt-24">
+              <SectionHeading icon={Milestone}>Journey</SectionHeading>
+              <div className="border-l-2 border-border pl-6 space-y-8">
+                {timeline.map((t) => (
+                  <div key={t.id} className="relative">
+                    <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
+                    <div className="flex gap-4 items-start">
+                      {t.image && (
+                        <img
+                          src={t.image}
+                          alt=""
+                          loading="lazy"
+                          className="w-10 h-10 rounded-md border border-border object-contain bg-white p-0.5 shrink-0"
+                        />
+                      )}
+                      <div className="min-w-0">
+                        <div className="text-xs font-semibold text-muted-foreground">{t.period}</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed mt-1">{linkify(t.text)}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* ===== News ===== */}
           {news.length > 0 && (
@@ -258,34 +308,6 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-            </section>
-          )}
-
-          {/* ===== Journey ===== */}
-          {timeline.length > 0 && (
-            <section id="journey" className="scroll-mt-24">
-              <SectionHeading icon={Milestone}>Journey</SectionHeading>
-              <div className="border-l-2 border-border pl-6 space-y-8">
-                {timeline.map((t) => (
-                  <div key={t.id} className="relative">
-                    <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary border-2 border-background" />
-                    <div className="flex gap-4 items-start">
-                      {t.image && (
-                        <img
-                          src={t.image}
-                          alt=""
-                          loading="lazy"
-                          className="w-10 h-10 rounded-md border border-border object-contain bg-white p-0.5 shrink-0"
-                        />
-                      )}
-                      <div className="min-w-0">
-                        <div className="text-xs font-semibold text-muted-foreground">{t.period}</div>
-                        <p className="text-sm text-muted-foreground leading-relaxed mt-1">{linkify(t.text)}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </section>
           )}
 
