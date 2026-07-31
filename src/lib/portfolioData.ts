@@ -295,7 +295,7 @@ skills: [
       id: "2",
       title: "Outbound Calling Assistant",
       period: "2024 - 2025",
-      description: "is a calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback — built on the agent backend of a WhatsApp marketing product.",
+      description: "is a calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback, built on the agent backend of a WhatsApp marketing product.",
       link: "https://jasmyn.ai",
       technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
       image: "/screenshots/jasmyn.jpg"
@@ -328,7 +328,7 @@ skills: [
       id: "6",
       title: "Odin Reporting Tools",
       period: "Feb 2025 - Running",
-      description: "are internal tools for financial reporting that work directly in Excel workbooks — cashflow models, rent roll analysis, PDF extraction — running on client infrastructure.",
+      description: "are internal tools for financial reporting that work directly in Excel workbooks (cashflow models, rent roll analysis, PDF extraction), running on client infrastructure.",
       technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"]
     },
     {
@@ -758,19 +758,19 @@ skills: [
     {
       id: "1",
       period: "2025 - now",
-      text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013 — loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I build the tooling behind that reporting: a model plans a task, calls tools that read from and write directly into the analysts' live Excel workbooks, verifies its output against the source documents, and re-runs the fields it got wrong. Underneath sits a per-page extraction cascade — pdfplumber, Camelot lattice and stream, Tesseract OCR — covering PDF, Word, and scanned files, scored to keep the best result per page. Everything runs on client hardware, because bank documents can't leave the machine.",
+      text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013: loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I build the tooling behind that reporting: a model plans a task, calls tools that read from and write directly into the analysts' live Excel workbooks, verifies its output against the source documents, and re-runs the fields it got wrong. Underneath sits a per-page extraction cascade (pdfplumber, Camelot lattice and stream, Tesseract OCR) covering PDF, Word, and scanned files, scored to keep the best result per page. Everything runs on client hardware, because bank documents can't leave the machine.",
       image: "/images/logos/odin.png"
     },
     {
       id: "2",
       period: "2024",
-      text: "Opened [Prodigy AI](https://github.com/prodigyagi) with a group of friends from AIUB — a non-profit research organization exploring neuroscience and AI: brain-computer interfaces, cognitive computing, and neuroimaging analysis. Open-source projects for collaboration, private research for focused studies.",
+      text: "Opened [Prodigy AI](https://github.com/prodigyagi) with a group of friends from AIUB, a non-profit research organization exploring neuroscience and AI: brain-computer interfaces, cognitive computing, and neuroimaging analysis. Open-source projects for collaboration, private research for focused studies.",
       image: "/images/logos/prodigyai.png"
     },
     {
       id: "3",
       period: "2023",
-      text: "Started [Byteverse](https://byteverseit.com) — an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. I work on [Chatsby](https://chatsby.co), our customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions). Along the way I did contract backend work for client products — a [WhatsApp marketing agent](https://jasmyn.ai), an outbound calling pipeline, comment and DM automation, and a [course platform](https://app.ceosociety.io/) on AdonisJS. Also proud of [aipedia.blog](https://aipedia.blog) and [sspark](https://sspark.lovable.app).",
+      text: "Started [Byteverse](https://byteverseit.com), an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. I work on [Chatsby](https://chatsby.co), our customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions). Along the way I did contract backend work for client products: a [WhatsApp marketing agent](https://jasmyn.ai), an outbound calling pipeline, comment and DM automation, and a [course platform](https://app.ceosociety.io/) on AdonisJS. Also proud of [aipedia.blog](https://aipedia.blog) and [sspark](https://sspark.lovable.app).",
       image: "/images/logos/byteverse.png"
     },
     {
@@ -782,7 +782,7 @@ skills: [
     {
       id: "5",
       period: "2020 - 2022",
-      text: "Left for [Saint Petersburg State University](https://english.spbu.ru/) intending a software engineering degree; earned TORFL B1 Russian along the way, then discontinued and came home — putting the Russian to work as a Russian-Bangla interpreter at the Rooppur Nuclear Power Plant.",
+      text: "Left for [Saint Petersburg State University](https://english.spbu.ru/) intending a software engineering degree; earned TORFL B1 Russian along the way, then discontinued and came home, putting the Russian to work as a Russian-Bangla interpreter at the Rooppur Nuclear Power Plant.",
       image: "/images/logos/spbu.png"
     }
   ],
@@ -793,11 +793,11 @@ skills: [
     },
     {
       id: "2",
-      text: "I used to make games: a [first-person adventure in Unity](https://www.youtube.com/watch?v=skQcoC6f3Hs) about finding keys to complete missions, a [canyon mystery game](https://www.linkedin.com/feed/update/urn:li:ugcPost:7291817784240418817/), and [Galactic Exodus: Homeward Bound](https://www.youtube.com/watch?v=D1DXTJp9y8o) — a space game written from scratch in C++ and OpenGL ([source](https://github.com/wshuv-o/opengl-galactic-exodus))."
+      text: "I used to make games: a [first-person adventure in Unity](https://www.youtube.com/watch?v=skQcoC6f3Hs) about finding keys to complete missions, a [canyon mystery game](https://www.linkedin.com/feed/update/urn:li:ugcPost:7291817784240418817/), and [Galactic Exodus: Homeward Bound](https://www.youtube.com/watch?v=D1DXTJp9y8o), a space game written from scratch in C++ and OpenGL ([source](https://github.com/wshuv-o/opengl-galactic-exodus))."
     },
     {
       id: "3",
-      text: "For two years I organized workshops and exhibitions with the [AIUB Arts Club](https://www.aiub.edu/oncampus/clubs/aac-in-aiub) — 15+ events like the [Intra-AIUB Art Exhibition](https://aiub.edu/intra-aiub-art-exhibition-by-aiub-arts-club), running logistics, sponsorship, and promotion."
+      text: "For two years I organized workshops and exhibitions with the [AIUB Arts Club](https://www.aiub.edu/oncampus/clubs/aac-in-aiub): 15+ events like the [Intra-AIUB Art Exhibition](https://aiub.edu/intra-aiub-art-exhibition-by-aiub-arts-club), running logistics, sponsorship, and promotion."
     }
   ],
   webProfiles: [
@@ -877,7 +877,7 @@ skills: [
       id: "13",
       name: "YouTube",
       url: "https://www.youtube.com/@Py_Geek",
-      note: "Py Geek — games & OpenGL"
+      note: "Py Geek: games & OpenGL"
     }
   ],
   education: [
@@ -916,7 +916,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.14";
+const DATA_VERSION = "2026-07-31.15";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

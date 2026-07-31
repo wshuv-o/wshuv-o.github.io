@@ -1,6 +1,6 @@
 import { ThemeToggle } from "./ThemeToggle";
 
-// No navigation bar — just the theme toggle, aligned with the content
+// No navigation bar, just the theme toggle, aligned with the content
 // container: same top offset as the hero photo and the same edge
 // spacing on the right that the photo has on the left.
 const Navbar = () => {
