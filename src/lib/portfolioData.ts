@@ -288,15 +288,14 @@ skills: [
       id: "1",
       title: "Chatsby",
       period: "Apr 2025 - Running",
-      description: "Customer-support AI platform at Byteverse. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack.",
-      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
-      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7369019422184726548?collapsed=1"
+      description: "is Byteverse's customer-support AI platform. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack (FastAPI, Redis, Nginx). See the [launch post](https://www.linkedin.com/feed/update/urn:li:share:7369019422184726548/).",
+      technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"]
     },
     {
       id: "2",
       title: "Outbound Calling Assistant",
       period: "2024 - 2025",
-      description: "Calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback. Built on the agent backend of a WhatsApp marketing product.",
+      description: "is a calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback — built on the agent backend of a WhatsApp marketing product.",
       link: "https://jasmyn.ai",
       technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
       image: "/screenshots/jasmyn.jpg"
@@ -305,7 +304,7 @@ skills: [
       id: "3",
       title: "CEO Society",
       period: "Oct 2024 – May 2025",
-      description: "Backend for a course platform: courses, cohorts, roles, and an in-product assistant that answers from course material.",
+      description: "is a course platform whose backend I built: courses, cohorts, roles, and an in-product assistant that answers from course material.",
       link: "https://app.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
       image: "/screenshots/ceosociety.png"
@@ -314,7 +313,7 @@ skills: [
       id: "5",
       title: "CommentZap",
       period: "Sept 2024 – Mar 2025",
-      description: "Comment and DM automation on the Meta Graph and Messenger APIs: webhooks, rule-driven responses, token handling, rate-limit backoff.",
+      description: "automates comments and DMs on the Meta Graph and Messenger APIs: webhooks, rule-driven responses, token handling, rate-limit backoff.",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
       image: "/screenshots/commentzap.jpg"
     },
@@ -322,21 +321,21 @@ skills: [
       id: "4",
       title: "Lead Scrapper",
       period: "Nov 2025 - Running",
-      description: "Lead scraping tool with validation, running on Docker and Redis.",
+      description: "is a lead scraping tool with validation, running on Docker and Redis.",
       technologies: ["Vite", "Python", "Docker", "Redis"]
     },
     {
       id: "6",
       title: "Odin Reporting Tools",
       period: "Feb 2025 - Running",
-      description: "Internal tools for financial reporting: they work directly in Excel workbooks — cashflow models, rent roll analysis, and PDF extraction. Runs on client infrastructure.",
+      description: "are internal tools for financial reporting that work directly in Excel workbooks — cashflow models, rent roll analysis, PDF extraction — running on client infrastructure.",
       technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM"]
     },
     {
       id: "7",
       title: "Pexl",
       period: "2025",
-      description: "Extracts tables and fields from financial documents (appraisals, bank statements, utility bills) with pdfplumber, Camelot, and Tesseract.",
+      description: "extracts tables and fields from financial documents (appraisals, bank statements, utility bills) with pdfplumber, Camelot, and Tesseract.",
       github: "https://github.com/wshuv-o/pexl",
       technologies: ["TypeScript", "Python", "pdfplumber", "Camelot", "Tesseract OCR"],
       image: "/screenshots/pexl.png"
@@ -917,7 +916,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.13";
+const DATA_VERSION = "2026-07-31.14";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

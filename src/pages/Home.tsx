@@ -314,65 +314,45 @@ const Home = () => {
           {/* ===== Products & Projects ===== */}
           <section id="projects" className="scroll-mt-24">
             <SectionHeading icon={Wrench}>Projects</SectionHeading>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <p className="text-sm text-muted-foreground mb-5">
+              Up-to-date code lives on my{" "}
+              <a
+                href="https://github.com/wshuv-o"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline underline-offset-2"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+            <div className="divide-y divide-border">
               {projects.map((project) => (
-                <div key={project.id} className="rounded-xl bg-card border border-border glow-card overflow-hidden flex flex-col">
+                <div key={project.id} className="flex gap-4 items-start py-4 first:pt-0 last:pb-0">
                   {project.image && (
                     <img
                       src={project.image}
                       alt=""
-                      className="w-full h-40 object-cover object-top border-b border-border"
                       loading="lazy"
+                      className="w-20 h-20 rounded-md border border-border object-cover object-top shrink-0"
                     />
                   )}
-                  <div className="p-5 space-y-2 flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-display font-semibold text-foreground leading-snug">{project.title}</h3>
-                    <div className="flex gap-2 shrink-0">
-                      {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} website`}>
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      )}
-                      {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} source`}>
-                          <Github className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">{project.period}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-                  {project.technologies && (
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {project.technologies.map((tech, i) => (
-                        <span key={i} className="px-2 py-0.5 rounded bg-muted text-xs text-foreground border border-border">{tech}</span>
-                      ))}
-                    </div>
-                  )}
-                  {project.linkedinEmbed && (
-                    <>
-                      <iframe
-                        src={project.linkedinEmbed}
-                        height="669"
-                        width="504"
-                        frameBorder="0"
-                        allowFullScreen
-                        title={`LinkedIn post: ${project.title}`}
-                        loading="lazy"
-                        className="mt-3 rounded-lg border border-border w-full max-w-full"
-                      />
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.link || project.github ? (
                       <a
-                        href={linkedinPostUrl(project.linkedinEmbed)}
+                        href={project.link || project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block mt-1 text-xs text-muted-foreground underline underline-offset-2"
+                        className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors"
                       >
-                        View post on LinkedIn
+                        {project.title}
                       </a>
-                    </>
-                  )}
-                  </div>
+                    ) : (
+                      <span className="font-medium text-foreground">{project.title}</span>
+                    )}{" "}
+                    {linkify(project.description)}
+                    {project.details && <> {linkify(project.details)}</>}
+                  </p>
                 </div>
               ))}
             </div>
