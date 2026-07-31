@@ -72,6 +72,7 @@ export interface OtherExperience {
   link?: string;
   image?: string;
   imageCaption?: string;
+  images?: string[];
 }
 
 export interface WebProfile {
@@ -658,6 +659,23 @@ skills: [
       imageCaption: "Science box module designed as part of University Rover Challenge 2024"
     },
     {
+      id: "4",
+      organization: "TechnoXian Bangladesh",
+      position: "Organizer",
+      period: "2024",
+      description: "Organized the 2024 national round of TechnoXian Bangladesh, a national robotics competition.",
+      image: "/images/technoxian-2024.jpg"
+    },
+    {
+      id: "5",
+      organization: "AIUB CS Fest 2024",
+      position: "Participant",
+      period: "Apr 2024",
+      description: "Took part in AIUB CS Fest 2024, a university-wide tech fest with programming, project showcasing, and robotics segments.",
+      link: "https://csfest.aiubcc.org/",
+      images: ["/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"]
+    },
+    {
       id: "3",
       organization: "AIUB Arts Club, AIUB",
       position: "Organizer",
@@ -842,7 +860,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-30.18";
+const DATA_VERSION = "2026-07-31.1";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

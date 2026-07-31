@@ -445,6 +445,19 @@ const Home = () => {
                       )}
                     </figure>
                   )}
+                  {exp.images && exp.images.length > 0 && (
+                    <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2 max-w-2xl">
+                      {exp.images.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={exp.organization}
+                          loading="lazy"
+                          className="rounded-lg border border-border w-full h-28 object-cover"
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
