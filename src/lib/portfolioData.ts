@@ -64,6 +64,9 @@ export interface Research {
   abstract?: string;
   keywords?: string[];
   linkedinEmbed?: string;
+  // Preprints / under-review / proposals collapsed behind a
+  // "show more technical papers" toggle.
+  secondary?: boolean;
 }
 
 export interface OtherExperience {
@@ -570,19 +573,6 @@ skills: [
       keywords: ["Equivariant QNN", "Quantum Kernel Methods", "Unsupervised Learning", "NISQ"]
     },
     {
-      id: "3",
-      title: "EEG-DATNet: Dual Attention Transformer for EEG Classification",
-      authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E. Moula Chowdhury Abha, Susham Moula Choudhury Akash, Md Tauhidul Islam, Abhijit Bhowmik, Dip Nandi, Mashiour Rahman, Debajyoti Karmaker",
-      venue: "SSRN (preprint, under review)",
-      year: "2026",
-      link: "https://doi.org/10.2139/ssrn.6531865",
-      links: [
-        { label: "SSRN", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6531865" }
-      ],
-      abstract: "Hybrid architecture for motor-imagery brain-computer interfaces combining multi-scale temporal convolutions (60-260 ms), spatial encoding, and dual attention. Reports 82.84% and 89.03% mean accuracy on two standard motor-imagery benchmarks at ~0.47 GFLOPs and 3.2 ms latency.",
-      keywords: ["EEG Classification", "Brain-Computer Interface", "Motor Imagery", "Transformers"]
-    },
-    {
       id: "4",
       title: "Federated Learning in Healthcare Technology: Challenges, Solutions and Opportunities",
       authors: "Esm E Moula Chowdhury Abha, Md. Imtiaj Alam Sajin, Md Wahiduzzaman Suva, Shanjida Akter, Mushfiqur Rahman Abir, Md. Asgor Hossain Reaj, Jahir Ibna Rafiq",
@@ -611,6 +601,20 @@ skills: [
       keywords: ["Data Visualization", "R", "ggplot2", "Statistical Analysis"]
     },
     {
+      id: "3",
+      title: "EEG-DATNet: Dual Attention Transformer for EEG Classification",
+      authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E. Moula Chowdhury Abha, Susham Moula Choudhury Akash, Md Tauhidul Islam, Abhijit Bhowmik, Dip Nandi, Mashiour Rahman, Debajyoti Karmaker",
+      venue: "SSRN (preprint, under review)",
+      year: "2026",
+      link: "https://doi.org/10.2139/ssrn.6531865",
+      links: [
+        { label: "SSRN", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6531865" }
+      ],
+      abstract: "Hybrid architecture for motor-imagery brain-computer interfaces combining multi-scale temporal convolutions (60-260 ms), spatial encoding, and dual attention. Reports 82.84% and 89.03% mean accuracy on two standard motor-imagery benchmarks at ~0.47 GFLOPs and 3.2 ms latency.",
+      keywords: ["EEG Classification", "Brain-Computer Interface", "Motor Imagery", "Transformers"],
+      secondary: true
+    },
+    {
       id: "6",
       title: "An Integrated Deep Learning and Natural Language Processing Framework for Autonomous Vehicle Perception and Voice Control",
       authors: "Md Wahiduzzaman Suva, Md Imtiaj Alam Sajin, Esm E Moula Chowdhury Abha, Mohammed Mustafa, Abir Bakhtiar, Susham Moula Chowdhury Akash",
@@ -621,7 +625,8 @@ skills: [
         { label: "OpenAlex", url: "https://openalex.org/W7105670826" }
       ],
       abstract: "Describes a smart interactive vehicle prototype integrating voice recognition, obstacle avoidance, and perception systems, targeting assistive technology, educational robotics, and home-automation applications.",
-      keywords: ["Autonomous Vehicles", "Object Detection", "Deep Learning", "NLP", "Voice Control"]
+      keywords: ["Autonomous Vehicles", "Object Detection", "Deep Learning", "NLP", "Voice Control"],
+      secondary: true
     },
     {
       id: "7",
@@ -630,7 +635,8 @@ skills: [
       venue: "Under review",
       year: "2026",
       abstract: "Theoretical framework for quantifying uncertainty in large language model reasoning via knowledge-graph structure. Companion code models LLM reasoning as traversals through knowledge graphs with graph-theoretical uncertainty measures decomposing epistemic and aleatoric uncertainty.",
-      keywords: ["Knowledge Graphs", "LLMs", "Uncertainty Quantification"]
+      keywords: ["Knowledge Graphs", "LLMs", "Uncertainty Quantification"],
+      secondary: true
     },
     {
       id: "8",
@@ -640,7 +646,8 @@ skills: [
       year: "2025",
       link: "https://doi.org/10.13140/RG.2.2.22726.74565",
       abstract: "Proposes combining drone and CCTV feeds for automated crime detection and public-safety monitoring.",
-      keywords: ["Surveillance", "Drones", "Computer Vision", "Public Safety"]
+      keywords: ["Surveillance", "Drones", "Computer Vision", "Public Safety"],
+      secondary: true
     }
   ],
   otherExperiences: [
@@ -897,7 +904,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.4";
+const DATA_VERSION = "2026-07-31.5";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

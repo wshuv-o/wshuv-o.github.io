@@ -109,6 +109,7 @@ const SectionHeading = ({ icon: Icon, children }: { icon: any; children: ReactNo
 const Home = () => {
   const [data, setData] = useState<any>(null);
   const [showAllAcademic, setShowAllAcademic] = useState(false);
+  const [showAllPapers, setShowAllPapers] = useState(false);
 
   useEffect(() => {
     initializeData();
@@ -321,7 +322,7 @@ const Home = () => {
           <section id="publications" className="scroll-mt-24">
             <SectionHeading icon={FileText}>Publications</SectionHeading>
             <ol className="space-y-5">
-              {research.map((paper, idx) => (
+              {research.filter((p) => !p.secondary || showAllPapers).map((paper, idx) => (
                 <li key={paper.id} className="flex gap-4">
                   <span className="text-sm font-mono text-muted-foreground pt-0.5 shrink-0">[{idx + 1}]</span>
                   <div className="space-y-1 min-w-0">
@@ -366,6 +367,16 @@ const Home = () => {
                 </li>
               ))}
             </ol>
+            {research.some((p) => p.secondary) && (
+              <button
+                onClick={() => setShowAllPapers(!showAllPapers)}
+                className="mt-4 text-sm text-primary underline underline-offset-2"
+              >
+                {showAllPapers
+                  ? "Show fewer papers"
+                  : `Show ${research.filter((p) => p.secondary).length} more technical papers`}
+              </button>
+            )}
           </section>
 
           {/* ===== Research & Academic Projects ===== */}
