@@ -48,6 +48,9 @@ export interface AcademicProject {
   details?: string;
   linkedinEmbed?: string;
   youtubeEmbed?: string;
+  // Coursework-tier entries collapsed behind a "show more" toggle so the
+  // first impression is the strongest work.
+  secondary?: boolean;
 }
 
 export interface Research {
@@ -249,7 +252,7 @@ skills: [
       id: "2",
       company: "Byteverse Ltd",
       position: "Software Engineer",
-      period: "Jun 2023 - Present",
+      period: "Jun 2023 - Present · Part-time",
       description: "Work on [Chatsby](https://chatsby.co), the company's customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions).",
       link: "https://byteverseit.com"
     },
@@ -338,7 +341,6 @@ skills: [
       category: "Brain-Computer Interface",
       link: "https://github.com/prodigyagi/Brain-Controller",
       technologies: ["EEG", "Deep Learning", "Python"],
-      images: ["/images/repos/brain-controller.png"],
       details: "Research on decoding EEG signals into device control commands, developed under Prodigy AI, a Bangladesh-based AI research group."
     },
     {
@@ -348,7 +350,6 @@ skills: [
       category: "Quantum & Security",
       link: "https://github.com/wshuv-o/ISM_Quantum",
       technologies: ["Python", "PyTorch", "HQC / ML-KEM", "Federated Learning"],
-      images: ["/images/repos/ism-quantum.png"],
       details: "KEM-agnostic cluster-based secure aggregation with Bonawitz-style double masking, Shamir dropout recovery, and robust aggregation rules (trimmed mean, median, Multi-Krum) against poisoning attacks, evaluated on non-IID CIFAR-10 with 30 clients."
     },
     {
@@ -358,7 +359,6 @@ skills: [
       category: "AI Research",
       link: "https://github.com/wshuv-o/clinical-reasoning-graph",
       technologies: ["Python", "Knowledge Graphs", "LLMs"],
-      images: ["https://opengraph.githubassets.com/1/wshuv-o/clinical-reasoning-graph"],
       details: "Introduces graph-theoretical uncertainty measures enabling interpretable, theoretically grounded decomposition of epistemic and aleatoric uncertainty for clinical tasks like diagnosis and treatment planning."
     },
     {
@@ -368,7 +368,6 @@ skills: [
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quantum-clustering",
       technologies: ["Python", "Variational Quantum Circuits", "K-means"],
-      images: ["/images/repos/quantum-clustering.png"],
       details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
     },
     {
@@ -378,7 +377,6 @@ skills: [
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quanvolution",
       technologies: ["Python", "Quantum Computing", "Deep Learning"],
-      images: ["/images/repos/quanvolution.png"],
       details: "Exploratory research repos including quanvolution (quantum convolutional layers) and qnerf (quantum neural radiance fields)."
     },
     {
@@ -398,7 +396,6 @@ skills: [
       category: "Data Science",
       link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
       technologies: ["Python", "Pandas", "NLTK (VADER)", "NetworkX", "Matplotlib", "Seaborn"],
-      images: ["/images/repos/conti-leaks.png"],
       details: "Cleaned and structured the leaked data with Pandas, classified message sentiment with VADER, explored relationships between actors with NetworkX, and visualized findings with Matplotlib and Seaborn."
     },
     {
@@ -408,7 +405,7 @@ skills: [
       category: "Healthcare AI",
       link: "https://github.com/wshuv-o/AKI-Prediction-Using-Machine-Learning",
       technologies: ["Python", "scikit-learn", "Pandas"],
-      images: ["/images/repos/aki-prediction.png"],
+      secondary: true,
       details: "Predictive modeling on clinical datasets for early detection of acute kidney injury."
     },
     {
@@ -428,7 +425,7 @@ skills: [
       category: "Web Development",
       link: "https://github.com/wshuv-o/Nexa-Social-Media",
       technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
-      images: ["/images/repos/nexa.png"],
+      secondary: true,
       details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, friends management, and instant messaging."
     },
     {
@@ -439,6 +436,7 @@ skills: [
       link: "https://optra-blush.vercel.app/",
       technologies: ["Next.js", "TypeScript", "PostgreSQL"],
       images: ["/images/optra.jpg"],
+      secondary: true,
       details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support. Source: github.com/wshuv-o/optra"
     },
     {
@@ -448,7 +446,7 @@ skills: [
       category: "Enterprise Software",
       link: "https://github.com/wshuv-o/iInventory-backend",
       technologies: ["Next.js", "NestJS", "PostgreSQL"],
-      images: ["/images/repos/iinventory.png"],
+      secondary: true,
       details: "Real-time inventory tracking, automated reordering, analytics dashboard, and multi-warehouse support."
     },
     {
@@ -458,7 +456,7 @@ skills: [
       category: "EdTech",
       link: "https://github.com/wshuv-o/Courseway-a-Lerning-Platform-Instructors",
       technologies: ["PHP", "Laravel", "MySQL"],
-      images: ["/images/repos/courseway.png"],
+      secondary: true,
       details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
     },
     {
@@ -468,7 +466,7 @@ skills: [
       category: "Healthcare",
       link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
       technologies: ["C#", ".NET", "MySQL"],
-      images: ["/images/repos/pharmasync.png"],
+      secondary: true,
       details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
     },
     {
@@ -478,7 +476,7 @@ skills: [
       category: "Healthcare",
       link: "https://github.com/wshuv-o/HealthHub-ManagementSystem",
       technologies: ["C#", ".NET"],
-      images: ["/images/repos/healthhub.png"],
+      secondary: true,
       details: "Patient, appointment, and records management for healthcare facilities."
     },
     {
@@ -487,7 +485,7 @@ skills: [
       description: "Comprehensive railway booking and management system",
       category: "Enterprise Software",
       technologies: ["Java Swing", "MySQL"],
-      image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=600&fit=crop",
+      secondary: true,
       details: "Desktop application for ticket booking, seat selection, schedule management, and automated fare calculation."
     },
     {
@@ -496,7 +494,7 @@ skills: [
       description: "Point of sale and inventory system for retail stores",
       category: "Retail",
       technologies: ["C#", ".NET", "MsSQL"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      secondary: true,
       details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
     {
@@ -533,6 +531,7 @@ skills: [
       link: "https://github.com/wshuv-o/koala-data-analysis",
       technologies: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn"],
       images: ["/images/koala-tracklog-1.jpg", "/images/koala-tracklog-2.jpg"],
+      secondary: true,
       details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
     }
   ],
@@ -898,7 +897,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.3";
+const DATA_VERSION = "2026-07-31.4";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

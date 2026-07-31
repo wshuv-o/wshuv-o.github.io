@@ -108,6 +108,7 @@ const SectionHeading = ({ icon: Icon, children }: { icon: any; children: ReactNo
 
 const Home = () => {
   const [data, setData] = useState<any>(null);
+  const [showAllAcademic, setShowAllAcademic] = useState(false);
 
   useEffect(() => {
     initializeData();
@@ -158,8 +159,9 @@ const Home = () => {
                   Backend &amp; AI engineer
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  I work on backend and AI systems, and do research on brain-computer
-                  interfaces and quantum machine learning.
+                  I build agent harnesses, RAG pipelines, and document extraction systems for
+                  SaaS, fintech, and US real estate clients. On the side, I do research on
+                  brain-computer interfaces and quantum machine learning.
                 </p>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
@@ -206,7 +208,7 @@ const Home = () => {
                       {n.image && (
                         <img
                           src={n.image}
-                          alt={n.text}
+                          alt=""
                           loading="lazy"
                           className="block mt-2 rounded-lg border border-border w-40"
                         />
@@ -253,6 +255,63 @@ const Home = () => {
                     <span className="text-xs text-muted-foreground">{exp.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">{linkify(exp.description)}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== Products & Projects ===== */}
+          <section id="projects" className="scroll-mt-24">
+            <SectionHeading icon={Wrench}>Projects</SectionHeading>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {projects.map((project) => (
+                <div key={project.id} className="rounded-xl bg-card border border-border glow-card overflow-hidden flex flex-col">
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt=""
+                      className="w-full h-40 object-cover object-top border-b border-border"
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="p-5 space-y-2 flex-1">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="font-display font-semibold text-foreground leading-snug">{project.title}</h3>
+                    <div className="flex gap-2 shrink-0">
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} website`}>
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} source`}>
+                          <Github className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{project.period}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+                  {project.technologies && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="px-2 py-0.5 rounded bg-muted text-xs text-foreground border border-border">{tech}</span>
+                      ))}
+                    </div>
+                  )}
+                  {project.linkedinEmbed && (
+                    <iframe
+                      src={project.linkedinEmbed}
+                      height="669"
+                      width="504"
+                      frameBorder="0"
+                      allowFullScreen
+                      title={`LinkedIn post: ${project.title}`}
+                      loading="lazy"
+                      className="mt-3 rounded-lg border border-border w-full max-w-full"
+                    />
+                  )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -309,73 +368,16 @@ const Home = () => {
             </ol>
           </section>
 
-          {/* ===== Products & Projects ===== */}
-          <section id="projects" className="scroll-mt-24">
-            <SectionHeading icon={Wrench}>Projects</SectionHeading>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {projects.map((project) => (
-                <div key={project.id} className="rounded-xl bg-card border border-border glow-card overflow-hidden flex flex-col">
-                  {project.image && (
-                    <img
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      className="w-full h-40 object-cover object-top border-b border-border"
-                      loading="lazy"
-                    />
-                  )}
-                  <div className="p-5 space-y-2 flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-display font-semibold text-foreground leading-snug">{project.title}</h3>
-                    <div className="flex gap-2 shrink-0">
-                      {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} website`}>
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      )}
-                      {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${project.title} source`}>
-                          <Github className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-xs text-muted-foreground">{project.period}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-                  {project.technologies && (
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {project.technologies.map((tech, i) => (
-                        <span key={i} className="px-2 py-0.5 rounded bg-muted text-xs text-foreground border border-border">{tech}</span>
-                      ))}
-                    </div>
-                  )}
-                  {project.linkedinEmbed && (
-                    <iframe
-                      src={project.linkedinEmbed}
-                      height="669"
-                      width="504"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`LinkedIn post: ${project.title}`}
-                      loading="lazy"
-                      className="mt-3 rounded-lg border border-border w-full max-w-full"
-                    />
-                  )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* ===== Research & Academic Projects ===== */}
           <section id="academic" className="scroll-mt-24">
             <SectionHeading icon={FlaskConical}>Academic Projects</SectionHeading>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {academicProjects.map((project) => (
+              {academicProjects.filter((p) => !p.secondary || showAllAcademic).map((project) => (
                 <div key={project.id} className="p-4 rounded-xl bg-card border border-border glow-card space-y-1.5">
                   {project.images && project.images.length > 0 && (
                     <div className={`grid ${project.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-1.5 mb-2`}>
                       {project.images.map((img, i) => (
-                        <img key={i} src={img} alt={project.title} loading="lazy" className="rounded-md border border-border w-full h-24 object-cover" />
+                        <img key={i} src={img} alt="" loading="lazy" className="rounded-md border border-border w-full h-24 object-cover" />
                       ))}
                     </div>
                   )}
@@ -416,6 +418,16 @@ const Home = () => {
                 </div>
               ))}
             </div>
+            {academicProjects.some((p) => p.secondary) && (
+              <button
+                onClick={() => setShowAllAcademic(!showAllAcademic)}
+                className="mt-4 text-sm text-primary underline underline-offset-2"
+              >
+                {showAllAcademic
+                  ? "Show fewer projects"
+                  : `Show ${academicProjects.filter((p) => p.secondary).length} more projects`}
+              </button>
+            )}
           </section>
 
           {/* ===== Tutorials ===== */}
@@ -500,7 +512,7 @@ const Home = () => {
                     <figure className="mt-3">
                       <img
                         src={exp.image}
-                        alt={exp.imageCaption || exp.organization}
+                        alt=""
                         loading="lazy"
                         className="rounded-lg border border-border w-full max-w-md"
                       />
@@ -517,7 +529,7 @@ const Home = () => {
                         <img
                           key={i}
                           src={img}
-                          alt={exp.organization}
+                          alt=""
                           loading="lazy"
                           className="rounded-lg border border-border w-full h-28 object-cover"
                         />
