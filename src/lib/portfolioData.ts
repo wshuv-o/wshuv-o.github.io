@@ -371,6 +371,16 @@ skills: [
       details: "KEM-agnostic cluster-based secure aggregation with Bonawitz-style double masking, Shamir dropout recovery, and robust aggregation rules (trimmed mean, median, Multi-Krum) against poisoning attacks, evaluated on non-IID CIFAR-10 with 30 clients."
     },
     {
+      id: "20",
+      title: "Koala Tracklog Analysis",
+      description: "Analysis of koala movement patterns from GPS tracklog data",
+      category: "Data Science",
+      link: "https://github.com/wshuv-o/koala-data-analysis",
+      technologies: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn"],
+      images: ["/images/koala-tracklog-1.jpg", "/images/koala-tracklog-2.jpg"],
+      details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
+    },
+    {
       id: "4",
       title: "Clinical Reasoning Graph",
       description: "LLM reasoning modeled as traversals through clinical knowledge graphs with uncertainty quantification",
@@ -405,7 +415,7 @@ skills: [
       category: "Computer Vision",
       link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
       technologies: ["Python", "TensorFlow", "Keras", "MTCNN", "Scikit-learn"],
-      images: ["/images/facenet-detection.jpg", "/images/facenet-embeddings.jpg"],
+      images: ["/images/facenet-embeddings.jpg", "/images/facenet-detection.jpg"],
       details: "Maps face images into a 128-dimensional embedding space where distances correspond to face similarity, with MTCNN for detection."
     },
     {
@@ -517,17 +527,6 @@ skills: [
       secondary: true,
       details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
-    {
-      id: "20",
-      title: "Koala Tracklog Analysis",
-      description: "Analysis of koala movement patterns from GPS tracklog data",
-      category: "Data Science",
-      link: "https://github.com/wshuv-o/koala-data-analysis",
-      technologies: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn"],
-      images: ["/images/koala-tracklog-1.jpg", "/images/koala-tracklog-2.jpg"],
-      secondary: true,
-      details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
-    }
   ],
   research: [
     {
@@ -918,7 +917,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.16";
+const DATA_VERSION = "2026-07-31.17";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
