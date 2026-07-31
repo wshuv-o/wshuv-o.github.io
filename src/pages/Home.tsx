@@ -19,17 +19,58 @@ import {
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
 
-// Bold the site owner's name inside a comma-separated author string.
+// Co-authors with personal pages; patterns cover the spelling variants
+// used across different papers.
+const AUTHOR_LINKS: { pattern: RegExp; url: string }[] = [
+  { pattern: /Md\.? Imtiaj Alam Sajin/, url: "https://imtiaj-sajin.github.io/" },
+  { pattern: /Esm[- ]E\.? Moula Chowdhury Abha/, url: "https://esme.framer.ai" },
+  { pattern: /Md Tauhidul Islam/, url: "https://github.com/IamTauhid" },
+];
+
+// Bold the site owner's name and hyperlink known co-authors inside an
+// author string.
 const renderAuthors = (authors: string) => {
-  const parts = authors.split(SELF_NAME);
-  return parts.map((part, i) => (
-    <span key={i}>
-      {part}
-      {i < parts.length - 1 && (
-        <span className="font-semibold text-foreground">{SELF_NAME}</span>
-      )}
-    </span>
-  ));
+  const nodes: ReactNode[] = [];
+  let rest = authors;
+  let key = 0;
+  while (rest.length > 0) {
+    let best: { index: number; length: number; render: (t: string) => ReactNode } | null = null;
+    const selfIdx = rest.indexOf(SELF_NAME);
+    if (selfIdx !== -1) {
+      best = {
+        index: selfIdx,
+        length: SELF_NAME.length,
+        render: (t) => <span className="font-semibold text-foreground">{t}</span>,
+      };
+    }
+    for (const { pattern, url } of AUTHOR_LINKS) {
+      const m = rest.match(pattern);
+      if (m && m.index !== undefined && (best === null || m.index < best.index)) {
+        best = {
+          index: m.index,
+          length: m[0].length,
+          render: (t) => (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-primary transition-colors"
+            >
+              {t}
+            </a>
+          ),
+        };
+      }
+    }
+    if (!best) {
+      nodes.push(rest);
+      break;
+    }
+    if (best.index > 0) nodes.push(rest.slice(0, best.index));
+    nodes.push(<span key={key++}>{best.render(rest.slice(best.index, best.index + best.length))}</span>);
+    rest = rest.slice(best.index + best.length);
+  }
+  return nodes;
 };
 
 // Render [text](url) spans in plain description strings as anchors.
@@ -47,7 +88,7 @@ const linkify = (text: string) => {
         href={m[2]}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary hover:underline"
+        className="text-primary underline underline-offset-2"
       >
         {m[1]}
       </a>
@@ -122,10 +163,10 @@ const Home = () => {
                 </p>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
-                  <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                  <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
                     <Mail className="h-4 w-4" /> {personalInfo.email}
                   </a>
-                  <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                  <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
                     <Phone className="h-4 w-4" /> {personalInfo.phone}
                   </a>
                 </div>
@@ -158,7 +199,7 @@ const Home = () => {
                     <span className="text-muted-foreground">
                       {n.text}{" "}
                       {n.link && (
-                        <a href={n.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-0.5">
+                        <a href={n.link} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 inline-flex items-center gap-0.5">
                           link<ExternalLink className="h-3 w-3" />
                         </a>
                       )}
@@ -202,7 +243,7 @@ const Home = () => {
                         href={exp.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary font-medium hover:underline"
+                        className="text-primary font-medium underline underline-offset-2"
                       >
                         {exp.company}
                       </a>
@@ -226,7 +267,7 @@ const Home = () => {
                   <span className="text-sm font-mono text-muted-foreground pt-0.5 shrink-0">[{idx + 1}]</span>
                   <div className="space-y-1 min-w-0">
                     {paper.link ? (
-                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors leading-snug block">
+                      <a href={paper.link} target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors leading-snug block">
                         {paper.title}
                       </a>
                     ) : (
@@ -341,7 +382,7 @@ const Home = () => {
                   <span className="text-[11px] uppercase tracking-wide font-semibold text-primary">{project.category}</span>
                   <div className="flex items-start justify-between gap-2">
                     {project.link ? (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-foreground hover:text-primary transition-colors leading-snug">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-foreground underline underline-offset-2 hover:text-primary transition-colors leading-snug">
                         {project.title}
                       </a>
                     ) : (
@@ -446,7 +487,7 @@ const Home = () => {
                   <div className="flex flex-wrap items-baseline gap-x-3">
                     <span className="font-medium text-foreground">{exp.position}</span>
                     {exp.link ? (
-                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-primary text-sm font-medium hover:underline">
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-primary text-sm font-medium underline underline-offset-2">
                         {exp.organization}
                       </a>
                     ) : (
@@ -492,16 +533,16 @@ const Home = () => {
           <section id="contact" className="scroll-mt-24 border-t border-border pt-10">
             <SectionHeading icon={Globe}>Contact</SectionHeading>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> {personalInfo.email}
               </a>
-              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href={`tel:${personalInfo.phone}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" /> {personalInfo.phone}
               </a>
-              <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Github className="h-4 w-4" /> GitHub
               </a>
-              <a href={`https://linkedin.com/in${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href={`https://linkedin.com/in${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
             </div>
