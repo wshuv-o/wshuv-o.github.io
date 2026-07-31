@@ -353,15 +353,6 @@ skills: [
       details: "Pairs a shared multi-scale temporal-spatial front-end with parallel mean and log-variance encoder streams of dual-attention transformer layers. Every number in the manuscript is reproducible from raw OpenNeuro data (ds003626, ds004196, ds006033)."
     },
     {
-      id: "2",
-      title: "Brain-Controller (Prodigy AI)",
-      description: "Brain-computer interface work under the Prodigy AI research group",
-      category: "Brain-Computer Interface",
-      link: "https://github.com/prodigyagi/Brain-Controller",
-      technologies: ["EEG", "Deep Learning", "Python"],
-      details: "Research on decoding EEG signals into device control commands, developed under Prodigy AI, a Bangladesh-based AI research group."
-    },
-    {
       id: "3",
       title: "CB-SAFE: Post-Quantum Secure Aggregation for Federated Learning",
       description: "Code-based (HQC) post-quantum secure-aggregation framework for federated learning",
@@ -381,15 +372,6 @@ skills: [
       details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
     },
     {
-      id: "4",
-      title: "Clinical Reasoning Graph",
-      description: "LLM reasoning modeled as traversals through clinical knowledge graphs with uncertainty quantification",
-      category: "AI Research",
-      link: "https://github.com/wshuv-o/clinical-reasoning-graph",
-      technologies: ["Python", "Knowledge Graphs", "LLMs"],
-      details: "Introduces graph-theoretical uncertainty measures enabling interpretable, theoretically grounded decomposition of epistemic and aleatoric uncertainty for clinical tasks like diagnosis and treatment planning."
-    },
-    {
       id: "5",
       title: "Quantum Clustering for Image Data",
       description: "Hybrid quantum-classical model for image clustering using variational quantum circuits",
@@ -398,15 +380,6 @@ skills: [
       technologies: ["Python", "Variational Quantum Circuits", "K-means"],
       images: ["/images/eqc-framework.jpg"],
       details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
-    },
-    {
-      id: "6",
-      title: "Quantum ML Experiments",
-      description: "Quanvolutional neural network layers and quantum-enhanced NeRF experiments",
-      category: "Quantum ML",
-      link: "https://github.com/wshuv-o/quanvolution",
-      technologies: ["Python", "Quantum Computing", "Deep Learning"],
-      details: "Exploratory research repos including quanvolution (quantum convolutional layers) and qnerf (quantum neural radiance fields)."
     },
     {
       id: "7",
@@ -488,44 +461,6 @@ skills: [
       technologies: ["PHP", "Laravel", "MySQL"],
       secondary: true,
       details: "Complete LMS with video lessons, quizzes, assignments, progress tracking, and certificate generation."
-    },
-    {
-      id: "15",
-      title: "PharmaSync - Pharmacy Management System",
-      description: "Inventory and sales management system for pharmacies",
-      category: "Healthcare",
-      link: "https://github.com/wshuv-o/pharmasync-ManagementSystem",
-      technologies: ["C#", ".NET", "MySQL"],
-      secondary: true,
-      details: "Medicine inventory tracking, prescription management, sales reporting, and expiry date alerts."
-    },
-    {
-      id: "16",
-      title: "HealthHub Management System",
-      description: "Healthcare facility management desktop application",
-      category: "Healthcare",
-      link: "https://github.com/wshuv-o/HealthHub-ManagementSystem",
-      technologies: ["C#", ".NET"],
-      secondary: true,
-      details: "Patient, appointment, and records management for healthcare facilities."
-    },
-    {
-      id: "17",
-      title: "Railway Ticketing System",
-      description: "Comprehensive railway booking and management system",
-      category: "Enterprise Software",
-      technologies: ["Java Swing", "MySQL"],
-      secondary: true,
-      details: "Desktop application for ticket booking, seat selection, schedule management, and automated fare calculation."
-    },
-    {
-      id: "18",
-      title: "Single-Vendor Retail Shop",
-      description: "Point of sale and inventory system for retail stores",
-      category: "Retail",
-      technologies: ["C#", ".NET", "MsSQL"],
-      secondary: true,
-      details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
   ],
   research: [
@@ -917,7 +852,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.17";
+const DATA_VERSION = "2026-07-31.18";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
