@@ -386,6 +386,7 @@ skills: [
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quantum-clustering",
       technologies: ["Python", "Variational Quantum Circuits", "K-means"],
+      images: ["/images/eqc-framework.jpg"],
       details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
     },
     {
@@ -414,6 +415,7 @@ skills: [
       category: "Data Science",
       link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
       technologies: ["Python", "Pandas", "NLTK (VADER)", "NetworkX", "Matplotlib", "Seaborn"],
+      images: ["/images/conti-network.jpg"],
       details: "Cleaned and structured the leaked data with Pandas, classified message sentiment with VADER, explored relationships between actors with NetworkX, and visualized findings with Matplotlib and Seaborn."
     },
     {
@@ -916,7 +918,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.15";
+const DATA_VERSION = "2026-07-31.16";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
