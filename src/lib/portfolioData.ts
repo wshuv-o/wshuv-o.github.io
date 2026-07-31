@@ -95,6 +95,12 @@ export interface Tutorial {
   youtubeEmbed: string;
 }
 
+// Storytelling bullets with inline [text](url) links, Karpathy-style.
+export interface MiscItem {
+  id: string;
+  text: string;
+}
+
 export interface NewsItem {
   id: string;
   date: string;
@@ -502,32 +508,6 @@ skills: [
       details: "Complete POS system with barcode scanning, sales reports, customer management, and inventory control."
     },
     {
-      id: "19",
-      title: "Canyon Mystery Game",
-      description: "Mystery game set in a canyon environment, built in Unity.",
-      category: "Game Development",
-      technologies: ["Unity", "C#"],
-      linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7291817784240418817?collapsed=1"
-    },
-    {
-      id: "21",
-      title: "First-Person Adventure Game",
-      description: "First-person adventure in Unity: explore the environment, find a set of keys, and complete missions. Physics, interactive objects, and level design.",
-      category: "Game Development",
-      link: "https://www.youtube.com/watch?v=skQcoC6f3Hs",
-      technologies: ["Unity", "C#"],
-      youtubeEmbed: "https://www.youtube.com/embed/skQcoC6f3Hs"
-    },
-    {
-      id: "22",
-      title: "Galactic Exodus: Homeward Bound",
-      description: "Space game built from scratch in C++ with OpenGL/GLUT.",
-      category: "Game Development",
-      link: "https://github.com/wshuv-o/opengl-galactic-exodus",
-      technologies: ["C++", "OpenGL", "GLUT"],
-      youtubeEmbed: "https://www.youtube.com/embed/D1DXTJp9y8o"
-    },
-    {
       id: "20",
       title: "Koala Tracklog Analysis",
       description: "Analysis of koala movement patterns from GPS tracklog data",
@@ -698,13 +678,6 @@ skills: [
       description: "Took part in AIUB CS Fest 2024, a university-wide tech fest with programming, project showcasing, and robotics segments.",
       link: "https://csfest.aiubcc.org/",
       images: ["/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"]
-    },
-    {
-      id: "3",
-      organization: "AIUB Arts Club, AIUB",
-      position: "Organizer",
-      period: "Jan 2023 – Feb 2025",
-      description: "Organized 15+ workshops and exhibitions, leading logistics, sponsorship, and promotion teams."
     }
   ],
   news: [
@@ -773,21 +746,18 @@ skills: [
       text: "Joined Byteverse."
     }
   ],
-  tutorials: [
+  misc: [
     {
       id: "1",
-      title: "Java interface — AIUB SOLUTION lecture",
-      youtubeEmbed: "https://www.youtube.com/embed/LNPxhqx9NoY"
+      text: "I recorded a few tutorials during university: a [Java interfaces lecture](https://www.youtube.com/watch?v=LNPxhqx9NoY), and OpenGL/GLUT guides on [texturing shapes](https://www.youtube.com/watch?v=Mvb4EdoprjQ) and [loading images](https://www.youtube.com/watch?v=oKnh7MfETZs). More on [YouTube](https://www.youtube.com/@Py_Geek)."
     },
     {
       id: "2",
-      title: "How to extract texture and apply it to different shapes in GLUT OpenGL",
-      youtubeEmbed: "https://www.youtube.com/embed/Mvb4EdoprjQ"
+      text: "I used to make games: a [first-person adventure in Unity](https://www.youtube.com/watch?v=skQcoC6f3Hs) about finding keys to complete missions, a [canyon mystery game](https://www.linkedin.com/feed/update/urn:li:ugcPost:7291817784240418817/), and [Galactic Exodus: Homeward Bound](https://www.youtube.com/watch?v=D1DXTJp9y8o) — a space game written from scratch in C++ and OpenGL ([source](https://github.com/wshuv-o/opengl-galactic-exodus))."
     },
     {
       id: "3",
-      title: "How to add image in GLUT, OpenGL",
-      youtubeEmbed: "https://www.youtube.com/embed/oKnh7MfETZs"
+      text: "For two years I organized workshops and exhibitions with the AIUB Arts Club — 15+ events, running logistics, sponsorship, and promotion."
     }
   ],
   webProfiles: [
@@ -906,7 +876,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.7";
+const DATA_VERSION = "2026-07-31.8";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

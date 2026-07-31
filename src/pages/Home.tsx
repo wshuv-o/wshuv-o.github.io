@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, BookOpen } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Briefcase, GraduationCap, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -14,7 +14,7 @@ import {
   Skill,
   WebProfile,
   NewsItem,
-  Tutorial,
+  MiscItem,
 } from "@/lib/portfolioData";
 
 const SELF_NAME = "Md Wahiduzzaman Suva";
@@ -136,7 +136,7 @@ const Home = () => {
   const skills: Skill[] = data.skills || [];
   const webProfiles: WebProfile[] = data.webProfiles || [];
   const news: NewsItem[] = data.news || [];
-  const tutorials: Tutorial[] = data.tutorials || [];
+  const misc: MiscItem[] = data.misc || [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -425,29 +425,6 @@ const Home = () => {
             )}
           </section>
 
-          {/* ===== Tutorials ===== */}
-          {tutorials.length > 0 && (
-            <section id="tutorials" className="scroll-mt-24">
-              <SectionHeading icon={BookOpen}>Tutorials</SectionHeading>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {tutorials.map((t) => (
-                  <div key={t.id} className="space-y-2">
-                    <iframe
-                      src={t.youtubeEmbed}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={t.title}
-                      loading="lazy"
-                      className="rounded-lg border border-border w-full aspect-video"
-                    />
-                    <p className="text-xs text-muted-foreground leading-snug">{t.title}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
           {/* ===== Skills ===== */}
           <section id="skills" className="scroll-mt-24">
             <SectionHeading icon={Wrench}>Skills</SectionHeading>
@@ -535,6 +512,20 @@ const Home = () => {
               ))}
             </div>
           </section>
+
+          {/* ===== Misc ===== */}
+          {misc.length > 0 && (
+            <section id="misc" className="scroll-mt-24">
+              <SectionHeading icon={Sparkles}>Misc</SectionHeading>
+              <ul className="list-disc pl-5 space-y-2.5">
+                {misc.map((item) => (
+                  <li key={item.id} className="text-sm text-muted-foreground leading-relaxed">
+                    {linkify(item.text)}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {/* ===== Contact / Footer ===== */}
           <section id="contact" className="scroll-mt-24 border-t border-border pt-10">
