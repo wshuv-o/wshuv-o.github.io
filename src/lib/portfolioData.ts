@@ -45,6 +45,9 @@ export interface AcademicProject {
   category: string;
   image?: string;
   images?: string[];
+  // Alt text per image, same order as images; omit or leave "" for
+  // decorative images whose caption already describes them.
+  imagesAlt?: string[];
   details?: string;
   linkedinEmbed?: string;
   youtubeEmbed?: string;
@@ -80,6 +83,7 @@ export interface OtherExperience {
   image?: string;
   imageCaption?: string;
   images?: string[];
+  imagesAlt?: string[];
 }
 
 export interface WebProfile {
@@ -311,7 +315,7 @@ skills: [
     {
       id: "3",
       title: "CEO Society",
-      period: "Oct 2024 – May 2025",
+      period: "Oct 2024 - May 2025",
       description: "is a course platform whose backend I built: courses, cohorts, roles, and an in-product assistant that answers from course material.",
       link: "https://app.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
@@ -320,7 +324,7 @@ skills: [
     {
       id: "5",
       title: "CommentZap",
-      period: "Sept 2024 – Mar 2025",
+      period: "Sept 2024 - Mar 2025",
       description: "automates comments and DMs on the Meta Graph and Messenger APIs: webhooks, rule-driven responses, token handling, rate-limit backoff.",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
       image: "/screenshots/commentzap.jpg"
@@ -374,13 +378,18 @@ skills: [
     },
     {
       id: "5",
-      title: "Quantum Clustering for Image Data",
-      description: "Hybrid quantum-classical model for image clustering using variational quantum circuits",
+      title: "Equivariant Quantum Clustering (EQC)",
+      description: "p4m equivariant 8-qubit quantum clustering framework behind the Physica Scripta paper",
       category: "Quantum ML",
       link: "https://github.com/wshuv-o/quantum-clustering",
-      technologies: ["Python", "Variational Quantum Circuits", "K-means"],
-      images: ["/images/eqc-framework.jpg"],
-      details: "Encodes image features onto six qubits, computes a quantum kernel, and applies classical clustering to group image data, exploiting quantum properties to improve clustering accuracy on complex datasets."
+      technologies: ["Python", "Quantum Kernels", "Equivariant QNN"],
+      images: ["/images/eqc-framework.jpg", "/images/eqc-p4m-circuit.png", "/images/eqc-quantum-kernel-clusters.png"],
+      imagesAlt: [
+        "Equivariant Quantum Clustering framework pipeline from Md Wahiduzzaman Suva's Physica Scripta paper",
+        "p4m equivariant quantum circuit from Md Wahiduzzaman Suva's Physica Scripta paper",
+        "Cluster assignments produced by the quantum kernel in the EQC framework"
+      ],
+      details: "Reference implementation for A symmetry-aware equivariant quantum clustering approach for enhanced unsupervised learning (Physica Scripta 101(2) 026007, 2026, DOI 10.1088/1402-4896/ae2dd7). On MNIST it reaches silhouette 0.557 and 76.3% accuracy; on Quark-Gluon, 0.512 and 74.8% against 0.183 and 58.4% for K-Means."
     },
     {
       id: "7",
@@ -419,8 +428,40 @@ skills: [
       category: "Robotics",
       link: "https://github.com/wshuv-o/space-rover-application",
       technologies: ["Python", "OpenCV", "Sensor Integration"],
-      images: ["/images/space-rover.png"],
+      images: ["/images/space-rover.png", "/images/rover-dashboard-wireframe.png", "/images/rover-map-view.png", "/images/rover-communication-sequence.png"],
+      imagesAlt: [
+        "Space rover control application screens",
+        "Rover control dashboard wireframe designed by Md Wahiduzzaman Suva for the AIUB Robotics Crew rover application",
+        "Map view wireframe of the rover control application",
+        "Rover to ground station communication sequence diagram"
+      ],
       details: "Real-time sensor data integration and processing with onboard image analysis for rover operations."
+    },
+    {
+      id: "21",
+      title: "dataviz: Statistical Visualization in R",
+      description: "R workflows behind the Metaversalize paper on advanced visualization for statistical data analysis",
+      category: "Data Science",
+      link: "https://github.com/wshuv-o/dataviz",
+      technologies: ["R", "ggplot2", "smplot", "visreg"],
+      images: ["/images/hcv-scatter-matrix.png", "/images/hcv-correlation-heatmap.png", "/images/hcv-alluvial.png"],
+      imagesAlt: [
+        "Scatter plot matrix of the UCI HCV dataset from Md Wahiduzzaman Suva's Metaversalize paper",
+        "Correlation heatmap of HCV blood markers",
+        "Alluvial plot linking sex and diagnosis category in the HCV dataset"
+      ],
+      details: "Demonstrates the paper's methods on the UCI HCV dataset (Metaversalize 1(4), pp 225-239, 2024, DOI 10.22105/metaverse.v1i1.36)."
+    },
+    {
+      id: "22",
+      title: "LIFT Ride Sharing Database",
+      description: "Relational schema for a mixed-fleet ride sharing service",
+      category: "Databases",
+      link: "https://github.com/wshuv-o/LIFT-ride-sharing-application",
+      technologies: ["SQL", "SQLite"],
+      images: ["/images/lift-er-diagram.jpg"],
+      imagesAlt: ["Entity relationship diagram of the LIFT ride sharing database schema"],
+      details: "A single vehicle table with an owner_type discriminator covers company and driver owned fleets, and payouts settle in batches. Tested on SQLite."
     },
     {
       id: "11",
@@ -429,6 +470,8 @@ skills: [
       category: "Web Development",
       link: "https://github.com/wshuv-o/Nexa-Social-Media",
       technologies: ["C#", ".NET", "SignalR", "WebRTC", "MySQL"],
+      images: ["/images/nexa-social.jpg"],
+      imagesAlt: ["Nexa social media platform interface"],
       secondary: true,
       details: "Built with real-time communication using SignalR and WebRTC for video calling. Supports posts, stories, friends management, and instant messaging."
     },
@@ -620,9 +663,16 @@ skills: [
       organization: "AIUB CS Fest 2024",
       position: "Participant",
       period: "Apr 2024",
-      description: "Took part in AIUB CS Fest 2024, a university-wide tech fest with programming, project showcasing, and robotics segments.",
+      description: "Presented our project Coder's Space at AIUB CS Fest 2024: a developer dashboard stacked with features to power devs.",
       link: "https://csfest.aiubcc.org/",
-      images: ["/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"]
+      images: ["/images/csfest-coderspace-1.jpg", "/images/csfest-coderspace-2.webp", "/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"],
+      imagesAlt: [
+        "Coder's Space developer dashboard presented by Md Wahiduzzaman Suva at AIUB CS Fest 2024",
+        "Team presenting Coder's Space at AIUB CS Fest 2024",
+        "",
+        "",
+        ""
+      ]
     }
   ],
   news: [
@@ -861,7 +911,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.23";
+const DATA_VERSION = "2026-07-31.24";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

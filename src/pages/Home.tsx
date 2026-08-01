@@ -444,29 +444,44 @@ const Home = () => {
                     {thumb ? (
                       <img
                         src={thumb}
-                        alt=""
+                        alt={project.imagesAlt?.[0] ?? ""}
                         loading="lazy"
-                        className="w-20 h-20 rounded-md border border-border object-cover object-top shrink-0"
+                        className="w-20 h-20 rounded-md border border-border object-contain bg-muted shrink-0"
                       />
                     ) : (
                       <div className="w-20 h-20 rounded-md border border-border bg-muted shrink-0" />
                     )}
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors"
-                        >
-                          {project.title}
-                        </a>
-                      ) : (
-                        <span className="font-medium text-foreground">{project.title}</span>
+                    <div className="min-w-0">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-foreground underline underline-offset-2 hover:text-primary transition-colors"
+                          >
+                            {project.title}
+                          </a>
+                        ) : (
+                          <span className="font-medium text-foreground">{project.title}</span>
+                        )}
+                        . {project.description}.
+                        {project.details && <> {project.details}</>}
+                      </p>
+                      {project.images && project.images.length > 1 && (
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {project.images.slice(1).map((img, i) => (
+                            <img
+                              key={i}
+                              src={img}
+                              alt={project.imagesAlt?.[i + 1] ?? ""}
+                              loading="lazy"
+                              className="h-16 max-w-40 rounded-md border border-border object-contain bg-muted"
+                            />
+                          ))}
+                        </div>
                       )}
-                      . {project.description}.
-                      {project.details && <> {project.details}</>}
-                    </p>
+                    </div>
                   </div>
                 );
               })}
@@ -542,7 +557,7 @@ const Home = () => {
                         <img
                           key={i}
                           src={img}
-                          alt=""
+                          alt={exp.imagesAlt?.[i] ?? ""}
                           loading="lazy"
                           className="rounded-lg border border-border w-full h-28 object-cover"
                         />
