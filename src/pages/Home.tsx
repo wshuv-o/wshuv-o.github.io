@@ -177,7 +177,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-8 items-start">
               <img
                 src="/100506316.jpg"
-                alt={personalInfo.name}
+                alt={`${personalInfo.name}, backend and AI engineer in Dhaka, Bangladesh`}
                 className="w-36 h-36 rounded-2xl object-cover border border-border shadow-lg shrink-0"
               />
               <div className="space-y-3 min-w-0">
@@ -252,7 +252,7 @@ const Home = () => {
                       {t.image && (
                         <img
                           src={t.image}
-                          alt=""
+                          alt={t.imageAlt ?? ""}
                           loading="lazy"
                           className="w-10 h-10 rounded-md border border-border object-contain bg-white p-0.5 shrink-0"
                         />
@@ -308,7 +308,7 @@ const Home = () => {
                       {n.image && (
                         <img
                           src={n.image}
-                          alt=""
+                          alt={n.imageAlt ?? ""}
                           loading="lazy"
                           className="block mt-2 rounded-lg border border-border w-40"
                         />
@@ -362,7 +362,7 @@ const Home = () => {
                   {project.image && (
                     <img
                       src={project.image}
-                      alt=""
+                      alt={project.imageAlt ?? ""}
                       loading="lazy"
                       className="w-20 h-20 rounded-md border border-border object-cover object-top shrink-0"
                     />
@@ -540,7 +540,7 @@ const Home = () => {
                     <figure className="mt-3">
                       <img
                         src={exp.image}
-                        alt=""
+                        alt={exp.imageAlt ?? ""}
                         loading="lazy"
                         className="rounded-lg border border-border w-full max-w-md"
                       />

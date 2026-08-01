@@ -31,6 +31,7 @@ export interface Project {
   link?: string;
   technologies?: string[];
   image?: string;
+  imageAlt?: string;
   details?: string;
   github?: string;
   linkedinEmbed?: string;
@@ -81,6 +82,7 @@ export interface OtherExperience {
   description: string;
   link?: string;
   image?: string;
+  imageAlt?: string;
   imageCaption?: string;
   images?: string[];
   imagesAlt?: string[];
@@ -112,6 +114,7 @@ export interface TimelineItem {
   period: string;
   text: string;
   image?: string;
+  imageAlt?: string;
 }
 
 export interface WritingItem {
@@ -127,6 +130,7 @@ export interface NewsItem {
   text: string;
   link?: string;
   image?: string;
+  imageAlt?: string;
   linkedinEmbed?: string;
 }
 
@@ -301,7 +305,8 @@ skills: [
       period: "Apr 2025 - Running",
       description: "is Byteverse's customer-support AI platform. I work on the agent layer, retrieval over Qdrant, and the realtime and deployment stack (FastAPI, Redis, Nginx). See the [launch post](https://www.linkedin.com/feed/update/urn:li:share:7369019422184726548/).",
       technologies: ["Next.js", "FastAPI", "Qdrant", "PostgreSQL", "Redis", "Docker"],
-      image: "/images/chatsby-app.jpg"
+      image: "/images/chatsby-app.jpg",
+      imageAlt: "Mobile interface of Chatsby, the AI customer support platform Wahiduzzaman Suva works on at Byteverse"
     },
     {
       id: "2",
@@ -310,7 +315,8 @@ skills: [
       description: "is a calling pipeline with lead scoring, live transfer to a human, voicemail detection with retry, and CRM writeback, built on the agent backend of a WhatsApp marketing product.",
       link: "https://jasmyn.ai",
       technologies: ["Agent runtime", "Tool calling", "WhatsApp Cloud API", "CRM APIs"],
-      image: "/screenshots/jasmyn.jpg"
+      image: "/screenshots/jasmyn.jpg",
+      imageAlt: "Homepage of Jasmyn AI, the WhatsApp marketing product whose outbound calling backend Wahiduzzaman Suva built"
     },
     {
       id: "3",
@@ -319,7 +325,8 @@ skills: [
       description: "is a course platform whose backend I built: courses, cohorts, roles, and an in-product assistant that answers from course material.",
       link: "https://app.ceosociety.io/",
       technologies: ["AdonisJS", "Lucid ORM", "PostgreSQL", "Docker", "GitHub Actions"],
-      image: "/screenshots/ceosociety.png"
+      image: "/screenshots/ceosociety.png",
+      imageAlt: "Login screen of CEO Society, the course platform with a backend built by Wahiduzzaman Suva on AdonisJS"
     },
     {
       id: "5",
@@ -327,7 +334,8 @@ skills: [
       period: "Sept 2024 - Mar 2025",
       description: "automates comments and DMs on the Meta Graph and Messenger APIs: webhooks, rule-driven responses, token handling, rate-limit backoff.",
       technologies: ["Next.js", "PostgreSQL", "Meta Graph API", "Messenger API"],
-      image: "/screenshots/commentzap.jpg"
+      image: "/screenshots/commentzap.jpg",
+      imageAlt: "Channel selection screen of CommentZap, the Instagram and Messenger automation tool from Byteverse"
     },
     {
       id: "4",
@@ -335,7 +343,8 @@ skills: [
       period: "Nov 2025 - Running",
       description: "is Byteverse's lead acquisition engine: scraping with validation, running on Docker and Redis.",
       technologies: ["Vite", "Python", "Docker", "Redis"],
-      image: "/images/acquisition-engine.jpg"
+      image: "/images/acquisition-engine.jpg",
+      imageAlt: "Scraper analytics dashboard of the lead acquisition engine Wahiduzzaman Suva built at Byteverse"
     },
     {
       id: "6",
@@ -343,7 +352,8 @@ skills: [
       period: "Feb 2025 - Running",
       description: "is a suite of micro-services for financial reporting at Odin, working directly in Excel workbooks on client infrastructure: Cashflow AI (cashflow models), Rent Roll Analyst (rent roll standardization), BossPDF (document workflows), [Pexl](https://github.com/wshuv-o/pexl) (table and field extraction from appraisals, bank statements, and utility bills with pdfplumber, Camelot, and Tesseract), a vision model for QC, and Market and Submarket analysis.",
       technologies: ["Python", "FastAPI", "LangChain", "pandas", "SQLAlchemy", "PowerShell COM", "Tesseract OCR"],
-      image: "/images/financial-asset-suite.jpg"
+      image: "/images/financial-asset-suite.jpg",
+      imageAlt: "Logos of the Financial Asset Suite micro-services Wahiduzzaman Suva builds at Odin: Cashflow AI, Rent Roll Analyst, BossPDF, Pexl, vision QC, and market analysis"
     }
   ],
   academicProjects: [
@@ -355,6 +365,7 @@ skills: [
       link: "https://github.com/wshuv-o/VC-DATNet",
       technologies: ["Python", "PyTorch", "EEG", "Transformers"],
       images: ["/images/vc-datnet-architecture.jpg"],
+      imagesAlt: ["VC-DATNet architecture diagram from Md Wahiduzzaman Suva's inner-speech decoding manuscript"],
       details: "Pairs a shared multi-scale temporal-spatial front-end with parallel mean and log-variance encoder streams of dual-attention transformer layers. Every number in the manuscript is reproducible from raw OpenNeuro data (ds003626, ds004196, ds006033)."
     },
     {
@@ -374,6 +385,10 @@ skills: [
       link: "https://github.com/wshuv-o/koala-data-analysis",
       technologies: ["Python", "Pandas", "NumPy", "Plotly", "Scikit-learn"],
       images: ["/images/koala-tracklog-1.jpg", "/images/koala-tracklog-2.jpg"],
+      imagesAlt: [
+        "Koala GPS tracklog movement visualization from Wahiduzzaman Suva's data analysis project",
+        "Clustering plot of koala movement patterns from GPS tracklog data"
+      ],
       details: "Preprocessed GPS tracklogs with Pandas and NumPy, visualized with Matplotlib, Seaborn, and Plotly, and applied Scikit-learn models to identify movement trends and behavioral patterns."
     },
     {
@@ -399,6 +414,10 @@ skills: [
       link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
       technologies: ["Python", "TensorFlow", "Keras", "MTCNN", "Scikit-learn"],
       images: ["/images/facenet-embeddings.jpg", "/images/facenet-detection.jpg"],
+      imagesAlt: [
+        "FaceNet 128-dimensional face embedding scatter plot from Wahiduzzaman Suva's face recognition project at AIUB",
+        "Real-time face detection output from the FaceNet and MTCNN recognition system"
+      ],
       details: "Maps face images into a 128-dimensional embedding space where distances correspond to face similarity, with MTCNN for detection."
     },
     {
@@ -409,6 +428,7 @@ skills: [
       link: "https://github.com/wshuv-o/conti-leaks-sentiment-analysis",
       technologies: ["Python", "Pandas", "NLTK (VADER)", "NetworkX", "Matplotlib", "Seaborn"],
       images: ["/images/conti-network.jpg"],
+      imagesAlt: ["Directed NetworkX graph of Conti ransomware email connections from Wahiduzzaman Suva's leak analysis"],
       details: "Cleaned and structured the leaked data with Pandas, classified message sentiment with VADER, explored relationships between actors with NetworkX, and visualized findings with Matplotlib and Seaborn."
     },
     {
@@ -430,7 +450,7 @@ skills: [
       technologies: ["Python", "OpenCV", "Sensor Integration"],
       images: ["/images/space-rover.png", "/images/rover-dashboard-wireframe.png", "/images/rover-map-view.png", "/images/rover-communication-sequence.png"],
       imagesAlt: [
-        "Space rover control application screens",
+        "Screens of the Mars rover control application built by Wahiduzzaman Suva for the AIUB Robotic Crew",
         "Rover control dashboard wireframe designed by Md Wahiduzzaman Suva for the AIUB Robotics Crew rover application",
         "Map view wireframe of the rover control application",
         "Rover to ground station communication sequence diagram"
@@ -483,6 +503,7 @@ skills: [
       link: "https://optra-blush.vercel.app/",
       technologies: ["Next.js", "TypeScript", "PostgreSQL"],
       images: ["/images/optra.jpg"],
+      imagesAlt: ["Dashboard of Optra, the fintech platform built by Wahiduzzaman Suva with Next.js"],
       secondary: true,
       details: "Secure payment processing system with transaction history, analytics dashboard, and multi-currency support. Source: github.com/wshuv-o/optra"
     },
@@ -630,6 +651,7 @@ skills: [
       description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller and VC-DATNet.",
       link: "https://github.com/prodigyagi",
       image: "/images/eeg-defense-2025.jpg",
+      imageAlt: "Md Wahiduzzaman Suva's team presenting their EEG transformer research poster at American International University-Bangladesh",
       imageCaption: "One of our research projects on EEG analysis using a transformer-based model was presented at AIUB in May 2025. [Read more](https://www.linkedin.com/posts/imtiaj-sajin_thesis-defense-2025-at-aiub-thanks-to-my-activity-7329541319448584192-ROZE)"
     },
     {
@@ -638,7 +660,11 @@ skills: [
       position: "Interpreter",
       period: "Jun 2021 - Feb 2022",
       description: "Facilitated effective communication with government officials and the HR department. Prepared documentation for work permits, legalization, and visas for foreign employees. Attended multi-party meetings as a Russian-Bangla interpreter.",
-      images: ["/images/rooppur-site.jpg", "/images/rooppur-office.jpg"]
+      images: ["/images/rooppur-site.jpg", "/images/rooppur-office.jpg"],
+      imagesAlt: [
+        "Wahiduzzaman Suva at the Rooppur Nuclear Power Plant construction site, where he worked as a Russian-Bangla interpreter",
+        "Wahiduzzaman Suva at his desk in the Rosatom Trest RosSEM office at Rooppur NPP"
+      ]
     },
     {
       id: "2",
@@ -648,6 +674,7 @@ skills: [
       description: "Designed the rover's science module (2023-24) and work on soil analysis, biochemical testing, and scientific payload development for the University Rover Challenge, alongside sensor data processing in Python and OpenCV.",
       link: "https://arc.aiub.edu/",
       image: "/images/urc-science-box.jpg",
+      imageAlt: "3D render of the Mars rover science box module Wahiduzzaman Suva designed with the AIUB Robotic Crew for University Rover Challenge 2024",
       imageCaption: "Science box module designed as part of University Rover Challenge 2024"
     },
     {
@@ -656,7 +683,8 @@ skills: [
       position: "Organizer",
       period: "2024",
       description: "Organized the 2024 national round of TechnoXian Bangladesh, a national robotics competition.",
-      image: "/images/technoxian-2024.jpg"
+      image: "/images/technoxian-2024.jpg",
+      imageAlt: "Organizers and robots at the TechnoXian Bangladesh 2024 national round, organized by Wahiduzzaman Suva and team"
     },
     {
       id: "5",
@@ -669,9 +697,9 @@ skills: [
       imagesAlt: [
         "Coder's Space developer dashboard presented by Md Wahiduzzaman Suva at AIUB CS Fest 2024",
         "Team presenting Coder's Space at AIUB CS Fest 2024",
-        "",
-        "",
-        ""
+        "Wahiduzzaman Suva's team demonstrating their project to judges at AIUB CS Fest 2024",
+        "Judges reviewing project submissions at AIUB CS Fest 2024",
+        "Project showcase judging session at AIUB CS Fest 2024"
       ]
     }
   ],
@@ -703,7 +731,8 @@ skills: [
       id: "10",
       date: "Oct 2025",
       text: "Recognized as Rising Star Performer 2025 at ODIN Outsourcing.",
-      image: "/images/rising-star-2025.jpg"
+      image: "/images/rising-star-2025.jpg",
+      imageAlt: "Md Wahiduzzaman Suva receiving the Rising Star Performer 2025 award at ODIN Outsourcing in Dhaka"
     },
     {
       id: "11",
@@ -754,31 +783,36 @@ skills: [
       id: "1",
       period: "2025 - now",
       text: "Joined [Odin](https://odinbd.com), which has supported financial data processing for the US commercial real-estate market since 2013: loan origination underwriting and acquisition analysis for investment banks, REITs, and private owners. I build the tooling behind that reporting: a model plans a task, calls tools that read from and write directly into the analysts' live Excel workbooks, verifies its output against the source documents, and re-runs the fields it got wrong. Underneath sits a per-page extraction cascade (pdfplumber, Camelot lattice and stream, Tesseract OCR) covering PDF, Word, and scanned files, scored to keep the best result per page. Everything runs on client hardware, because bank documents can't leave the machine.",
-      image: "/images/logos/odin.png"
+      image: "/images/logos/odin.png",
+      imageAlt: "Logo of Odin, where Wahiduzzaman Suva builds financial reporting tooling"
     },
     {
       id: "2",
       period: "2024",
       text: "Opened [Prodigy AI](https://github.com/prodigyagi) with a group of friends from AIUB, a non-profit research organization exploring neuroscience and AI: brain-computer interfaces, cognitive computing, and neuroimaging analysis. Open-source projects for collaboration, private research for focused studies.",
-      image: "/images/logos/prodigyai.png"
+      image: "/images/logos/prodigyai.png",
+      imageAlt: "Logo of Prodigy AI, the brain-computer interface research group Wahiduzzaman Suva opened with friends from AIUB"
     },
     {
       id: "3",
       period: "2023",
       text: "Started [Byteverse](https://byteverseit.com), an IT solutions company working across AI development, software, cloud, fintech, and data analytics. By early 2025 we had delivered 30+ projects for clients across the US, UK, Australia, and India, growing from two founders to a full team. I work on [Chatsby](https://chatsby.co), our customer-support AI product: the agent runtime, retrieval over Qdrant, realtime chat, and the deployment stack (FastAPI, Redis, Nginx, GitHub Actions). Along the way I did contract backend work for client products: a [WhatsApp marketing agent](https://jasmyn.ai), an outbound calling pipeline, comment and DM automation, and a [course platform](https://app.ceosociety.io/) on AdonisJS. Also proud of [aipedia.blog](https://aipedia.blog) and [sspark](https://sspark.lovable.app).",
-      image: "/images/logos/byteverse.png"
+      image: "/images/logos/byteverse.png",
+      imageAlt: "Logo of Byteverse, the IT solutions company Wahiduzzaman Suva started in Dhaka"
     },
     {
       id: "4",
       period: "2022 - 2025",
       text: "BSc in Computer Science and Engineering at [AIUB](https://www.aiub.edu), finishing with a 3.97 CGPA. Started the MSc there in 2025.",
-      image: "/images/logos/aiub.png"
+      image: "/images/logos/aiub.png",
+      imageAlt: "Logo of American International University-Bangladesh, where Wahiduzzaman Suva completed his BSc in Computer Science and Engineering"
     },
     {
       id: "5",
       period: "2020 - 2022",
       text: "Left for [Saint Petersburg State University](https://english.spbu.ru/) intending a software engineering degree; earned TORFL B1 Russian along the way, then discontinued and came home, putting the Russian to work as a Russian-Bangla interpreter at the Rooppur Nuclear Power Plant.",
-      image: "/images/logos/spbu.png"
+      image: "/images/logos/spbu.png",
+      imageAlt: "Logo of Saint Petersburg State University, where Wahiduzzaman Suva studied before returning to Bangladesh"
     }
   ],
   misc: [
@@ -911,7 +945,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-07-31.24";
+const DATA_VERSION = "2026-08-01.1";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
