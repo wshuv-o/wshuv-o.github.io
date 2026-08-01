@@ -413,11 +413,8 @@ skills: [
       category: "Computer Vision",
       link: "https://github.com/wshuv-o/facenet-realtime-face-recognition",
       technologies: ["Python", "TensorFlow", "Keras", "MTCNN", "Scikit-learn"],
-      images: ["/images/facenet-embeddings.jpg", "/images/facenet-detection.jpg"],
-      imagesAlt: [
-        "FaceNet 128-dimensional face embedding scatter plot from Wahiduzzaman Suva's face recognition project at AIUB",
-        "Real-time face detection output from the FaceNet and MTCNN recognition system"
-      ],
+      images: ["/images/facenet-embeddings.jpg"],
+      imagesAlt: ["FaceNet 128-dimensional face embedding scatter plot from Wahiduzzaman Suva's face recognition project at AIUB"],
       details: "Maps face images into a 128-dimensional embedding space where distances correspond to face similarity, with MTCNN for detection."
     },
     {
@@ -945,7 +942,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-01.1";
+const DATA_VERSION = "2026-08-01.2";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
