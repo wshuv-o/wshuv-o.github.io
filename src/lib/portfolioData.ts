@@ -770,6 +770,13 @@ skills: [
       link: "https://doi.org/10.22105/metaverse.v1i1.36"
     },
     {
+      id: "14",
+      date: "2024",
+      text: "Organized the national round of TechnoXian Bangladesh, a robotics competition.",
+      image: "/images/technoxian-2024.jpg",
+      imageAlt: "Wahiduzzaman Suva with fellow organizers and robots at the TechnoXian Bangladesh 2024 national round"
+    },
+    {
       id: "13",
       date: "Apr 2024",
       text: "Presented Coder's Space, our developer dashboard, at AIUB CS Fest.",
@@ -962,7 +969,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-02.1";
+const DATA_VERSION = "2026-08-02.2";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
