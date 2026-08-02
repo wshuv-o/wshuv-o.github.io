@@ -313,6 +313,19 @@ const Home = () => {
                           className="block mt-2 rounded-lg border border-border w-40"
                         />
                       )}
+                      {n.images && n.images.length > 0 && (
+                        <span className="mt-2 flex flex-wrap gap-2">
+                          {n.images.map((img, i) => (
+                            <img
+                              key={i}
+                              src={img}
+                              alt={n.imagesAlt?.[i] ?? ""}
+                              loading="lazy"
+                              className="rounded-lg border border-border h-24 max-w-44 object-cover"
+                            />
+                          ))}
+                        </span>
+                      )}
                       {n.linkedinEmbed && (
                         <>
                           <iframe

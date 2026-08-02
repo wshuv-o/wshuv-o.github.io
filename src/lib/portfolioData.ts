@@ -131,6 +131,8 @@ export interface NewsItem {
   link?: string;
   image?: string;
   imageAlt?: string;
+  images?: string[];
+  imagesAlt?: string[];
   linkedinEmbed?: string;
 }
 
@@ -781,8 +783,14 @@ skills: [
       date: "Apr 2024",
       text: "Presented Coder's Space, our developer dashboard, at AIUB CS Fest.",
       link: "https://csfest.aiubcc.org/",
-      image: "/images/csfest-coderspace-2.webp",
-      imageAlt: "Wahiduzzaman Suva's team presenting Coder's Space at AIUB CS Fest 2024"
+      images: ["/images/csfest-coderspace-2.webp", "/images/csfest-coderspace-1.jpg", "/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"],
+      imagesAlt: [
+        "Wahiduzzaman Suva's team presenting Coder's Space at AIUB CS Fest 2024",
+        "Coder's Space developer dashboard interface",
+        "Demonstrating the project to judges at AIUB CS Fest 2024",
+        "Judges reviewing submissions at AIUB CS Fest 2024",
+        "Project showcase session at AIUB CS Fest 2024"
+      ]
     },
     {
       id: "9",
@@ -969,7 +977,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-02.2";
+const DATA_VERSION = "2026-08-02.3";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
