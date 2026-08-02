@@ -738,6 +738,14 @@ skills: [
       linkedinEmbed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7369019422184726548?collapsed=1"
     },
     {
+      id: "12",
+      date: "May 2025",
+      text: "Presented our EEG transformer research at AIUB.",
+      link: "https://www.linkedin.com/posts/imtiaj-sajin_thesis-defense-2025-at-aiub-thanks-to-my-activity-7329541319448584192-ROZE",
+      image: "/images/eeg-defense-2025.jpg",
+      imageAlt: "Wahiduzzaman Suva's team beside their EEG transformer research poster at AIUB"
+    },
+    {
       id: "6",
       date: "Mar 2025",
       text: "Quantum graph neural network paper published in IEEE Transactions on Artificial Intelligence.",
@@ -760,6 +768,14 @@ skills: [
       date: "2024",
       text: "First paper published, in Metaversalize.",
       link: "https://doi.org/10.22105/metaverse.v1i1.36"
+    },
+    {
+      id: "13",
+      date: "Apr 2024",
+      text: "Presented Coder's Space, our developer dashboard, at AIUB CS Fest.",
+      link: "https://csfest.aiubcc.org/",
+      image: "/images/csfest-coderspace-2.webp",
+      imageAlt: "Wahiduzzaman Suva's team presenting Coder's Space at AIUB CS Fest 2024"
     },
     {
       id: "9",
@@ -824,6 +840,10 @@ skills: [
     {
       id: "3",
       text: "For two years I organized workshops and exhibitions with the [AIUB Arts Club](https://www.aiub.edu/oncampus/clubs/aac-in-aiub): 15+ events like the [Intra-AIUB Art Exhibition](https://aiub.edu/intra-aiub-art-exhibition-by-aiub-arts-club), running logistics, sponsorship, and promotion."
+    },
+    {
+      id: "4",
+      text: "Opened Runique, a shoe brand, with [Imtiaj Sajin](https://imtiaj-sajin.github.io/). We sold roughly 280 pairs of shoes until our page got banned."
     }
   ],
   webProfiles: [
@@ -942,7 +962,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-01.2";
+const DATA_VERSION = "2026-08-02.1";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
