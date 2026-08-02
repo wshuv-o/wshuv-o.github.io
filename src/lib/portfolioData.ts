@@ -648,10 +648,7 @@ skills: [
       position: "BCI Researcher",
       period: "2024 - Present",
       description: "Research group working on brain-computer interfaces. EEG decoding work: Brain-Controller and VC-DATNet.",
-      link: "https://github.com/prodigyagi",
-      image: "/images/eeg-defense-2025.jpg",
-      imageAlt: "Md Wahiduzzaman Suva's team presenting their EEG transformer research poster at American International University-Bangladesh",
-      imageCaption: "One of our research projects on EEG analysis using a transformer-based model was presented at AIUB in May 2025. [Read more](https://www.linkedin.com/posts/imtiaj-sajin_thesis-defense-2025-at-aiub-thanks-to-my-activity-7329541319448584192-ROZE)"
+      link: "https://github.com/prodigyagi"
     },
     {
       id: "1",
@@ -676,31 +673,6 @@ skills: [
       imageAlt: "3D render of the Mars rover science box module Wahiduzzaman Suva designed with the AIUB Robotic Crew for University Rover Challenge 2024",
       imageCaption: "Science box module designed as part of University Rover Challenge 2024"
     },
-    {
-      id: "4",
-      organization: "TechnoXian Bangladesh",
-      position: "Organizer",
-      period: "2024",
-      description: "Organized the 2024 national round of TechnoXian Bangladesh, a national robotics competition.",
-      image: "/images/technoxian-2024.jpg",
-      imageAlt: "Organizers and robots at the TechnoXian Bangladesh 2024 national round, organized by Wahiduzzaman Suva and team"
-    },
-    {
-      id: "5",
-      organization: "AIUB CS Fest 2024",
-      position: "Participant",
-      period: "Apr 2024",
-      description: "Presented our project Coder's Space at AIUB CS Fest 2024: a developer dashboard stacked with features to power devs.",
-      link: "https://csfest.aiubcc.org/",
-      images: ["/images/csfest-coderspace-1.jpg", "/images/csfest-coderspace-2.webp", "/images/csfest-1.jpg", "/images/csfest-2.jpg", "/images/csfest-3.jpg"],
-      imagesAlt: [
-        "Coder's Space developer dashboard presented by Md Wahiduzzaman Suva at AIUB CS Fest 2024",
-        "Team presenting Coder's Space at AIUB CS Fest 2024",
-        "Wahiduzzaman Suva's team demonstrating their project to judges at AIUB CS Fest 2024",
-        "Judges reviewing project submissions at AIUB CS Fest 2024",
-        "Project showcase judging session at AIUB CS Fest 2024"
-      ]
-    }
   ],
   news: [
     {
@@ -977,7 +949,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-02.4";
+const DATA_VERSION = "2026-08-02.5";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
