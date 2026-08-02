@@ -858,7 +858,7 @@ skills: [
     },
     {
       id: "4",
-      text: "Opened Runique, a shoe brand, with [Imtiaj Sajin](https://imtiaj-sajin.github.io/). We sold roughly 280 pairs of shoes until our page got banned."
+      text: "Opened Runique, a shoe brand, with [Imtiaj Sajin](https://imtiaj-sajin.github.io/). We sold roughly 280 pairs of shoes until our page got banned XD"
     }
   ],
   webProfiles: [
@@ -977,7 +977,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-02.3";
+const DATA_VERSION = "2026-08-02.4";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {
