@@ -177,7 +177,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-8 items-start">
               <img
                 src="/100506316.jpg"
-                alt={`${personalInfo.name}, backend and AI engineer in Dhaka, Bangladesh`}
+                alt={`${personalInfo.name}, applied AI engineer in Dhaka, Bangladesh`}
                 className="w-36 h-36 rounded-2xl object-cover border border-border shadow-lg shrink-0"
               />
               <div className="space-y-3 min-w-0">
@@ -185,12 +185,12 @@ const Home = () => {
                   {personalInfo.name}
                 </h1>
                 <p className="text-lg text-muted-foreground font-medium">
-                  Backend &amp; AI engineer
+                  Applied AI Engineer
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  I build agent harnesses, RAG pipelines, and document extraction systems for
-                  SaaS, fintech, and US real estate clients. On the side, I do research on
-                  brain-computer interfaces and quantum machine learning.
+                  I build production AI systems such as agent runtimes, document intelligence
+                  pipelines, and retrieval infrastructure. Alongside engineering, I conduct
+                  research in brain-computer interfaces and quantum machine learning.
                 </p>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
