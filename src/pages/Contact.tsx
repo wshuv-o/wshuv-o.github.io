@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import { getPortfolioData, initializeData, PersonalInfo, WebProfile } from "@/lib/portfolioData";
-import { Mail, Phone, Github, Linkedin, Globe, ExternalLink } from "lucide-react";
+import { Mail, Github, Linkedin, Globe, ExternalLink } from "lucide-react";
 
 const Contact = () => {
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null);
@@ -41,21 +41,6 @@ const Contact = () => {
                   <div>
                     <h3 className="font-display font-semibold text-lg mb-1">Email</h3>
                     <p className="text-muted-foreground">{personalInfo.email}</p>
-                  </div>
-                </div>
-              </a>
-
-              <a 
-                href={`tel:${personalInfo.phone}`}
-                className="p-8 rounded-2xl bg-card border border-border glow-card hover-scale"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-lg mb-1">Phone</h3>
-                    <p className="text-muted-foreground">{personalInfo.phone}</p>
                   </div>
                 </div>
               </a>
