@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, FileText, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone, PenLine } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, FileText, Newspaper, FlaskConical, Wrench, Users, Globe, Sparkles, Milestone, PenLine } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState, type ReactNode } from "react";
 import {
@@ -196,9 +196,6 @@ const Home = () => {
                   <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Dhaka, Bangladesh (GMT+6)</span>
                   <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
                     <Mail className="h-4 w-4" /> {personalInfo.email}
-                  </a>
-                  <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, "")}`} className="flex items-center gap-1.5 underline underline-offset-2 hover:text-primary transition-colors">
-                    <Phone className="h-4 w-4" /> {personalInfo.phone}
                   </a>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-1">
@@ -602,9 +599,6 @@ const Home = () => {
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
               <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" /> {personalInfo.email}
-              </a>
-              <a href={`tel:${personalInfo.phone.replace(/[^+\d]/g, "")}`} className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" /> {personalInfo.phone}
               </a>
               <a href={`https://github.com${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 <Github className="h-4 w-4" /> GitHub

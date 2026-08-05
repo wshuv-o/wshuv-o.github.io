@@ -1,7 +1,6 @@
 export interface PersonalInfo {
   name: string;
   email: string;
-  phone: string;
   github: string;
   linkedin: string;
 }
@@ -148,7 +147,6 @@ const DEFAULT_DATA = {
   personalInfo: {
     name: "Wahiduzzaman Suva",
     email: "wahedshuvo36@gmail.com",
-    phone: "(+880) 1773259873",
     github: "/wshuv-o",
     linkedin: "/wahid-shuvo"
   },
@@ -949,7 +947,7 @@ export const setPortfolioData = (data: any) => {
 
 // Bump whenever DEFAULT_DATA changes so returning visitors get the new content
 // instead of the stale copy cached in their localStorage.
-const DATA_VERSION = "2026-08-02.5";
+const DATA_VERSION = "2026-08-05.1";
 
 export const initializeData = () => {
   if (localStorage.getItem('portfolioDataVersion') !== DATA_VERSION) {

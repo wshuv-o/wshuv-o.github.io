@@ -183,14 +183,6 @@ const AdminDashboard = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input
-                    id="phone"
-                    value={data.personalInfo.phone}
-                    onChange={(e) => setData({ ...data, personalInfo: { ...data.personalInfo, phone: e.target.value } })}
-                  />
-                </div>
-                <div>
                   <Label htmlFor="github">GitHub</Label>
                   <Input
                     id="github"
